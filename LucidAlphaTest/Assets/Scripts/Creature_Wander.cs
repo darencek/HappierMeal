@@ -9,6 +9,8 @@ public class Creature_Wander : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        moveSpeed = Random.Range(0.2f, 0.5f);
+
         moveTarget = transform.position;
         StartCoroutine("doNextMoveTarget");
     }
@@ -19,6 +21,11 @@ public class Creature_Wander : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, moveTarget, moveSpeed * Time.deltaTime);
 
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -8, 8), Mathf.Clamp(transform.position.y, -5, 0), 0);
+    }
+
+    private void OnMouseDown()
+    {
+        UIManager.instance.UI_ShowDialogueBox();
     }
 
     IEnumerator doNextMoveTarget()

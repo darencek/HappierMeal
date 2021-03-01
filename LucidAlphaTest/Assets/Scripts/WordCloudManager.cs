@@ -8,17 +8,19 @@ public class WordCloudManager : MonoBehaviour
     public GameObject wordPrefab;
     public TextAsset raw_moodList;
 
-    public List<WordCloudButton> selectedWords;
+    List<string> selectedMoods;
+
+    public List<GameObject> spawnedWords;
 
     public string[] moods;
+
+    public int responsesLeft = 3;
+
     // Start is called before the first frame update
     void Start()
     {
-        selectedWords = new List<WordCloudButton>();
-
-        moods = raw_moodList.text.Split('\n');
-        Debug.Log(moods.Length + " mood words loaded");
-        SpawnWords();
+        spawnedWords = new List<GameObject>();
+        StartWakeUpQuiz();
     }
 
     // Update is called once per frame
@@ -27,55 +29,57 @@ public class WordCloudManager : MonoBehaviour
 
     }
 
-    public void doneButtonPressed()
+    public void StartWakeUpQuiz()
     {
-        if (selectedWords.Count < 3) return;
+        moods = raw_moodList.text.Split('\n');
 
-        selectedWords.Clear();
-        UImanager.UI_WakeUp_Exit();
+        selectedMoods = new List<string>(moods);
+        responsesLeft = 3;
+        SpawnWords();
     }
-    public bool isWordSelected(WordCloudButton word)
+
+    public void SelectResponse()
     {
-        return selectedWords.Contains(word);
+        responsesLeft--;
+        SpawnWords();
+
+        if (responsesLeft <= 0)
+            UImanager.UI_WakeUp_Exit();
     }
-    public void selectWord(WordCloudButton word)
-    {
-        if (selectedWords.Contains(word))
-        {
-            selectedWords.Remove(word);
-        }
-        else
-        {
-            if (selectedWords.Count >= 3)
-                selectedWords.RemoveAt(0);
-            selectedWords.Add(word);
-        }
-    }
+
     public void SpawnWords()
     {
-        List<string> selectedMoods = new List<string>(moods);
+        foreach (GameObject k in spawnedWords)
+            Destroy(k);
 
-        int wordCount = 50;
-        for (int i = 0; i < (moods.Length - wordCount); i++)
+        spawnedWords.Clear();
+
+
+        int wordCount = 3;
+
+        List<string> displayMoods = new List<string>();
+
+        for (int i = 0; i < wordCount; i++)
         {
-            selectedMoods.RemoveAt(Random.Range(0, selectedMoods.Count));
+            string w = selectedMoods[Random.Range(0, selectedMoods.Count - 1)];
+            displayMoods.Add(w);
+            selectedMoods.Remove(w);
         }
-
 
         int r = 0;
         int c = 0;
-        int maxWidth = 5;
+        int maxWidth = 3;
 
-        float wordWidth = 250f;
-        float wordHeight = 50f;
+        float wordWidth = 420f;
+        float wordHeight = 200f;
 
         float startX = -(maxWidth * wordWidth) / 2 + (wordWidth / 2);
-        float startY = gameObject.GetComponent<RectTransform>().sizeDelta.y / 2 - wordHeight;
-        foreach (string mood in selectedMoods)
+        float startY = 0;
+        foreach (string mood in displayMoods)
         {
             GameObject g = Instantiate(wordPrefab, gameObject.transform);
             g.transform.localPosition = new Vector3(startX + wordWidth * c, startY - wordHeight * r, 0);
-            g.GetComponent<WordCloudButton>().SetWord(mood,this);
+            g.GetComponent<WordCloudButton>().SetWord(mood, this);
 
             if (++c >= maxWidth)
             {

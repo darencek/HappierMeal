@@ -17,7 +17,7 @@ public class WordCloudButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        wordText.color = manager.isWordSelected(this) ? Color.green : Color.black;
+        //  wordText.color = manager.isWordSelected(this) ? Color.green : Color.black;
     }
 
     public void SetWord(string word, WordCloudManager mn)
@@ -29,6 +29,6 @@ public class WordCloudButton : MonoBehaviour
 
     public void WordClicked()
     {
-        manager.selectWord(this);
+        manager.SelectResponse();
     }
 }

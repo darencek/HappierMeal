@@ -12,17 +12,29 @@ public class UIManager : MonoBehaviour
     public GameObject sleepingScreen;
     public GameObject wakeMenu;
 
+    public GameObject dialogueBox;
+
     public GameObject noPointsError;
+
+    public TextMeshProUGUI wake_ratingText;
+    public TextMeshProUGUI sleep_hoursText;
+
+    public static UIManager instance;
     // Start is called before the first frame update
     void Start()
     {
-
+        instance = this;
     }
 
     // Update is called once per frame
     void Update()
     {
         pointsText.text = MainManager.instance.getDreamPoints() + " z";
+    }
+
+    public void updateSleepScreen(int hours)
+    {
+        sleep_hoursText.text = hours + " hours slept...";
     }
     public void UI_ToggleBuildMenu()
     {
@@ -46,18 +58,26 @@ public class UIManager : MonoBehaviour
     {
         sleepingScreen.SetActive(false);
         wakeMenu.SetActive(true);
+        wakeMenu.GetComponentInChildren<WordCloudManager>().StartWakeUpQuiz();
 
-        MainManager.instance.Sleep_StopSleeping();
+        string sleepRating = "";
+        int pointsGained = 0;
+
+        MainManager.instance.Sleep_StopSleeping(out sleepRating, out pointsGained);
+
+        wake_ratingText.text = "You slept: " + sleepRating + "\nEarned: " + pointsGained;
     }
     public void UI_WakeUp_Exit()
     {
         wakeMenu.SetActive(false);
-        MainManager.instance.spawnCreature();
+        MainManager.instance.spawnCreatures();
     }
 
-    public void UI_Build_TestBuilding()
+    public void UI_Build_TestBuilding(int buildingIndex)
     {
-        if (MainManager.instance.buildBuilding())
+        bool success = MainManager.instance.buildBuilding(buildingIndex);
+
+        if (success)
         {
             buildMenu.SetActive(false);
         }
@@ -65,6 +85,11 @@ public class UIManager : MonoBehaviour
         {
             StartCoroutine("noPointsErrorFlash");
         }
+    }
+
+    public void UI_ShowDialogueBox()
+    {
+        dialogueBox.SetActive(true);
     }
 
     IEnumerator noPointsErrorFlash()

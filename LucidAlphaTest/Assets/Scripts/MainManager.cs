@@ -11,7 +11,13 @@ public class MainManager : MonoBehaviour
     bool isSleeping = false;
     float sleepTime = 0;
 
+    public GameObject prefab_building_dreamMachine;
+    public GameObject prefab_building_factory;
+
+    public GameObject prefab_building_dreamTree;
+
     public GameObject prefab_buildingTest;
+
     public GameObject prefab_creatureTest;
 
     public delegate void BuildingTicksDelegate();
@@ -31,6 +37,7 @@ public class MainManager : MonoBehaviour
         if (isSleeping)
         {
             sleepTime += Time.deltaTime;
+            UIManager.instance.updateSleepScreen((int)sleepTime);
         }
     }
     public void Sleep_StartSleeping()
@@ -38,8 +45,11 @@ public class MainManager : MonoBehaviour
         sleepTime = 0f;
         isSleeping = true;
     }
-    public void Sleep_StopSleeping()
+    public void Sleep_StopSleeping(out string rating, out int pointsGained)
     {
+        rating = "WELL";
+        pointsGained = 0;
+
         isSleeping = false;
 
         GameObject[] crs = GameObject.FindGameObjectsWithTag("Creature");
@@ -48,12 +58,26 @@ public class MainManager : MonoBehaviour
             Destroy(j);
         }
 
-        AddSleepPoints((int)sleepTime);
+        float hoursSlept = sleepTime;
+        if (hoursSlept < 3f)
+            rating = "NOT GREAT";
+        else if (hoursSlept < 5f)
+            rating = "GOOD";
+        else if (hoursSlept < 6f)
+            rating = "WELL";
+        else if (hoursSlept < 8f)
+            rating = "GREAT";
+        else
+            rating = "WONDERFUL";
+
+        pointsGained = AddSleepPoints((int)hoursSlept);
     }
 
-    void AddSleepPoints(int hoursSlept)
+    int AddSleepPoints(int hoursSlept)
     {
-        dreamPoints += hoursSlept * 100;
+        int p = hoursSlept * 100;
+        AddDreamPoints(p);
+        return p;
     }
 
     public void AddDreamPoints(int points)
@@ -66,17 +90,43 @@ public class MainManager : MonoBehaviour
         return dreamPoints;
     }
 
-    public bool buildBuilding()
+    public bool buildBuilding(int buildingIndex)
     {
-        if (dreamPoints < Building.cost)
+        Building b = prefab_building_dreamMachine.GetComponent<Building>();
+
+        switch (buildingIndex)
+        {
+            case 0:
+                //Dream Machine
+                b = prefab_building_dreamMachine.GetComponent<Building>();
+                break;
+            case 1:
+                //Factory
+                b = prefab_building_factory.GetComponent<Building>();
+                break;
+            case 60:
+                //DreamTree
+                b = prefab_building_dreamTree.GetComponent<Building>();
+                break;
+        }
+
+        Debug.Log("Building: " + b.name);
+
+        if (dreamPoints < b.cost)
             return false;
 
-        Instantiate(prefab_buildingTest);
-        dreamPoints -= Building.cost;
+        Instantiate(b);
+        dreamPoints -= b.cost;
 
         return true;
     }
 
+    public void spawnCreatures()
+    {
+        spawnCreature();
+        if (Random.Range(0, 100) < 50) spawnCreature();
+        if (Random.Range(0, 100) < 50) spawnCreature();
+    }
     public void spawnCreature()
     {
         Instantiate(prefab_creatureTest, new Vector3(Random.Range(-8, 8), Random.Range(0, -3), 0), Quaternion.identity);
