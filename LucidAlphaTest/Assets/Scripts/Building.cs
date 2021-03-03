@@ -12,7 +12,7 @@ public class Building : MonoBehaviour
     public int pointsAdd = 1;
     public float tickInterval = 10f;
 
-    static float snapSize = 2.5f;
+    static float snapSize = 1.25f;
 
     BuildingScript buildingScript;
 

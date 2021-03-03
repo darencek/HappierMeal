@@ -7,6 +7,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3105326200653186883, guid: 1c1a5056b88176d4a8e4c2ba59b70432, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4537263044859802458, guid: 1c1a5056b88176d4a8e4c2ba59b70432, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4948090683525806613, guid: 1c1a5056b88176d4a8e4c2ba59b70432, type: 3}
       propertyPath: m_text
       value: 'Factory
