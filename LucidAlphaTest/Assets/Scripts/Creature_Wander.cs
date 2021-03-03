@@ -6,6 +6,9 @@ public class Creature_Wander : MonoBehaviour
 {
     float moveSpeed = 1f;
     Vector3 moveTarget;
+
+    public GameObject[] creatureSprites;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +16,12 @@ public class Creature_Wander : MonoBehaviour
 
         moveTarget = transform.position;
         StartCoroutine("doNextMoveTarget");
+
+
+        foreach (GameObject g in creatureSprites)
+            g.SetActive(false);
+
+        creatureSprites[Random.Range(0, creatureSprites.Length - 1)].SetActive(true);
     }
 
     // Update is called once per frame
