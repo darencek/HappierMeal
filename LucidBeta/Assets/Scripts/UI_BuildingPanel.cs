@@ -4,17 +4,18 @@ using UnityEngine;
 using TMPro;
 public class UI_BuildingPanel : MonoBehaviour
 {
-    public TextMeshProUGUI price_dreamMachine;
-    public TextMeshProUGUI price_dreamEngine;
-    public TextMeshProUGUI price_factory;
-    public TextMeshProUGUI price_foundry;
-    public TextMeshProUGUI price_refinery;
-    public TextMeshProUGUI price_crystarium;
-    public TextMeshProUGUI price_workshop;
-    public TextMeshProUGUI price_gardenShed;
-    public TextMeshProUGUI price_incubator;
-    public TextMeshProUGUI price_bakery;
-    public TextMeshProUGUI price_fishery;
+
+    public UI_BuildingButton button_dreamMachine;
+    public UI_BuildingButton button_dreamEngine;
+    public UI_BuildingButton button_factory;
+    public UI_BuildingButton button_foundry;
+    public UI_BuildingButton button_refinery;
+    public UI_BuildingButton button_crystarium;
+    public UI_BuildingButton button_workshop;
+    public UI_BuildingButton button_gardenShed;
+    public UI_BuildingButton button_incubator;
+    public UI_BuildingButton button_bakery;
+    public UI_BuildingButton button_fishery;
 
     public GameObject[] buildWindow_Panels;
 
@@ -37,7 +38,17 @@ public class UI_BuildingPanel : MonoBehaviour
     }
     void UpdatePrices()
     {
-        price_dreamMachine.text = "$" + Building.GetPrice(Building.BuildingType.DREAM_MACHINE);
-        price_factory.text = "$" + Building.GetPrice(Building.BuildingType.FACTORY);
+        button_dreamMachine.UpdateText(Building.GetStat(Building.BuildingType.DREAM_MACHINE));
+        button_factory.UpdateText(Building.GetStat(Building.BuildingType.FACTORY));
+        button_bakery.UpdateText(Building.GetStat(Building.BuildingType.BAKERY));
+        button_refinery.UpdateText(Building.GetStat(Building.BuildingType.REFINERY));
+        button_foundry.UpdateText(Building.GetStat(Building.BuildingType.FOUNDRY));
+
+        button_workshop.UpdateText(Building.GetStat(Building.BuildingType.WORKSHOP));
+        button_dreamEngine.UpdateText(Building.GetStat(Building.BuildingType.DREAM_ENGINE));
+        button_fishery.UpdateText(Building.GetStat(Building.BuildingType.FISHERY));
+        button_crystarium.UpdateText(Building.GetStat(Building.BuildingType.CRYSTARIUM));
+        button_gardenShed.UpdateText(Building.GetStat(Building.BuildingType.GARDEN_SHED));
+        button_incubator.UpdateText(Building.GetStat(Building.BuildingType.INCUBATOR));
     }
 }
