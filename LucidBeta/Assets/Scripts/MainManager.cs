@@ -35,6 +35,8 @@ public class MainManager : MonoBehaviour
     float rest_EarnMultiplier = 1f;
     float energy_EarnMultiplier = 1f;
 
+    public double zee_earningPerMinute = 0f;
+
     void Start()
     {
         instance = this;
@@ -43,7 +45,7 @@ public class MainManager : MonoBehaviour
     }
     void ResetResources()
     {
-        zees = 10000000;
+        zees = 1000;
         zees_earnLimit_base = 5000;
 
         rest_resource = 0;
@@ -105,9 +107,16 @@ public class MainManager : MonoBehaviour
             }
         }
 
+        if(sleepState == 0)
+        {
+            //Rest Loss
+            float restLoss = 0;
+        }
         //Cap Rest
         if (rest_resource > rest_limit)
             rest_resource = rest_limit;
+        if (rest_resource < 0)
+            rest_resource = 0;
 
         //Cap Energy
         if (energy_resource > energy_limit)
@@ -116,13 +125,18 @@ public class MainManager : MonoBehaviour
         //Main Zees Gained
         zee_FromRestEarnMultiplier = Mathf.Pow(1.1f, buildings_refineries);
 
+        double zees_perRest = (1f) / (60f * 60f); //1 per Rest per 1 hour
+        double zees_gained = (rest_resource * zees_perRest);
+        zees_gained *= zee_FromRestEarnMultiplier;
+
+        double zees_gained_capped = System.Math.Min(zees_gained, zees_earnLimit / (60f * 60f));
+        zee_earningPerMinute = (zees_gained_capped * 60f);
+
         if (sleepState == 1)
         {
-            double zees_perRest = (1f) / (60f * 60f); //1 per Rest per 1 hour
-            double zees_gained = (rest_resource * zees_perRest);
-            zees_gained *= zee_FromRestEarnMultiplier;
-            zees += System.Math.Min(zees_gained, zees_earnLimit) * dreamTimeScale;
+            zees += zees_gained_capped * dreamTimeScale;
         }
+
     }
 
     void Update()
@@ -197,7 +211,7 @@ public class MainManager : MonoBehaviour
         foreach (GameObject g in GameObject.FindGameObjectsWithTag("Building"))
         {
             Building b = g.GetComponent<Building>();
-            if (b.type == type && !b.underConstruction)
+            if (b.type == type && !b.underConstruction && !b.placing)
                 c++;
             if (b.energized)
                 c++;

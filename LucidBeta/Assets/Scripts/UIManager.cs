@@ -23,8 +23,9 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         zeeText.text = "$" + (int)System.Math.Floor(MainManager.instance.zees) +
-            "\nRest: " + Mathf.FloorToInt(MainManager.instance.rest_resource) + "/" + Mathf.FloorToInt(MainManager.instance.rest_limit) +
-            "\nEnergy:" + Mathf.FloorToInt(MainManager.instance.energy_resource) + "/" + Mathf.FloorToInt(MainManager.instance.energy_limit);
+            "\n($" + (int)System.Math.Floor(MainManager.instance.zee_earningPerMinute * 60f) + " per hour / " + MainManager.instance.zees_earnLimit + " Limit)" +
+              "\nRest: " + Mathf.FloorToInt(MainManager.instance.rest_resource) + "/" + Mathf.FloorToInt(MainManager.instance.rest_limit) +
+              "\nEnergy:" + Mathf.FloorToInt(MainManager.instance.energy_resource) + "/" + Mathf.FloorToInt(MainManager.instance.energy_limit);
         sleepHoursText.text = "Slept for " + Mathf.FloorToInt(MainManager.instance.sleepTime / (60f * 60f)) + " hours...";
     }
 
