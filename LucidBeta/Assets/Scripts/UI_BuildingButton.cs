@@ -13,7 +13,9 @@ public class UI_BuildingButton : MonoBehaviour
     public TextMeshProUGUI priceText;
     public TextMeshProUGUI buildTimeText;
 
+    public Image sprite;
     public Image priceLabelSprite;
+    public Image mainSprite;
 
     public Color col_green;
     public Color col_red;
@@ -27,7 +29,18 @@ public class UI_BuildingButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        priceLabelSprite.color = (MainManager.instance.zees >= stats.price) ? col_green : col_red;
+        if (MainManager.instance.zees >= stats.price)
+        {
+            priceLabelSprite.color = col_green;
+            mainSprite.color = Color.white;
+        }
+        else
+        {
+            priceLabelSprite.color = col_red;
+            mainSprite.color = Color.gray;
+        }
+
+        sprite.sprite = MainManager.buildingSpriteManager.GetBuildingSprite(stats.type);
     }
 
     public void ButtonClicked()
@@ -40,6 +53,6 @@ public class UI_BuildingButton : MonoBehaviour
         nameText.text = stats.buildingName;
         infoText.text = stats.buildingInfo;
         priceText.text = "$" + stats.price;
-        buildTimeText.text = "Build time:\n" + stats.buildHours + " sleep hours";
+        buildTimeText.text = stats.buildHours + " hours of sleep";
     }
 }

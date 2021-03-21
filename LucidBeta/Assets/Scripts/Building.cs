@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Building : MonoBehaviour
 {
-    public enum BuildingType { DREAM_MACHINE, DREAM_ENGINE, FACTORY, REFINERY, FOUNDRY, CRYSTARIUM, GARDEN_SHED, INCUBATOR, WORKSHOP, BAKERY, FISHERY };
+    public enum BuildingType { NONE, DREAM_MACHINE, DREAM_ENGINE, FACTORY, REFINERY, FOUNDRY, CRYSTARIUM, GARDEN_SHED, INCUBATOR, WORKSHOP, BAKERY, FISHERY, SMALL_FARM, LARGE_FARM, FRUIT_TREE };
 
     public BuildingType type;
 
@@ -13,15 +13,15 @@ public class Building : MonoBehaviour
 
     public bool energized = false;
 
-    bool clicked = false;
-
     public float buildHours = 0;
     float totalBuildHours = 0;
 
     public GameObject[] buildingSprites;
-    public int buildingSpriteId = 0;
 
-    GameObject currentSprite;
+    public SpriteRenderer buildingSprite;
+    public SpriteRenderer tileSprite;
+
+    public Sprite[] tileSprites;
 
     static float gridX = 1f;
     static float gridY = 0.5f;
@@ -32,66 +32,84 @@ public class Building : MonoBehaviour
     public GameObject progressBar;
     public GameObject progressBarFill;
 
+    public BoxCollider2D mainClickbox;
+
+    public bool SlotUnlocked = true;
+
     // Start is called before the first frame update
     void Start()
     {
-        currentSprite = buildingSprites[0];
+        type = BuildingType.NONE;
     }
 
     // Update is called once per frame
     void Update()
     {
-        UpdateSprite();
-        if (placing)
+        if (SlotUnlocked)
         {
-            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mousePosition.z = 0;
-            transform.position = mousePosition;
-            snapToGrid();
+            tileSprite.sprite = tileSprites[0];
+            buildingSprite.gameObject.SetActive(true);
 
-            bool validPlacment = true;
-            foreach (Collider2D c in Physics2D.OverlapBoxAll(transform.position, new Vector2(1, 0.5f), 0))
-            {
-                if (c.gameObject == gameObject || c.isTrigger) continue;
-                validPlacment = false;
-            }
+            UpdateSprite();
 
-            if (validPlacment)
+            if (underConstruction)
             {
-                currentSprite.GetComponent<SpriteRenderer>().color = buildColor;
-                if (Input.GetKeyUp(KeyCode.Mouse0) && !MainManager.CamPan_JustReleased && !MainManager.MouseOnUI)
-                {
-                    currentSprite.GetComponent<SpriteRenderer>().color = Color.white;
-                    placing = false;
+                if (MainManager.instance.sleepState >= 1)
+                    buildHours -= Time.deltaTime * MainManager.dreamTimeScale;
 
-                    buildHours = GetBuildHours(type) * 60f * 60f;
-                    totalBuildHours = buildHours;
-                    underConstruction = buildHours > 0 ? true : false;
-                }
-            }
-            else
-            {
-                currentSprite.GetComponent<SpriteRenderer>().color = buildRed;
+                if (buildHours <= 0)
+                    underConstruction = false;
+
+                UpdateProgressBar();
             }
         }
         else
         {
-            UpdateProgressBar();
+            buildingSprite.gameObject.SetActive(false);
+            tileSprite.sprite = tileSprites[1];
         }
 
-        if (buildHours > 0 && MainManager.instance.sleepState >= 1)
-        {
-            buildHours -= Time.deltaTime * MainManager.dreamTimeScale;
-            if (buildHours <= 0)
-                underConstruction = false;
-        }
+
     }
 
+    bool clicked = false;
     private void OnMouseDown()
     {
-        if (!placing && !underConstruction && !MainManager.CamPan_JustReleased && !MainManager.MouseOnUI)
-            MainManager.uiManager.UI_ShowBuildingInfoPanel(this);
+        clicked = true;
+    }
+
+    private void OnMouseUp()
+    {
+        if (clicked && SlotUnlocked)
+        {
+            if (!underConstruction && !MainManager.CamPan_JustReleased && !MainManager.MouseOnUI)
+            {
+                if (type != BuildingType.NONE)
+                {
+                    MainManager.uiManager.UI_ShowBuildingInfoPanel(this);
+                }
+                else
+                {
+                    MainManager.uiManager.UI_ShowBuildingPanel(this);
+                }
+            }
+        }
+
         clicked = false;
+    }
+
+    public void BuildAs(BuildingType buildInto)
+    {
+        Debug.Log("Building into: " + buildInto);
+        type = buildInto;
+        underConstruction = true;
+        totalBuildHours = GetBuildHours(type) * 60f * 60f;
+        buildHours = totalBuildHours;
+    }
+
+    public void Demolish()
+    {
+        type = BuildingType.NONE;
     }
 
     void snapToGrid()
@@ -106,7 +124,7 @@ public class Building : MonoBehaviour
 
     void UpdateProgressBar()
     {
-        if (buildHours == 0 || totalBuildHours == 0)
+        if (buildHours == 0 || totalBuildHours == 0 || !underConstruction)
         {
             progressBar.SetActive(false);
             return;
@@ -120,20 +138,20 @@ public class Building : MonoBehaviour
     }
     public void UpdateSprite()
     {
-        foreach (GameObject o in buildingSprites)
-            o.SetActive(false);
+        //foreach (GameObject o in buildingSprites)
+        //    o.SetActive(false);
 
-        int targetSpriteId = 0;
+        mainClickbox.enabled = (type != BuildingType.NONE);
+
+        buildingSprite.sprite = MainManager.buildingSpriteManager.GetBuildingSprite(type);
+
         if (underConstruction)
-        {
-            targetSpriteId = 0;
-        }
+            buildingSprite.color = buildColor;
         else
-        {
-            targetSpriteId = (int)type + 1;
-        }
-        currentSprite = buildingSprites[targetSpriteId];
-        currentSprite.SetActive(true);
+            buildingSprite.color = Color.white;
+
+        //currentSprite = buildingSprites[targetSpriteId];
+        //currentSprite.SetActive(true);
     }
 
     public static float GetPrice(BuildingType type)
@@ -242,6 +260,24 @@ public class Building : MonoBehaviour
                     buildHours = 3;
                     buildingName = "Incubator";
                     buildingInfo = "Enables purchasing of special seeds and soil for gardening.";
+                    break;
+                case BuildingType.SMALL_FARM:
+                    price = 5000;
+                    buildHours = 1;
+                    buildingName = "Small Garden";
+                    buildingInfo = "Allows you to plant 1 seed to grow a plant.";
+                    break;
+                case BuildingType.LARGE_FARM:
+                    price = 15000;
+                    buildHours = 4;
+                    buildingName = "Large Garden";
+                    buildingInfo = "Allows you to plant up to 4 seeds to grow plants and crossbreed seeds.";
+                    break;
+                case BuildingType.FRUIT_TREE:
+                    price = 15000;
+                    buildHours = 4;
+                    buildingName = "Fruit Tree";
+                    buildingInfo = "Grows up to 3 fruits every hour that can be harvested for money.";
                     break;
             }
         }

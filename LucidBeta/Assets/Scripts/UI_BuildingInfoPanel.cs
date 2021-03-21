@@ -10,10 +10,10 @@ public class UI_BuildingInfoPanel : MonoBehaviour
     public Building.BuildingStats stats;
     public TextMeshProUGUI buildingName;
     public TextMeshProUGUI buildingInfo;
-    public Button energizeButton;
+    public Image sprite;
+    public GameObject energizeButton;
+    public GameObject energizeDoneButton;
     public TextMeshProUGUI energizeButtonText;
-
-    float exitCooldown = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -25,37 +25,39 @@ public class UI_BuildingInfoPanel : MonoBehaviour
     {
         selected = b;
         stats = Building.GetStat(b.type);
-        exitCooldown = 0.1f;
+        sprite.sprite = MainManager.buildingSpriteManager.GetBuildingSprite(b.type);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (exitCooldown <= 0f)
-        {
-            if (Input.GetKeyDown(KeyCode.Mouse0) && !MainManager.MouseOnUI)
-            {
-                gameObject.SetActive(false);
-            }
-        }
-        else
-        {
-            exitCooldown -= Time.deltaTime;
-        }
-
         if (!selected) return;
 
         buildingName.text = stats.buildingName;
         buildingInfo.text = stats.buildingInfo;
 
-        energizeButton.gameObject.SetActive((!selected.energized && stats.energizeCost > 0));
+        energizeButton.SetActive((!selected.energized && stats.energizeCost > 0));
         energizeButtonText.text = "Energize\n" + stats.energizeCost + " Energy";
+
+        energizeButton.SetActive(!selected.energized);
+        energizeDoneButton.SetActive(selected.energized);
     }
-    public void Energize()
+
+    public void UI_Close()
     {
-        if (MainManager.instance.zees >= stats.energizeCost)
+        gameObject.SetActive(false);
+    }
+
+    public void UI_Demolish()
+    {
+        selected.Demolish();
+        UI_Close();
+    }
+    public void UI_Energize()
+    {
+        if (MainManager.instance.energy_resource >= stats.energizeCost)
         {
-            MainManager.instance.zees -= stats.energizeCost;
+            MainManager.instance.energy_resource -= stats.energizeCost;
             selected.energized = true;
         }
     }

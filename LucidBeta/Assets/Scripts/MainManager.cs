@@ -7,10 +7,10 @@ public class MainManager : MonoBehaviour
 {
     public static MainManager instance;
     public static UIManager uiManager;
+    public static BuildingSpriteManager buildingSpriteManager;
+    public static CreatureManager creatureManager;
 
     public EventSystem eventSystem;
-    public GameObject buildingPrefab;
-    public GameObject creaturePrefab;
 
     public static bool MouseOnUI;
 
@@ -107,7 +107,7 @@ public class MainManager : MonoBehaviour
             }
         }
 
-        if(sleepState == 0)
+        if (sleepState == 0)
         {
             //Rest Loss
             float restLoss = 0;
@@ -151,10 +151,12 @@ public class MainManager : MonoBehaviour
     }
     public void StopSleeping()
     {
-        foreach (GameObject g in GameObject.FindGameObjectsWithTag("Creature"))
-        {
-            Destroy(g);
-        }
+        GameObject[] aliveCreatures = GameObject.FindGameObjectsWithTag("Creature");
+        if (aliveCreatures.Length >= 5)
+            for (int i = aliveCreatures.Length; i > 5; i--)
+                Destroy(aliveCreatures[i]);
+
+
         foreach (GameObject g in GameObject.FindGameObjectsWithTag("Building"))
         {
             Building b = g.GetComponent<Building>();
@@ -165,22 +167,20 @@ public class MainManager : MonoBehaviour
     }
     public void CompleteWakeUp()
     {
-        SpawnCreature();
-        if (Random.Range(0, 100) < 50) SpawnCreature();
-        if (Random.Range(0, 100) < 50) SpawnCreature();
-    }
-    void SpawnCreature()
-    {
-        float rg = 4;
-        Instantiate(creaturePrefab, new Vector3(Random.Range(-rg, rg), Random.Range(-rg, rg), 0), Quaternion.identity);
+        creatureManager.SpawnNewCreature();
     }
 
-    public void BuildBuilding(Building.BuildingType type)
+    public void BuildBuilding(Building building, Building.BuildingType type)
     {
-        GameObject b = Instantiate(buildingPrefab);
-        Building bS = b.GetComponent<Building>();
-        bS.type = type;
-        bS.placing = true;
+        float price = Building.GetPrice(type);
+
+        if (zees >= price)
+        {
+            zees -= price;
+
+            uiManager.buildPanel.SetActive(false);
+            building.BuildAs(type);
+        }
     }
 
     public int buildings_dreamMachines = 0;
@@ -232,6 +232,7 @@ public class MainManager : MonoBehaviour
 
                 CamPan_startPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 CamPan_Dragging = true;
+                CamPan_JustReleased = false;
                 CamPan_totalMove = 0;
             }
         }
@@ -241,17 +242,44 @@ public class MainManager : MonoBehaviour
             Vector3 PanDelta = (CamPan_pos - CamPan_startPos);
             CamPan_totalMove += PanDelta.sqrMagnitude;
             Camera.main.transform.position -= PanDelta;
-            CamPan_JustReleased = true;
+            if (CamPan_totalMove > 0.01f)
+                CamPan_JustReleased = true;
+            else
+                CamPan_JustReleased = false;
+
             if (Input.GetKeyUp(KeyCode.Mouse0))
             {
                 CamPan_Dragging = false;
-                if (CamPan_totalMove > 0.01f)
+                if (CamPan_totalMove > 0.001f)
                     StartCoroutine("CamPan_ReleaseCooldown");
-                else
-                    CamPan_JustReleased = false;
             }
         }
     }
+
+    Vector3 _panToTarget;
+    public void CamPan_SmoothToTarget(Vector3 tar)
+    {
+        _panToTarget = tar;
+        StartCoroutine("CamSmoothPanToTarget");
+    }
+
+    IEnumerator CamSmoothPanToTarget()
+    {
+        float t = 0;
+        float dur = 0.5f;
+        Vector3 ve = Vector3.zero;
+        while (true)
+        {
+            t += Time.deltaTime;
+            Vector3 v = Vector3.SmoothDamp(Camera.main.transform.position, _panToTarget, ref ve, dur, 100f, Time.unscaledDeltaTime);
+            v.z = Camera.main.transform.position.z;
+            Camera.main.transform.position = v;
+            if (t >= dur)
+                break;
+            yield return null;
+        }
+    }
+
     IEnumerator CamPan_ReleaseCooldown()
     {
         yield return new WaitForSecondsRealtime(0.1f);
