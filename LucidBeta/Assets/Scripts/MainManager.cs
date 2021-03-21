@@ -167,7 +167,8 @@ public class MainManager : MonoBehaviour
     }
     public void CompleteWakeUp()
     {
-        creatureManager.SpawnNewCreature();
+        if (Random.Range(0, 100) <= 50)
+            creatureManager.SpawnNewCreature();
     }
 
     public void BuildBuilding(Building building, Building.BuildingType type)

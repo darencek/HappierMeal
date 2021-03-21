@@ -16,8 +16,6 @@ public class Building : MonoBehaviour
     public float buildHours = 0;
     float totalBuildHours = 0;
 
-    public GameObject[] buildingSprites;
-
     public SpriteRenderer buildingSprite;
     public SpriteRenderer tileSprite;
 
@@ -40,6 +38,7 @@ public class Building : MonoBehaviour
     void Start()
     {
         type = BuildingType.NONE;
+        _swaySpeed = Random.Range(0.5f, 1f);
     }
 
     // Update is called once per frame
@@ -47,6 +46,8 @@ public class Building : MonoBehaviour
     {
         if (SlotUnlocked)
         {
+            BouncyAnimation();
+
             tileSprite.sprite = tileSprites[0];
             buildingSprite.gameObject.SetActive(true);
 
@@ -67,6 +68,7 @@ public class Building : MonoBehaviour
         {
             buildingSprite.gameObject.SetActive(false);
             tileSprite.sprite = tileSprites[1];
+            tileSprite.transform.localScale = Vector3.one;
         }
 
 
@@ -152,6 +154,20 @@ public class Building : MonoBehaviour
 
         //currentSprite = buildingSprites[targetSpriteId];
         //currentSprite.SetActive(true);
+    }
+
+    float _sway = 0;
+    float _swayTime = 0;
+    float _swaySpeed = 1f;
+    void BouncyAnimation()
+    {
+        _swayTime += Time.deltaTime * _swaySpeed;
+        _sway = Mathf.PingPong(_swayTime, 1);
+        float fSway = _sway - 0.5f;
+        float cSway = Mathf.PingPong(_swayTime * 0.5f, 1) - 0.5f;
+        buildingSprite.transform.rotation = Quaternion.Euler(0, 0, fSway * 0.5f);
+        buildingSprite.transform.localScale = new Vector3(1 + fSway * 0.03f, 1 - fSway * 0.03f, 1);
+        tileSprite.transform.localScale = new Vector3(1 + cSway * 0.03f, 1 - cSway * 0.03f, 1);
     }
 
     public static float GetPrice(BuildingType type)
