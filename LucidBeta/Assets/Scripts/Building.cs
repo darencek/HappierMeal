@@ -32,6 +32,9 @@ public class Building : MonoBehaviour
 
     public BoxCollider2D mainClickbox;
 
+    public GameObject fruitTree_fruitGroup;
+    public GameObject[] fruitTree_fruits;
+
     public bool SlotUnlocked = true;
 
     // Start is called before the first frame update
@@ -55,6 +58,8 @@ public class Building : MonoBehaviour
 
             if (underConstruction)
             {
+                _growthTimer = 0;
+
                 if (MainManager.instance.sleepState >= 1)
                     buildHours -= Time.deltaTime * MainManager.dreamTimeScale;
 
@@ -63,6 +68,10 @@ public class Building : MonoBehaviour
 
                 UpdateProgressBar();
             }
+            else
+            {
+                FruitTree_Update();
+            }
         }
         else
         {
@@ -70,11 +79,10 @@ public class Building : MonoBehaviour
             tileSprite.sprite = tileSprites[1];
             tileSprite.transform.localScale = Vector3.one;
         }
-
-
     }
 
     bool clicked = false;
+    public bool CancelClick = false;
     private void OnMouseDown()
     {
         clicked = true;
@@ -84,6 +92,16 @@ public class Building : MonoBehaviour
     {
         if (clicked && SlotUnlocked)
         {
+            StartCoroutine("ConfirmClick");
+        }
+
+        clicked = false;
+    }
+
+    IEnumerator ConfirmClick()
+    {
+        yield return new WaitForEndOfFrame();
+        if (!CancelClick)
             if (!underConstruction && !MainManager.CamPan_JustReleased && !MainManager.MouseOnUI)
             {
                 if (type != BuildingType.NONE)
@@ -95,9 +113,7 @@ public class Building : MonoBehaviour
                     MainManager.uiManager.UI_ShowBuildingPanel(this);
                 }
             }
-        }
-
-        clicked = false;
+        CancelClick = false;
     }
 
     public void BuildAs(BuildingType buildInto)
@@ -152,8 +168,34 @@ public class Building : MonoBehaviour
         else
             buildingSprite.color = Color.white;
 
-        //currentSprite = buildingSprites[targetSpriteId];
-        //currentSprite.SetActive(true);
+    }
+
+    float _growthTimer = 0;
+    void FruitTree_Update()
+    {
+        if (type == BuildingType.FRUIT_TREE)
+        {
+            fruitTree_fruitGroup.SetActive(true);
+
+            _growthTimer += Time.unscaledDeltaTime * MainManager.dreamTimeScale;
+
+            if (_growthTimer >= (60f * 60f * 3f))
+            {
+                _growthTimer = 0;
+
+                foreach (GameObject g in fruitTree_fruits)
+                    if (!g.activeInHierarchy)
+                    {
+                        g.SetActive(true);
+                        break;
+                    }
+            }
+
+        }
+        else
+        {
+            fruitTree_fruitGroup.SetActive(false);
+        }
     }
 
     float _sway = 0;
@@ -210,7 +252,7 @@ public class Building : MonoBehaviour
                     buildHours = 3;
                     buildingName = "Dream Machine";
                     buildingInfo = "Generates 1 Rest every minute while sleeping.";
-                    energizeCost = 500;
+                    energizeCost = 300;
                     break;
                 case BuildingType.FACTORY:
                     price = 25000;
@@ -224,21 +266,21 @@ public class Building : MonoBehaviour
                     buildHours = 5;
                     buildingName = "Bakery";
                     buildingInfo = "Produces 1 Energy every minute while sleeping.";
-                    energizeCost = 2000;
+                    energizeCost = 800;
                     break;
                 case BuildingType.REFINERY:
                     price = 50000;
                     buildHours = 10;
                     buildingName = "Refinery";
                     buildingInfo = "Increases $ earned by 10% while sleeping.";
-                    energizeCost = 5000;
+                    energizeCost = 2000;
                     break;
                 case BuildingType.FOUNDRY:
                     price = 45000;
                     buildHours = 8;
                     buildingName = "Foundry";
                     buildingInfo = "Increases Energy gained by 10% while sleeping.";
-                    energizeCost = 7000;
+                    energizeCost = 4200;
                     break;
 
                 case BuildingType.WORKSHOP:
@@ -263,7 +305,7 @@ public class Building : MonoBehaviour
                     price = 30000;
                     buildHours = 10;
                     buildingName = "Crystarium";
-                    buildingInfo = "Increases Zee earning limit by 5000.";
+                    buildingInfo = "Increases $ earning limit by 5000.";
                     break;
                 case BuildingType.GARDEN_SHED:
                     price = 15000;
@@ -293,7 +335,7 @@ public class Building : MonoBehaviour
                     price = 15000;
                     buildHours = 4;
                     buildingName = "Fruit Tree";
-                    buildingInfo = "Grows up to 3 fruits every hour that can be harvested for money.";
+                    buildingInfo = "Grows up to 3 fruits every 3 hours that can be harvested for $7000.";
                     break;
             }
         }

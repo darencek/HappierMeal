@@ -36,11 +36,11 @@ public class UI_BuildingInfoPanel : MonoBehaviour
         buildingName.text = stats.buildingName;
         buildingInfo.text = stats.buildingInfo;
 
-        energizeButton.SetActive((!selected.energized && stats.energizeCost > 0));
+
         energizeButtonText.text = "Energize\n" + stats.energizeCost + " Energy";
 
-        energizeButton.SetActive(!selected.energized);
-        energizeDoneButton.SetActive(selected.energized);
+        energizeButton.SetActive((!selected.energized && stats.energizeCost > 0));
+        energizeDoneButton.SetActive(selected.energized && stats.energizeCost > 0);
     }
 
     public void UI_Close()

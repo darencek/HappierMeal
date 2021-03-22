@@ -52,7 +52,7 @@ public class UI_BuildingButton : MonoBehaviour
         this.stats = stats;
         nameText.text = stats.buildingName;
         infoText.text = stats.buildingInfo;
-        priceText.text = "$" + stats.price;
+        priceText.text = "$" + MainManager.FormatMoney(stats.price);
         buildTimeText.text = stats.buildHours + " hours of sleep";
     }
 }

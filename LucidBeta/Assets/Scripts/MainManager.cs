@@ -45,7 +45,7 @@ public class MainManager : MonoBehaviour
     }
     void ResetResources()
     {
-        zees = 1000;
+        zees = 100000000;
         zees_earnLimit_base = 5000;
 
         rest_resource = 0;
@@ -73,9 +73,9 @@ public class MainManager : MonoBehaviour
     public void ResourceTick()
     {
         //Limits
-        rest_limit = rest_limit_base + (buildings_dreamEngines * 500f);
-        energy_limit = energy_limit_base + (buildings_fisheries * 50f);
-        zees_earnLimit = zees_earnLimit_base + (buildings_crystariums * 5000f);
+        rest_limit = rest_limit_base + (buildings_dreamEngines * 500f * Mathf.Pow(1.5f, UpgradeManager.dreamEngine_upgrade.level));
+        energy_limit = energy_limit_base + (buildings_fisheries * 50f * Mathf.Pow(1.8f, UpgradeManager.fishery_upgrade.level));
+        zees_earnLimit = zees_earnLimit_base + (buildings_crystariums * 5000f * Mathf.Pow(1.2f, UpgradeManager.crystarium_upgrade.level));
 
         if (sleepState == 1)
         {
@@ -84,9 +84,9 @@ public class MainManager : MonoBehaviour
             {
                 float energy_perBakery = (1f) / 60f; //1 per Minute
 
-                energy_EarnMultiplier = Mathf.Pow(1.1f, buildings_foundries);
+                energy_EarnMultiplier = Mathf.Pow(1.1f, buildings_foundries) * Mathf.Pow(1.25f, UpgradeManager.foundry_efficiency.level);
 
-                float energy_gained = (buildings_bakeries * energy_perBakery);
+                float energy_gained = (buildings_bakeries * energy_perBakery * Mathf.Pow(1.05f, UpgradeManager.bakery_efficiency.level));
                 energy_gained *= energy_EarnMultiplier;
 
                 energy_resource += energy_gained * dreamTimeScale;
@@ -98,8 +98,8 @@ public class MainManager : MonoBehaviour
                 float rest_perDreamMachine = (1f) / 60f;
                 float rest_perFactory = (10f) / 60f;
 
-                float rest_gained = (buildings_dreamMachines * rest_perDreamMachine)
-                    + (buildings_factories * rest_perFactory);
+                float rest_gained = (buildings_dreamMachines * rest_perDreamMachine * Mathf.Pow(1.1f, UpgradeManager.dreamMachine_efficiency.level))
+                    + (buildings_factories * rest_perFactory * Mathf.Pow(1.03f, UpgradeManager.factory_efficiency.level));
 
                 rest_gained *= rest_EarnMultiplier;
 
@@ -123,7 +123,7 @@ public class MainManager : MonoBehaviour
             energy_resource = energy_limit;
 
         //Main Zees Gained
-        zee_FromRestEarnMultiplier = Mathf.Pow(1.1f, buildings_refineries);
+        zee_FromRestEarnMultiplier = Mathf.Pow((1.1f) + (0.01f * UpgradeManager.refinery_efficiency.level), buildings_refineries);
 
         double zees_perRest = (1f) / (60f * 60f); //1 per Rest per 1 hour
         double zees_gained = (rest_resource * zees_perRest);
@@ -194,6 +194,9 @@ public class MainManager : MonoBehaviour
     public int buildings_fisheries = 0;
     public int buildings_crystariums = 0;
 
+    public bool buildings_haveWorkshop = false;
+    public bool buildings_haveGardenShed = false;
+
     public void CountBuildings()
     {
         buildings_dreamMachines = CountBuildingsOfType(Building.BuildingType.DREAM_MACHINE);
@@ -205,17 +208,22 @@ public class MainManager : MonoBehaviour
         buildings_dreamEngines = CountBuildingsOfType(Building.BuildingType.DREAM_ENGINE);
         buildings_fisheries = CountBuildingsOfType(Building.BuildingType.FISHERY);
         buildings_crystariums = CountBuildingsOfType(Building.BuildingType.CRYSTARIUM);
+
+        buildings_haveWorkshop = CountBuildingsOfType(Building.BuildingType.WORKSHOP) > 0;
+        buildings_haveGardenShed = CountBuildingsOfType(Building.BuildingType.GARDEN_SHED) > 0;
     }
-    int CountBuildingsOfType(Building.BuildingType type)
+    public int CountBuildingsOfType(Building.BuildingType type)
     {
         int c = 0;
         foreach (GameObject g in GameObject.FindGameObjectsWithTag("Building"))
         {
             Building b = g.GetComponent<Building>();
             if (b.type == type && !b.underConstruction && !b.placing)
+            {
                 c++;
-            if (b.energized)
-                c++;
+                if (b.energized)
+                    c++;
+            }
         }
         return c;
     }
@@ -280,10 +288,46 @@ public class MainManager : MonoBehaviour
             yield return null;
         }
     }
-
     IEnumerator CamPan_ReleaseCooldown()
     {
+        CamPan_JustReleased = true;
         yield return new WaitForSecondsRealtime(0.1f);
         CamPan_JustReleased = false;
+    }
+
+    public static string FormatMoney(double money)
+    {
+        if (money >= 100000000)
+            return (money / 1000000D).ToString("0.#M");
+
+        if (money >= 1000000)
+            return (money / 1000000D).ToString("0.##M");
+
+        if (money >= 100000)
+            return (money / 1000D).ToString("0.#k");
+
+        if (money >= 10000)
+            return (money / 1000D).ToString("0.##k");
+
+
+        return System.Math.Floor(money).ToString("#,0");
+    }
+
+    public static string FormatNumber(float num)
+    {
+        if (num >= 100000000)
+            return (num / 1000000D).ToString("0.#M");
+
+        if (num >= 1000000)
+            return (num / 1000000D).ToString("0.##M");
+
+        if (num >= 100000)
+            return (num / 1000D).ToString("0.#k");
+
+        if (num >= 10000)
+            return (num / 1000D).ToString("0.##k");
+
+
+        return Mathf.FloorToInt(num).ToString();
     }
 }
