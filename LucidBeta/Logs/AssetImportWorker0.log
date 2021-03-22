@@ -1,0 +1,1302 @@
+Using pre-set license
+Built from '2020.3/staging' branch; Version is '2020.3.0f1 (c7b5465681fb) revision 13088070'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Pro; OS build 19041.867; Version 2004; 64bit' Language: 'en' Physical Memory: 32683 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.3.0f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+D:/Documents/GitHub/HappierMeal/LucidBeta
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+64082
+Successfully changed project path to: D:/Documents/GitHub/HappierMeal/LucidBeta
+D:/Documents/GitHub/HappierMeal/LucidBeta
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 31.47 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.0f1 (c7b5465681fb)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.0f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Documents/GitHub/HappierMeal/LucidBeta/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 2070 SUPER (ID=0x1e84)
+    Vendor:   
+    VRAM:     8011 MB
+    Driver:   27.21.14.6089
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.0f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.0f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.0f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56308
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.0f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001401 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 32.06 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.886 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.000519 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-0000021803621C00 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000218031BE070 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021802D99B60 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021802D7EE20 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021802D07900 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021802D1AB10 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\PsdPlugin.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000218085033B0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000218033C3B10 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807675240 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807675240 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021803621C00 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180329F610 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180318F8A0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.IK.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021803760030 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180371B430 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000218032B0A20 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Path.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021802D7EE20 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180371B430 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000218033C3B10 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000218079EC640 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000218035D1010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Mathematics.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180318F8A0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000218079EC640 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Animation.Triangle.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180318F8A0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021802D22B20 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.PixelPerfect.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000218072F0020 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000218032B0A20 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021803113430 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021808376B00 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021802E8B8D0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807636630 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Common.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000218032B0A20 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 32.49 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.787 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 0.42 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1831 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 87.8 MB.
+System memory in use after: 87.9 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2286.
+Total: 2.141900 ms (FindLiveObjects: 0.232900 ms CreateObjectMapping: 0.066200 ms MarkObjects: 1.762800 ms  DeleteObjects: 0.079200 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Artwork/Buildings/FruitTree.png
+  artifactKey: Guid(059b80de07a40d74b85a37126a132d50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Artwork/Buildings/FruitTree.png using Guid(059b80de07a40d74b85a37126a132d50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27aba65cf3a478b412f391f771dbb419') in 0.137712 seconds
+  Import took 0.140911 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 42.693270 seconds.
+  path: Assets/Artwork/Plants/Fruit.png
+  artifactKey: Guid(9a56be42019c6b045b22c64618cb9cae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Artwork/Plants/Fruit.png using Guid(9a56be42019c6b045b22c64618cb9cae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '800014e306ce1206427d3d8923cdfefc') in 0.019068 seconds
+  Import took 0.021748 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 44.151145 seconds.
+  path: Assets/Artwork/Plants/Fruit.png
+  artifactKey: Guid(9a56be42019c6b045b22c64618cb9cae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Artwork/Plants/Fruit.png using Guid(9a56be42019c6b045b22c64618cb9cae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05974e97efcb781fbb8f9e5013551ed6') in 0.012575 seconds
+  Import took 0.015237 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000786 seconds.
+  path: Assets/Artwork/Plants/Fruit.png
+  artifactKey: Guid(9a56be42019c6b045b22c64618cb9cae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Artwork/Plants/Fruit.png using Guid(9a56be42019c6b045b22c64618cb9cae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05974e97efcb781fbb8f9e5013551ed6') in 0.012575 seconds
+  Import took 0.015152 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000720 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-0000021802FAEF70 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021809BAE230 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021802D3A750 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021802FA3090 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021808154060 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000219D857F680 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\PsdPlugin.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021808134030 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180871C010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021802F26010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021808154060 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021803621C00 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000218084DD010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807C78F20 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.IK.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180728D7A0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021802E44030 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021802FE3180 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Path.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180361D040 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021802E44030 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021802D21510 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807176030 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180377AE70 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Mathematics.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021802D3A750 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807176030 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Animation.Triangle.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000218083E3040 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021802D38010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.PixelPerfect.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021806E7E010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021808154060 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021808C45030 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180358E5D0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180702A230 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000219D85AFF10 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Common.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021808154060 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.32 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.716 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.31 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1808 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.4 MB.
+System memory in use after: 89.5 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2298.
+Total: 2.276600 ms (FindLiveObjects: 0.221300 ms CreateObjectMapping: 0.123100 ms MarkObjects: 1.912700 ms  DeleteObjects: 0.018000 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000683 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-000002180AE4C790 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021809BAD060 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000219D857B200 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180ADD2D20 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021809FA6630 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021802CFB8D0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\PsdPlugin.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021808431020 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180871C010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021802CFB8D0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021809FA6630 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021803621C00 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000218084DD010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000219D857B200 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.IK.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021808431020 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021802F26010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000218079FC010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Path.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180ADD2D20 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021802F26010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021802E8B8D0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180822E010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000218077D1010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Mathematics.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000219D857B200 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180822E010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Animation.Triangle.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807988A10 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021808F0C650 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.PixelPerfect.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021803739020 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021803582020 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180ADD2D20 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180358E5D0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021802F26010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021802CA6AC0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Common.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807324030 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.33 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.690 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.30 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1808 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.5 MB.
+System memory in use after: 89.6 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2302.
+Total: 2.643900 ms (FindLiveObjects: 0.228300 ms CreateObjectMapping: 0.075900 ms MarkObjects: 2.322100 ms  DeleteObjects: 0.016500 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000805 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-000002180A3872B0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021809BAE230 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021803111420 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A8250A0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021808154060 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000219D857F680 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\PsdPlugin.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021808154060 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A592280 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A606010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021808154060 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A62A9C0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180377AE70 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021809E53030 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.IK.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021808154060 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021802E8B8D0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021808BA3030 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Path.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000219FB8845D0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A35CE00 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021806DBC060 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A8066A0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000218077D1010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Mathematics.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021802D3A750 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A340C00 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Animation.Triangle.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180BC1D9A0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A1D6CA0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.PixelPerfect.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807638F60 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A615F20 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A99A110 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180358E5D0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021802E8B8D0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180824B930 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Common.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021808134030 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.31 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.706 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.34 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1808 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.5 MB.
+System memory in use after: 89.6 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2306.
+Total: 1.852300 ms (FindLiveObjects: 0.184000 ms CreateObjectMapping: 0.065800 ms MarkObjects: 1.591200 ms  DeleteObjects: 0.010600 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000619 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-000002180A3872B0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021809BADB10 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000219D857B200 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180371FD80 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807453020 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000219D857F680 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\PsdPlugin.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021808154060 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021808C2F010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A3641A0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807453020 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A62A9C0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807697030 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000219D857B200 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.IK.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021806EAE030 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A592280 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021808BA3030 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Path.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000218082B3020 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A592280 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021808C2F010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180822E010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A5C4040 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Mathematics.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000219D857B200 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A6D4030 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Animation.Triangle.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180BC1D9A0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021806EA1FE0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.PixelPerfect.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807638F60 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A615F20 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180371FD80 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180358E5D0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A592280 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180824B930 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Common.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180AE70020 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.31 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.718 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.30 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1808 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.5 MB.
+System memory in use after: 89.6 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2310.
+Total: 1.917100 ms (FindLiveObjects: 0.171800 ms CreateObjectMapping: 0.062700 ms MarkObjects: 1.667700 ms  DeleteObjects: 0.013800 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000531 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-0000021803621C00 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021809BAD3F0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A680360 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000218033482D0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807453020 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A70B200 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\PsdPlugin.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021808154060 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021808C2F010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021802F26010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807453020 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A62A9C0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A72EFA0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021809E53030 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.IK.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021808154060 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807027040 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180875A020 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Path.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A57FA00 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807027040 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021806DBC060 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180822E010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000218077D1010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Mathematics.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A680360 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021808429010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Animation.Triangle.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807C64030 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A1D08F0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.PixelPerfect.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021808EB6020 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180728D7A0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000219D8576980 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180358EB10 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807027040 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021802CA0010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Common.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A3A9020 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.38 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.690 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.36 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1808 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.5 MB.
+System memory in use after: 89.6 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2314.
+Total: 1.672700 ms (FindLiveObjects: 0.214400 ms CreateObjectMapping: 0.066000 ms MarkObjects: 1.379800 ms  DeleteObjects: 0.011700 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000710 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-0000021803621C00 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021809BAD780 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000218071DA030 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000219D8576980 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807453020 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180B0C9060 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\PsdPlugin.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021802D17910 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021808C2F010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021803613020 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807453020 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A62A9C0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A72EFA0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000218071DA030 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.IK.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021802D17910 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180843B020 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180875A020 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Path.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000219D8576980 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180843B020 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A592280 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180822E010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021808EA6010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Mathematics.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000218071DA030 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180822E010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Animation.Triangle.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807C64030 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180731F220 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.PixelPerfect.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180C1F4010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A3A9020 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000219D8576980 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180358EB10 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021803663010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021802FABE60 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Common.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A3A9020 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.34 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.680 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.35 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1808 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.5 MB.
+System memory in use after: 89.6 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2318.
+Total: 2.821700 ms (FindLiveObjects: 0.366600 ms CreateObjectMapping: 0.113100 ms MarkObjects: 2.324400 ms  DeleteObjects: 0.016800 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000550 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-00000218071AA010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021809BAD3F0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021809E53030 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A8250A0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807453020 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A70B200 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\PsdPlugin.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021808154060 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180C871020 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A3641A0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807453020 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A62A9C0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180377AE70 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021809E53030 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.IK.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180728D7A0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180843B020 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180875A020 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Path.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180824AE30 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180843B020 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021808C2F010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180C73D010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000218077D1010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Mathematics.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021809E53030 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021809CA7020 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Animation.Triangle.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807C64030 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A1D6390 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.PixelPerfect.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A5B3830 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807A4C010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A99A110 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180358E5D0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021802E8B8D0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000219D859A760 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Common.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021808105020 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.30 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.698 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.31 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1808 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.5 MB.
+System memory in use after: 89.7 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2322.
+Total: 1.990100 ms (FindLiveObjects: 0.264300 ms CreateObjectMapping: 0.128800 ms MarkObjects: 1.581700 ms  DeleteObjects: 0.013800 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000520 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-00000218071AA010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021809BAE950 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021809E53030 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A8250A0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807453020 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A70B200 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\PsdPlugin.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021808154060 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021806DBC060 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021802E5D010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807453020 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A62A9C0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180AF76B30 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021809E53030 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.IK.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180728D7A0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180843B020 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180B038010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Path.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A408E50 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180843B020 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021806DBC060 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180C2B9010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000218077D1010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Mathematics.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021809E53030 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180B930020 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Animation.Triangle.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807C64030 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021806EB7A90 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.PixelPerfect.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180C1F4010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807325010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021803720B60 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180358E5D0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807132040 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180767C020 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Common.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021808105020 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.30 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.731 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.30 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1808 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.6 MB.
+System memory in use after: 89.7 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2326.
+Total: 1.946500 ms (FindLiveObjects: 0.262000 ms CreateObjectMapping: 0.067500 ms MarkObjects: 1.604600 ms  DeleteObjects: 0.011600 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000589 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-0000021803621C00 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021809BAD780 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807C789D0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A547EF0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807453020 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A70B200 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\PsdPlugin.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180B32A080 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021806DBC060 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A3641A0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807453020 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A62A9C0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A72EFA0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807C789D0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.IK.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180B32A080 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807132040 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807672030 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Path.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A408E50 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807132040 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021808651010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A8066A0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180B256030 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Mathematics.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807C789D0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A8066A0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Animation.Triangle.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A623280 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A1D99F0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.PixelPerfect.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180B772040 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180B93C630 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A99A110 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180358E250 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807132040 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000219D859A760 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Common.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A3A9030 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.31 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.695 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.34 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1808 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.6 MB.
+System memory in use after: 89.7 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2330.
+Total: 5.018900 ms (FindLiveObjects: 0.788200 ms CreateObjectMapping: 2.356200 ms MarkObjects: 1.858000 ms  DeleteObjects: 0.014900 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000550 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-000002180334A040 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021809BAE230 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A66D3E0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A54E770 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807453020 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000219D857F680 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\PsdPlugin.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180B87C010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021806DBC060 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807A4C010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807453020 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A62A9C0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180AF76B30 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A5CB430 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.IK.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180B87C010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807132040 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180B7AC040 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Path.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000218087403C0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807132040 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807679710 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021809BF1010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000218077D1010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Mathematics.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A66D3E0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021809BF1010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Animation.Triangle.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180B944640 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A5F6B90 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.PixelPerfect.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021809F58030 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000218037B0010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000218071EA530 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180358E5D0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807132040 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A66D3E0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Common.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807023030 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.31 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.690 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.30 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1808 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.6 MB.
+System memory in use after: 89.7 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2334.
+Total: 2.035200 ms (FindLiveObjects: 0.222400 ms CreateObjectMapping: 0.129600 ms MarkObjects: 1.669300 ms  DeleteObjects: 0.013000 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000585 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-0000021803621C00 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021809BAD780 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021802CA0010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021809E391D0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807023030 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A70B200 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\PsdPlugin.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A3E0280 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A59D120 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021802CFB8D0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807023030 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180334A040 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180B4FE080 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021802CA0010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.IK.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A3E0280 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021802E8B8D0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000218079FC010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Path.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021808720020 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021802E8B8D0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021808651010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021803136020 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000218077D1010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Mathematics.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021802CA0010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021803136020 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Animation.Triangle.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807988A10 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A1D90E0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.PixelPerfect.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021808EA6010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021806DC2D40 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A99A110 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180358E5D0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021802E8B8D0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021802CA0010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Common.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A3A9030 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.31 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.683 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.31 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1808 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.6 MB.
+System memory in use after: 89.7 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2338.
+Total: 1.872400 ms (FindLiveObjects: 0.196400 ms CreateObjectMapping: 0.090400 ms MarkObjects: 1.572500 ms  DeleteObjects: 0.012300 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000611 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-00000218071AA010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021809BAE950 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180810EE60 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021809E3C610 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807023030 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180C4DA020 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\PsdPlugin.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807767040 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A59D120 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807325010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807023030 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180334A040 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180AF76B30 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180810EE60 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.IK.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807767040 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021803663010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A97AD00 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Path.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180C1A1430 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021803663010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021808651010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021809F7A010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000218077D1010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Mathematics.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180810EE60 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180B462010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Animation.Triangle.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807988A10 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180366D420 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.PixelPerfect.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021803231000 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A3A9030 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000219D8576980 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180358E5D0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021803663010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A402020 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Common.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A3A9030 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.37 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.739 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.31 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1808 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.6 MB.
+System memory in use after: 89.7 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2342.
+Total: 1.551000 ms (FindLiveObjects: 0.176600 ms CreateObjectMapping: 0.060800 ms MarkObjects: 1.301300 ms  DeleteObjects: 0.011000 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000625 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-00000218071AA010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021809BAD3F0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807C789D0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021809E3ABF0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021802F95880 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180C4DA020 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\PsdPlugin.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180CBB3010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180B30C050 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021808105030 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021802F95880 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180334A040 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180B34A090 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807C789D0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.IK.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180CBB3010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021803663010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021809F92030 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Path.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000218079E9030 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021803663010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021808651010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021809BF1010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-00000218077D1010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Mathematics.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021807C789D0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A8066A0 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Animation.Triangle.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180314E040 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180C81CC50 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.PixelPerfect.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180CD6C010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A3A9030 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180B793060 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180358E790 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000021803663010 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A402020 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.Common.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000002180A3A9030 doesn't match image D:\Documents\GitHub\HappierMeal\LucidBeta\Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.35 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.688 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.32 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1808 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.6 MB.
+System memory in use after: 89.7 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2346.
+Total: 2.217500 ms (FindLiveObjects: 0.255500 ms CreateObjectMapping: 0.157000 ms MarkObjects: 1.776300 ms  DeleteObjects: 0.027900 ms)
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
