@@ -134,9 +134,8 @@ public class MainManager : MonoBehaviour
 
         if (sleepState == 1)
         {
-            zees += zees_gained_capped * dreamTimeScale;
+            //zees += zees_gained_capped * dreamTimeScale;
         }
-
     }
 
     void Update()
@@ -151,12 +150,16 @@ public class MainManager : MonoBehaviour
     }
     public void StopSleeping()
     {
+        //Add Zees
+        zees += zee_earningPerMinute * (sleepTime / 60f);
+
+        //Clean Up Creatures
         GameObject[] aliveCreatures = GameObject.FindGameObjectsWithTag("Creature");
         if (aliveCreatures.Length >= 5)
             for (int i = aliveCreatures.Length; i > 5; i--)
                 Destroy(aliveCreatures[i]);
 
-
+        //Unenergize Buildings
         foreach (GameObject g in GameObject.FindGameObjectsWithTag("Building"))
         {
             Building b = g.GetComponent<Building>();
