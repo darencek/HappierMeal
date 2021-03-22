@@ -177,7 +177,7 @@ public class Building : MonoBehaviour
         {
             fruitTree_fruitGroup.SetActive(true);
 
-            _growthTimer += Time.unscaledDeltaTime * MainManager.dreamTimeScale;
+            _growthTimer += Time.unscaledDeltaTime * MainManager.dreamTimeScale * Random.Range(0.7f,1f);
 
             if (_growthTimer >= (60f * 60f * 3f))
             {
@@ -208,8 +208,8 @@ public class Building : MonoBehaviour
         float fSway = _sway - 0.5f;
         float cSway = Mathf.PingPong(_swayTime * 0.5f, 1) - 0.5f;
         buildingSprite.transform.rotation = Quaternion.Euler(0, 0, fSway * 0.5f);
-        buildingSprite.transform.localScale = new Vector3(1 + fSway * 0.03f, 1 - fSway * 0.03f, 1);
-        tileSprite.transform.localScale = new Vector3(1 + cSway * 0.03f, 1 - cSway * 0.03f, 1);
+        buildingSprite.transform.localScale = new Vector3(1 + fSway * 0.05f, 1 - fSway * 0.03f, 1);
+        tileSprite.transform.localScale = new Vector3(1 + cSway * 0.1f, 1 - cSway * 0.03f, 1);
     }
 
     public static float GetPrice(BuildingType type)

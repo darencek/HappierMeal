@@ -67,7 +67,7 @@ public class MainManager : MonoBehaviour
                 sleepTime += dreamTimeScale;
             }
 
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSecondsRealtime(1f);
         }
     }
     public void ResourceTick()

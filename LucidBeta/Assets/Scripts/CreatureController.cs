@@ -13,9 +13,17 @@ public class CreatureController : MonoBehaviour
     public GameObject currentSprite;
 
     public Creature info;
-    public Creature.CreatureType type;
+    public Creature.CreatureType type = Creature.CreatureType.GLOOMY;
 
     public int friendshipLevel = 0;
+
+    Animator spriteAnimator;
+    SpriteRenderer spriteRenderer;
+
+    Vector2 _lastPos;
+    bool moving = false;
+
+    bool spriteReady = false;
 
     // Start is called before the first frame update
     void Start()
@@ -25,30 +33,44 @@ public class CreatureController : MonoBehaviour
         moveSpeed = Random.Range(0.1f, 1f) * 0.1f;
 
         moveTarget = transform.position;
+        _lastPos = transform.position;
         StartCoroutine("doNextMoveTarget");
 
+        StartCoroutine("delayInit");
+    }
+    public void UpdateSprite()
+    {
         foreach (GameObject g in creatureSprites)
             g.SetActive(false);
 
-        type = (Creature.CreatureType)Random.Range(0, System.Enum.GetNames(typeof(Creature.CreatureType)).Length);
         info = new Creature(type);
         currentSprite = creatureSprites[(int)type];
 
         currentSprite.SetActive(true);
+        spriteAnimator = currentSprite.GetComponent<Animator>();
+        spriteRenderer = currentSprite.GetComponent<SpriteRenderer>();
 
         MainManager.creatureManager.CheckNewEncounter(this);
+
+        spriteReady = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //transform.position = Vector3.MoveTowards(transform.position, moveTarget, moveSpeed * Time.deltaTime);
-        //transform.position = new Vector3(Mathf.Clamp(transform.position.x, -8, 8), Mathf.Clamp(transform.position.y, -5, 0), 0);
+        if (!spriteReady) return;
+
+        spriteAnimator.SetInteger("animState", moving ? 1 : 0);
+        spriteRenderer.flipX = (moveTarget.x < transform.position.x);
+
+
     }
 
     private void FixedUpdate()
     {
         rb.MovePosition(Vector3.MoveTowards(rb.position, moveTarget, moveSpeed * Time.fixedDeltaTime));
+        moving = rb.position != _lastPos;
+        _lastPos = rb.position;
     }
 
     bool clicked = false;
@@ -68,13 +90,17 @@ public class CreatureController : MonoBehaviour
         clicked = false;
     }
 
-
+    IEnumerator delayInit()
+    {
+        yield return new WaitForEndOfFrame();
+        UpdateSprite();
+    }
     IEnumerator doNextMoveTarget()
     {
         while (true)
         {
-            moveTarget = transform.position + new Vector3(Random.Range(-5, 5), Random.Range(-2, 2));
-            yield return new WaitForSeconds(Random.Range(5f, 10f));
+            moveTarget = transform.position + new Vector3(Random.Range(-1, 1), Random.Range(-1, 1));
+            yield return new WaitForSeconds(Random.Range(5f, 20f));
         }
     }
 
@@ -100,7 +126,7 @@ public struct Creature
         {
             case CreatureType.GLOOMY:
                 name = "Gloomy";
-                defaultDialog = "Everyday is feels so grey...";
+                defaultDialog = "Everyday I feel so grey...";
                 break;
             case CreatureType.GLOW:
                 name = "Glow";

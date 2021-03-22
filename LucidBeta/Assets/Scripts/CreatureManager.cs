@@ -25,7 +25,8 @@ public class CreatureManager : MonoBehaviour
     public void SpawnNewCreature()
     {
         GameObject spawnLoc = creatureSpawnLocations[Random.Range(0, creatureSpawnLocations.Length)];
-        Instantiate(creaturePrefab, spawnLoc.transform.position, Quaternion.identity);
+        GameObject g = Instantiate(creaturePrefab, spawnLoc.transform.position, Quaternion.identity);
+        g.GetComponent<CreatureController>().type = (Creature.CreatureType)Random.Range(0, System.Enum.GetNames(typeof(Creature.CreatureType)).Length);
     }
 
     public void CheckNewEncounter(CreatureController c)

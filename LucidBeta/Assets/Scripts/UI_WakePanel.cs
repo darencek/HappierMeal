@@ -13,6 +13,7 @@ public class UI_WakePanel : MonoBehaviour
     public TextMeshProUGUI ratingText;
 
     List<string> wordsList;
+    List<string> wordsList_work;
     bool wordsLoaded = false;
 
     int answerCount = 0;
@@ -60,7 +61,13 @@ public class UI_WakePanel : MonoBehaviour
         if (!wordsLoaded) LoadWords();
 
         word1.text = wordsList[Random.Range(0, wordsList.Count)];
-        word2.text = wordsList[Random.Range(0, wordsList.Count)];
+
+        int breaker = 0;
+        while ((word2.text = wordsList[Random.Range(0, wordsList.Count)]) == word1.text)
+        {
+            if (breaker++ > 100) break;
+        }
+
     }
 
     public void UI_SelectWord()
