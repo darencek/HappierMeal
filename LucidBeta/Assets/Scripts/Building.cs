@@ -37,13 +37,18 @@ public class Building : MonoBehaviour
 
     public GameObject[] fruitTree_fruits;
 
+    public GameObject EnergizedEffect;
+
     public bool SlotUnlocked = true;
+
+    public int tierUnlock = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         type = BuildingType.NONE;
         _swaySpeed = Random.Range(0.5f, 1f);
+        EnergizedEffect.SetActive(false);
 
         UpdateSprite();
     }
@@ -51,9 +56,19 @@ public class Building : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (SlotUnlocked)
+        if (SlotUnlocked || MainManager.instance.ascensionLevel >= tierUnlock)
         {
             BouncyAnimation();
+
+            if (energized)
+            {
+                if (!EnergizedEffect.activeInHierarchy)
+                    EnergizedEffect.SetActive(EnergizedEffect);
+            }
+            else
+            {
+                EnergizedEffect.SetActive(false);
+            }
 
             tileSprite.sprite = tileSprites[0];
 
@@ -67,7 +82,7 @@ public class Building : MonoBehaviour
                 _growthTimer = 0;
 
                 if (MainManager.instance.sleepState >= 1)
-                    buildHours -= Time.deltaTime * MainManager.dreamTimeScale;
+                    buildHours -= Time.unscaledDeltaTime * MainManager.dreamTimeScale;
 
                 if (buildHours <= 0)
                     underConstruction = false;
@@ -140,6 +155,7 @@ public class Building : MonoBehaviour
             gameObject.GetComponent<FarmPlot>().ClearSlots();
         type = BuildingType.NONE;
         UpdateSprite();
+        UpdateProgressBar();
     }
 
     void snapToGrid()
@@ -189,7 +205,7 @@ public class Building : MonoBehaviour
     {
         if (type == BuildingType.FRUIT_TREE)
         {
-            _growthTimer += Time.unscaledDeltaTime * MainManager.dreamTimeScale * Random.Range(0.7f, 1f);
+            _growthTimer += Time.unscaledDeltaTime * MainManager.dreamTimeScale;
 
             if (_growthTimer >= (60f * 60f * 3f))
             {

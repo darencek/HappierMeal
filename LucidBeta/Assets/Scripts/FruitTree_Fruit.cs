@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class FruitTree_Fruit : MonoBehaviour
 {
     public Building parent;
+    public GameObject moneyCounterPrefab;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +23,11 @@ public class FruitTree_Fruit : MonoBehaviour
             {
                 parent.CancelClick = true;
                 gameObject.SetActive(false);
-                MainManager.instance.zees += 7000;
+                float an = 7000;
+                MainManager.instance.zees += an;
+
+                GameObject g = Instantiate(moneyCounterPrefab, transform.position + Vector3.forward * 10f, Quaternion.identity);
+                g.GetComponent<TextMeshPro>().text = "$" + an;
             }
         }
     }

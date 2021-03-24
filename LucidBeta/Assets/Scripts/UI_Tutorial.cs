@@ -50,6 +50,14 @@ public class UI_Tutorial : MonoBehaviour
             }
             return;
         }
+        if (tutorialState == 3)
+        {
+            if (MainManager.instance.sleepState == 0 && !MainManager.uiManager.wakePanel.activeInHierarchy)
+            {
+                tutorialState = 4;
+                welcomePanel4.SetActive(true);
+            }
+        }
     }
 
     public void Welcome_ShowCloud()

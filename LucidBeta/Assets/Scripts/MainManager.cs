@@ -77,10 +77,10 @@ public class MainManager : MonoBehaviour
     void ResetResources()
     {
         zees = 1000;
-        zees_earnLimit_base = 5000;
+        zees_earnLimit_base = 10000;
 
         rest_resource = 0;
-        rest_limit_base = 1000;
+        rest_limit_base = 5000;
 
         energy_resource = 0;
         energy_limit_base = 500;
@@ -138,7 +138,7 @@ public class MainManager : MonoBehaviour
             {
                 float rest_perDreamMachine = (1f) / 60f;
                 float rest_perFactory = (10f) / 60f;
-                float rest_perMin = (1 / 5f) / 60f;
+                float rest_perMin = (1 / 10f) / 60f;
 
                 float rest_gained = (buildings_dreamMachines * rest_perDreamMachine * Mathf.Pow(1.1f, UpgradeManager.dreamMachine_efficiency.level))
                     + (buildings_factories * rest_perFactory * Mathf.Pow(1.03f, UpgradeManager.factory_efficiency.level)) + rest_perMin;
@@ -263,7 +263,7 @@ public class MainManager : MonoBehaviour
         foreach (GameObject g in GameObject.FindGameObjectsWithTag("Building"))
         {
             Building b = g.GetComponent<Building>();
-            if (b.type == type && !b.underConstruction && !b.placing)
+            if (b.type == type && !b.underConstruction)
             {
                 c++;
                 if (b.energized)

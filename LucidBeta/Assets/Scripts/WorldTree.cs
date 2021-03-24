@@ -7,6 +7,7 @@ public class WorldTree : MonoBehaviour
     public Sprite[] treeSprites;
 
     SpriteRenderer ren;
+    public GameObject ascendReadyParticles;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,8 @@ public class WorldTree : MonoBehaviour
     void Update()
     {
         ren.sprite = treeSprites[Mathf.Clamp(MainManager.instance.ascensionLevel - 1, 0, treeSprites.Length - 1)];
+
+        ascendReadyParticles.SetActive(MainManager.instance.zees >= MainManager.instance.nextAscension);
     }
 
     bool clicked = false;

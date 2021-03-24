@@ -2,13 +2,30 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - Building
+    - BuildingSpriteManager
     - CreatureController
+    - CreatureManager
+    - FarmManager
+    - FarmPlot
+    - FruitTree_Fruit
     - MainManager
+    - MoneyGainMarker
     - UIManager
     - UI_BuildingButton
     - UI_BuildingInfoPanel
     - UI_BuildingPanel
+    - UI_DialogBox
+    - UI_FarmPanel
+    - UI_FarmSlotButton
+    - UI_NewCreaturePopup
+    - UI_SeedButton
+    - UI_Tutorial
+    - UI_UpgradeButton
+    - UI_UpgradesPanel
     - UI_WakePanel
+    - UI_WorldTreePanel
+    - UpgradeManager
+    - WorldTree
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
@@ -18,9 +35,13 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.IK.IKEditorManagerHelper
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridBrush
+    - UnityEditor.Tilemaps.GridBrushEditor
+    - UnityEditor.Tilemaps.GridPaintPaletteClipboard
+    - UnityEditor.Tilemaps.GridPaintPaletteWindow
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
     - UnityEditor.Tilemaps.GridPalettes
+    - UnityEditor.Tilemaps.PaintableSceneViewGrid
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
@@ -32,7 +53,14 @@ ScriptsOnlyBuild:
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
+    - TMPro.TextMeshPro
     - TMPro.TextMeshProUGUI
+    UnityEditor.Graphs.dll:
+    - UnityEditor.Graphs.AnimationBlendTree.Graph
+    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.Graph
+    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -43,7 +71,10 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.HorizontalLayoutGroup
     - UnityEngine.UI.Image
+    - UnityEngine.UI.Shadow
+    - UnityEngine.UI.VerticalLayoutGroup
   sceneClasses:
     Assets/Scenes/MainScene.unity:
     - Class: 1
@@ -54,58 +85,110 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 21
       Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
     - Class: 28
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
     - Class: 49
       Script: {instanceID: 0}
+    - Class: 50
+      Script: {instanceID: 0}
     - Class: 61
       Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
       Script: {instanceID: 630}
     - Class: 114
-      Script: {instanceID: 1512}
+      Script: {instanceID: 1462}
     - Class: 114
-      Script: {instanceID: 1698}
+      Script: {instanceID: 1630}
     - Class: 114
-      Script: {instanceID: 1784}
+      Script: {instanceID: 1694}
     - Class: 114
-      Script: {instanceID: 2092}
+      Script: {instanceID: 1700}
     - Class: 114
-      Script: {instanceID: 2470}
+      Script: {instanceID: 1714}
     - Class: 114
-      Script: {instanceID: 2556}
+      Script: {instanceID: 1786}
     - Class: 114
-      Script: {instanceID: 2564}
+      Script: {instanceID: 1876}
     - Class: 114
-      Script: {instanceID: 2620}
+      Script: {instanceID: 1972}
     - Class: 114
-      Script: {instanceID: 2662}
+      Script: {instanceID: 2098}
     - Class: 114
-      Script: {instanceID: 2790}
+      Script: {instanceID: 2106}
     - Class: 114
-      Script: {instanceID: 2934}
+      Script: {instanceID: 2478}
     - Class: 114
-      Script: {instanceID: 3002}
+      Script: {instanceID: 2532}
     - Class: 114
-      Script: {instanceID: 3104}
+      Script: {instanceID: 2566}
     - Class: 114
-      Script: {instanceID: 3452}
+      Script: {instanceID: 2574}
+    - Class: 114
+      Script: {instanceID: 2630}
+    - Class: 114
+      Script: {instanceID: 2672}
+    - Class: 114
+      Script: {instanceID: 2800}
+    - Class: 114
+      Script: {instanceID: 2824}
+    - Class: 114
+      Script: {instanceID: 2908}
+    - Class: 114
+      Script: {instanceID: 2948}
+    - Class: 114
+      Script: {instanceID: 3016}
+    - Class: 114
+      Script: {instanceID: 3118}
+    - Class: 114
+      Script: {instanceID: 3178}
+    - Class: 114
+      Script: {instanceID: 3454}
+    - Class: 114
+      Script: {instanceID: 3458}
+    - Class: 114
+      Script: {instanceID: 3470}
+    - Class: 114
+      Script: {instanceID: 3588}
+    - Class: 114
+      Script: {instanceID: 3606}
     - Class: 114
       Script: {instanceID: 3758}
     - Class: 114
-      Script: {instanceID: 4238}
+      Script: {instanceID: 3780}
     - Class: 114
-      Script: {instanceID: 4368}
+      Script: {instanceID: 4062}
     - Class: 114
-      Script: {instanceID: 4568}
+      Script: {instanceID: 4262}
     - Class: 114
-      Script: {instanceID: 5078}
+      Script: {instanceID: 4392}
+    - Class: 114
+      Script: {instanceID: 4502}
+    - Class: 114
+      Script: {instanceID: 4526}
+    - Class: 114
+      Script: {instanceID: 4596}
+    - Class: 114
+      Script: {instanceID: 4680}
+    - Class: 114
+      Script: {instanceID: 5080}
+    - Class: 114
+      Script: {instanceID: 5110}
+    - Class: 114
+      Script: {instanceID: 90530}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -113,6 +196,10 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
       Script: {instanceID: 0}
     - Class: 212
       Script: {instanceID: 0}
@@ -124,6 +211,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 224
       Script: {instanceID: 0}
+    - Class: 19719996
+      Script: {instanceID: 0}
     - Class: 156049354
       Script: {instanceID: 0}
     - Class: 483693784
@@ -133,16 +222,16 @@ ScriptsOnlyBuild:
   scriptHashData:
   - hash:
       serializedVersion: 2
-      Hash: 5ab533713adae59372fb3e10a585c186
-    assemblyName: Unity.Timeline.dll
-    namespaceName: UnityEngine.Timeline
-    className: AnimationPlayableAsset
-  - hash:
-      serializedVersion: 2
       Hash: a6e561615949734e9f12f9b61661f43e
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Image
+  - hash:
+      serializedVersion: 2
+      Hash: 5ab533713adae59372fb3e10a585c186
+    assemblyName: Unity.Timeline.dll
+    namespaceName: UnityEngine.Timeline
+    className: AnimationPlayableAsset
   - hash:
       serializedVersion: 2
       Hash: 77aaaaa51f7a8d8ff333a879741e47d2
@@ -175,6 +264,12 @@ ScriptsOnlyBuild:
     className: Toggle
   - hash:
       serializedVersion: 2
+      Hash: 0872197ea1115bfdee452bf1f76f9bb7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FarmManager
+  - hash:
+      serializedVersion: 2
       Hash: 59ce5902048c1041729c804e2772b2ce
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEngine.U2D.IK
@@ -205,7 +300,7 @@ ScriptsOnlyBuild:
     className: HorizontalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 240114a21feaa46b79bd835c4b32c01f
+      Hash: 11319dfce032f40af934141e88f9f5f3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Building
@@ -223,6 +318,18 @@ ScriptsOnlyBuild:
     className: TMP_FontAsset
   - hash:
       serializedVersion: 2
+      Hash: 7aaa7a16c6227f31985716af121f71cc
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CreatureManager
+  - hash:
+      serializedVersion: 2
+      Hash: 6a691f4328d5313a16541e01701f0c81
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BuildingSpriteManager
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -233,6 +340,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_StyleSheet
+  - hash:
+      serializedVersion: 2
+      Hash: f7ff28706a557807c6b4a9e0e346e88c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UI_WorldTreePanel
   - hash:
       serializedVersion: 2
       Hash: 699619b86d9359741a4f58540298c80b
@@ -277,13 +390,19 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
-      Hash: 0d4c23a4490ff3653e835e826ae3e696
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UpgradeManager
+  - hash:
+      serializedVersion: 2
+      Hash: a2baba517c59e21922dfbcfedcfde84b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UI_WakePanel
   - hash:
       serializedVersion: 2
-      Hash: 4a47acc94d4b275c9519e08f67d03afe
+      Hash: 758133eee367b8e33dd63dcef0a27693
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UIManager
@@ -337,6 +456,12 @@ ScriptsOnlyBuild:
     className: GraphicRaycaster
   - hash:
       serializedVersion: 2
+      Hash: 36f761e7e6a39cde6338478c80cc6cb3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UI_NewCreaturePopup
+  - hash:
+      serializedVersion: 2
       Hash: f40fedccd4adbc76605bea6d67537e4b
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -367,7 +492,13 @@ ScriptsOnlyBuild:
     className: TestResultRendererCallback
   - hash:
       serializedVersion: 2
-      Hash: 767719f87f60f99a8081b414e91ccbf1
+      Hash: 712b7c95cb1b211940308884b0726631
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FruitTree_Fruit
+  - hash:
+      serializedVersion: 2
+      Hash: d9f0287df53c07f01417fad6e4437852
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UI_BuildingButton
@@ -421,6 +552,12 @@ ScriptsOnlyBuild:
     className: SpriteShapeController
   - hash:
       serializedVersion: 2
+      Hash: 07fbe52c76148a9c4e91c7481089c22d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UI_Tutorial
+  - hash:
+      serializedVersion: 2
       Hash: 4fd8bf02e3089425d3502e26c44ba31a
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -445,13 +582,19 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
+      Hash: 43438d7d71be04a1585bd458f300fb24
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UI_FarmSlotButton
+  - hash:
+      serializedVersion: 2
       Hash: 3164bc883ff663a5cdb32d1ef7e7c0c5
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: f256b604ece72aa6b44781ac20b562ea
+      Hash: bc4007c6cbea05d9b4a2afd4aa5b1d58
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UI_BuildingPanel
@@ -467,6 +610,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: BaseInput
+  - hash:
+      serializedVersion: 2
+      Hash: 9f82450cfe6c7a62d10908699edba9ac
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UI_UpgradeButton
   - hash:
       serializedVersion: 2
       Hash: 18c222bef9ae745ce69ddde9b74337ca
@@ -505,6 +654,12 @@ ScriptsOnlyBuild:
     className: AudioPlayableAsset
   - hash:
       serializedVersion: 2
+      Hash: 434a641d346cbb8ef75915d87b99eb8d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: WorldTree
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
@@ -517,7 +672,7 @@ ScriptsOnlyBuild:
     className: EventTrigger
   - hash:
       serializedVersion: 2
-      Hash: 260306e7adaa1a057940a7b68e746c49
+      Hash: 26997a5bc0732435a7cca34d62e0be73
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CreatureController
@@ -563,6 +718,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.SpriteShape.Runtime.dll
     namespaceName: 
     className: SpriteShapeGeometryCache
+  - hash:
+      serializedVersion: 2
+      Hash: 4a31001153e8f3f8f13be9a700cf6624
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UI_FarmPanel
   - hash:
       serializedVersion: 2
       Hash: b424b4eeb810aecb0ff91c62639241e9
@@ -625,7 +786,7 @@ ScriptsOnlyBuild:
     className: SpriteSkinEntity
   - hash:
       serializedVersion: 2
-      Hash: 3f7e9aa10ba145edb414929dc60bbd74
+      Hash: 5e8723876a02ec2cc6dad08f92490f3d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UI_BuildingInfoPanel
@@ -649,6 +810,18 @@ ScriptsOnlyBuild:
     className: TMP_SubMeshUI
   - hash:
       serializedVersion: 2
+      Hash: 08a4d78918d966e5bc611f0b858fb1f8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UI_DialogBox
+  - hash:
+      serializedVersion: 2
+      Hash: a2a9b4b6b7311c7d798a2cb05ad4377c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UI_SeedButton
+  - hash:
+      serializedVersion: 2
       Hash: fd68d84f33fad85aac38f2739c0ee270
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -659,6 +832,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_ScrollbarEventHandler
+  - hash:
+      serializedVersion: 2
+      Hash: e17b42c158fac3c538e6938204b71635
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UI_UpgradesPanel
   - hash:
       serializedVersion: 2
       Hash: 8220b46879dc5e37db1b940c938f5744
@@ -691,11 +870,23 @@ ScriptsOnlyBuild:
     className: FabrikSolver2D
   - hash:
       serializedVersion: 2
-      Hash: 8f5a8521e924661f6fb3124103d5f35d
+      Hash: f2e7878d755634194981e12fd0f5b030
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FarmPlot
+  - hash:
+      serializedVersion: 2
+      Hash: ccea3bc19cd3b940cb6140f191eb78b2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MainManager
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MoneyGainMarker
   platform: 5
   scenePathNames:
   - Assets/Scenes/MainScene.unity
-  playerPath: C:/Users/aceha/Documents/GitHub/HappierMeal/LucidBeta/Build/LucidBeta.exe
+  playerPath: D:/Documents/GitHub/HappierMeal/LUCID_BETA_BUILD/LucidBeta.exe
