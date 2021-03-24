@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6590630131413944856}
   - component: {fileID: 1495146049899568314}
   m_Layer: 0
-  m_Name: Shadow
+  m_Name: FloorShadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 3469476449167070850}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -1}
-  m_LocalScale: {x: 1.1397632, y: 0.26977304, z: 1}
+  m_LocalScale: {x: 0.65855515, y: 0.15587485, z: 0.5778}
   m_Children: []
   m_Father: {fileID: 6854145932581456468}
   m_RootOrder: 6
@@ -213,7 +213,7 @@ Transform:
   m_GameObject: {fileID: 6854145932581456471}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
   - {fileID: 5194873942536495665}
   - {fileID: 6854145932770964349}
@@ -292,7 +292,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7, y: 0.7}
+  m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
 --- !u!61 &571463191748764525
 BoxCollider2D:
@@ -318,7 +318,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.2}
+  m_Size: {x: 0.25, y: 0.1}
   m_EdgeRadius: 0
 --- !u!1 &6854145932655702061
 GameObject:

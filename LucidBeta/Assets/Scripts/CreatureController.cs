@@ -62,8 +62,6 @@ public class CreatureController : MonoBehaviour
 
         spriteAnimator.SetInteger("animState", moving ? 1 : 0);
         spriteRenderer.flipX = (moveTarget.x < transform.position.x);
-
-
     }
 
     private void FixedUpdate()

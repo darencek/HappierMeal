@@ -7,18 +7,24 @@ public class UI_WakePanel : MonoBehaviour
 {
     public TextAsset wordsListFile;
 
+    public TextAsset positiveWordsFile;
+    public TextAsset negativeWordsFile;
+
     public TextMeshProUGUI word1;
     public TextMeshProUGUI word2;
 
     public TextMeshProUGUI ratingText;
 
     List<string> wordsList;
-    List<string> wordsList_work;
+
+    List<string> positiveWords;
+    List<string> negativeWords;
+
     bool wordsLoaded = false;
 
     int answerCount = 0;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         LoadWords();
     }
@@ -40,12 +46,16 @@ public class UI_WakePanel : MonoBehaviour
             rating = "GOOD";
         else if (hoursSlept < 6f)
             rating = "WELL";
-        else if (hoursSlept < 8f)
+        else if (hoursSlept < 7f)
             rating = "GREAT";
-        else
+        else if (hoursSlept < 10f)
             rating = "WONDERFUL";
+        else
+            rating = "OVERSLEPT";
 
         ratingText.text = "Sleep duration: " + Mathf.FloorToInt(hoursSlept) + " hours\nYou slept: " + rating;
+
+        LoadWords();
 
         answerCount = 0;
         RefreshQuestion();
@@ -53,20 +63,36 @@ public class UI_WakePanel : MonoBehaviour
 
     void LoadWords()
     {
-        string[] wordsArray = wordsListFile.text.Split('\n');
-        wordsList = new List<string>(wordsArray);
+        string[] positiveWordsArray = positiveWordsFile.text.Split('\n');
+        string[] negativeWordsArray = negativeWordsFile.text.Split('\n');
+
+        positiveWords = new List<string>(positiveWordsArray);
+        negativeWords = new List<string>(negativeWordsArray);
+
+        wordsLoaded = true;
     }
+
     void RefreshQuestion()
     {
         if (!wordsLoaded) LoadWords();
 
-        word1.text = wordsList[Random.Range(0, wordsList.Count)];
+        string w1 = positiveWords[Random.Range(0, positiveWords.Count)];
+        string w2 = negativeWords[Random.Range(0, negativeWords.Count)];
 
-        int breaker = 0;
-        while ((word2.text = wordsList[Random.Range(0, wordsList.Count)]) == word1.text)
+        positiveWords.Remove(w1);
+        negativeWords.Remove(w2);
+
+        if (Random.Range(0, 100) < 50)
         {
-            if (breaker++ > 100) break;
+            word1.text = w1;
+            word2.text = w2;
         }
+        else
+        {
+            word1.text = w2;
+            word2.text = w1;
+        }
+
 
     }
 

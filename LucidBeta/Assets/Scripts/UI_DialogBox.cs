@@ -16,6 +16,9 @@ public class UI_DialogBox : MonoBehaviour
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogText;
     public Image charSprite;
+    public Image friendLevelSprite;
+
+    public Sprite[] friendLevelSprites;
 
     CreatureController creature;
 
@@ -48,6 +51,8 @@ public class UI_DialogBox : MonoBehaviour
         creature = c;
         nameText.text = c.info.name;
         charSprite.sprite = MainManager.creatureManager.GetCreatureSprite(c.type);
+
+        friendLevelSprite.sprite = friendLevelSprites[Mathf.Clamp(c.friendshipLevel, 0, friendLevelSprites.Length - 1)];
 
         dialogText.text = c.info.defaultDialog;
     }

@@ -16,6 +16,9 @@ public class Building : MonoBehaviour
     public float buildHours = 0;
     float totalBuildHours = 0;
 
+    public GameObject[] buildingObjects;
+
+    public GameObject buildingSpriteContainer;
     public SpriteRenderer buildingSprite;
     public SpriteRenderer tileSprite;
 
@@ -32,7 +35,6 @@ public class Building : MonoBehaviour
 
     public BoxCollider2D mainClickbox;
 
-    public GameObject fruitTree_fruitGroup;
     public GameObject[] fruitTree_fruits;
 
     public bool SlotUnlocked = true;
@@ -42,6 +44,8 @@ public class Building : MonoBehaviour
     {
         type = BuildingType.NONE;
         _swaySpeed = Random.Range(0.5f, 1f);
+
+        UpdateSprite();
     }
 
     // Update is called once per frame
@@ -52,9 +56,11 @@ public class Building : MonoBehaviour
             BouncyAnimation();
 
             tileSprite.sprite = tileSprites[0];
-            buildingSprite.gameObject.SetActive(true);
 
-            UpdateSprite();
+            if (underConstruction)
+                buildingSprite.color = buildColor;
+            else
+                buildingSprite.color = Color.white;
 
             if (underConstruction)
             {
@@ -106,7 +112,10 @@ public class Building : MonoBehaviour
             {
                 if (type != BuildingType.NONE)
                 {
-                    MainManager.uiManager.UI_ShowBuildingInfoPanel(this);
+                    if (type == BuildingType.LARGE_FARM || type == BuildingType.SMALL_FARM)
+                        MainManager.uiManager.UI_ShowFarmPanel(gameObject.GetComponent<FarmPlot>());
+                    else
+                        MainManager.uiManager.UI_ShowBuildingInfoPanel(this);
                 }
                 else
                 {
@@ -118,16 +127,19 @@ public class Building : MonoBehaviour
 
     public void BuildAs(BuildingType buildInto)
     {
-        Debug.Log("Building into: " + buildInto);
         type = buildInto;
         underConstruction = true;
         totalBuildHours = GetBuildHours(type) * 60f * 60f;
         buildHours = totalBuildHours;
+        UpdateSprite();
     }
 
     public void Demolish()
     {
+        if (type == BuildingType.LARGE_FARM || type == BuildingType.SMALL_FARM)
+            gameObject.GetComponent<FarmPlot>().ClearSlots();
         type = BuildingType.NONE;
+        UpdateSprite();
     }
 
     void snapToGrid()
@@ -156,17 +168,19 @@ public class Building : MonoBehaviour
     }
     public void UpdateSprite()
     {
-        //foreach (GameObject o in buildingSprites)
-        //    o.SetActive(false);
+        if (type != BuildingType.NONE)
+        {
+            buildingSprite = buildingObjects[(int)type - 1].GetComponent<SpriteRenderer>();
+            buildingSprite.gameObject.SetActive(true);
+        }
+
+        foreach (GameObject o in buildingObjects)
+            if (o != buildingSprite.gameObject || type == BuildingType.NONE)
+                o.SetActive(false);
+
+        //buildingSprite.sprite = MainManager.buildingSpriteManager.GetBuildingSprite(type);
 
         mainClickbox.enabled = (type != BuildingType.NONE);
-
-        buildingSprite.sprite = MainManager.buildingSpriteManager.GetBuildingSprite(type);
-
-        if (underConstruction)
-            buildingSprite.color = buildColor;
-        else
-            buildingSprite.color = Color.white;
 
     }
 
@@ -175,9 +189,7 @@ public class Building : MonoBehaviour
     {
         if (type == BuildingType.FRUIT_TREE)
         {
-            fruitTree_fruitGroup.SetActive(true);
-
-            _growthTimer += Time.unscaledDeltaTime * MainManager.dreamTimeScale * Random.Range(0.7f,1f);
+            _growthTimer += Time.unscaledDeltaTime * MainManager.dreamTimeScale * Random.Range(0.7f, 1f);
 
             if (_growthTimer >= (60f * 60f * 3f))
             {
@@ -192,10 +204,6 @@ public class Building : MonoBehaviour
             }
 
         }
-        else
-        {
-            fruitTree_fruitGroup.SetActive(false);
-        }
     }
 
     float _sway = 0;
@@ -207,8 +215,8 @@ public class Building : MonoBehaviour
         _sway = Mathf.PingPong(_swayTime, 1);
         float fSway = _sway - 0.5f;
         float cSway = Mathf.PingPong(_swayTime * 0.5f, 1) - 0.5f;
-        buildingSprite.transform.rotation = Quaternion.Euler(0, 0, fSway * 0.5f);
-        buildingSprite.transform.localScale = new Vector3(1 + fSway * 0.05f, 1 - fSway * 0.03f, 1);
+        buildingSpriteContainer.transform.rotation = Quaternion.Euler(0, 0, fSway * 0.5f);
+        buildingSpriteContainer.transform.localScale = new Vector3(1 + fSway * 0.05f, 1 - fSway * 0.03f, 1);
         tileSprite.transform.localScale = new Vector3(1 + cSway * 0.1f, 1 - cSway * 0.03f, 1);
     }
 
@@ -252,87 +260,87 @@ public class Building : MonoBehaviour
                     buildHours = 3;
                     buildingName = "Dream Machine";
                     buildingInfo = "Generates 1 Rest every minute while sleeping.";
-                    energizeCost = 300;
+                    energizeCost = 200;
                     break;
                 case BuildingType.FACTORY:
-                    price = 25000;
-                    buildHours = 5;
+                    price = 75000;
+                    buildHours = 7;
                     buildingName = "Factory";
                     buildingInfo = "Generates 10 Rest every minute while sleeping.";
                     energizeCost = 1000;
                     break;
                 case BuildingType.BAKERY:
-                    price = 1500;
-                    buildHours = 5;
+                    price = 5000;
+                    buildHours = 4;
                     buildingName = "Bakery";
                     buildingInfo = "Produces 1 Energy every minute while sleeping.";
-                    energizeCost = 800;
+                    energizeCost = 300;
                     break;
                 case BuildingType.REFINERY:
-                    price = 50000;
-                    buildHours = 10;
+                    price = 100000;
+                    buildHours = 7;
                     buildingName = "Refinery";
-                    buildingInfo = "Increases $ earned by 10% while sleeping.";
-                    energizeCost = 2000;
+                    buildingInfo = "Increases $ earned by 20% while sleeping.";
+                    energizeCost = 1000;
                     break;
                 case BuildingType.FOUNDRY:
                     price = 45000;
-                    buildHours = 8;
+                    buildHours = 7;
                     buildingName = "Foundry";
                     buildingInfo = "Increases Energy gained by 10% while sleeping.";
-                    energizeCost = 4200;
+                    energizeCost = 1000;
                     break;
 
                 case BuildingType.WORKSHOP:
-                    price = 12000;
-                    buildHours = 3;
+                    price = 10000;
+                    buildHours = 7;
                     buildingName = "Workshop";
                     buildingInfo = "Enables researching upgrades for buildings.";
                     break;
                 case BuildingType.DREAM_ENGINE:
-                    price = 5000;
+                    price = 25000;
                     buildHours = 5;
                     buildingName = "Dream Engine";
-                    buildingInfo = "Increases Rest limit by 500.";
+                    buildingInfo = "Increases Rest limit by 1000.";
                     break;
                 case BuildingType.FISHERY:
-                    price = 7000;
+                    price = 50000;
                     buildHours = 5;
                     buildingName = "Fishery";
-                    buildingInfo = "Increases Energy limit by 50.";
+                    buildingInfo = "Increases Energy limit by 100.";
                     break;
                 case BuildingType.CRYSTARIUM:
-                    price = 30000;
-                    buildHours = 10;
+                    price = 50000;
+                    buildHours = 14;
                     buildingName = "Crystarium";
-                    buildingInfo = "Increases $ earning limit by 5000.";
+                    buildingInfo = "Increases $ earning limit by 2000.";
                     break;
                 case BuildingType.GARDEN_SHED:
-                    price = 15000;
-                    buildHours = 3;
+                    price = 10000;
+                    buildHours = 7;
                     buildingName = "Garden Shed";
                     buildingInfo = "Enables researching upgrades for gardening.";
                     break;
                 case BuildingType.INCUBATOR:
-                    price = 25000;
-                    buildHours = 3;
+                    price = 30000;
+                    buildHours = 7;
                     buildingName = "Incubator";
                     buildingInfo = "Enables purchasing of special seeds and soil for gardening.";
                     break;
                 case BuildingType.SMALL_FARM:
-                    price = 5000;
+                    price = 12000;
                     buildHours = 1;
                     buildingName = "Small Garden";
                     buildingInfo = "Allows you to plant 1 seed to grow a plant.";
                     break;
                 case BuildingType.LARGE_FARM:
-                    price = 15000;
+                    price = 40000;
                     buildHours = 4;
                     buildingName = "Large Garden";
                     buildingInfo = "Allows you to plant up to 4 seeds to grow plants and crossbreed seeds.";
                     break;
                 case BuildingType.FRUIT_TREE:
-                    price = 15000;
+                    price = 45000;
                     buildHours = 4;
                     buildingName = "Fruit Tree";
                     buildingInfo = "Grows up to 3 fruits every 3 hours that can be harvested for $7000.";

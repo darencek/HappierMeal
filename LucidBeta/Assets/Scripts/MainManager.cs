@@ -9,6 +9,9 @@ public class MainManager : MonoBehaviour
     public static UIManager uiManager;
     public static BuildingSpriteManager buildingSpriteManager;
     public static CreatureManager creatureManager;
+    public static FarmManager farmManager;
+
+    public Dictionary<Crop.CropType, int> SeedInventory;
 
     public EventSystem eventSystem;
 
@@ -16,8 +19,13 @@ public class MainManager : MonoBehaviour
 
     public static float dreamTimeScale = 3600f;
 
+    public bool playTutorial = true;
+
     public int sleepState = 0;
     public float sleepTime = 0;
+
+    public int ascensionLevel = 1;
+    public double nextAscension = 100;
 
     public double zees = 0;
     public double zees_earnLimit = 0;
@@ -36,16 +44,39 @@ public class MainManager : MonoBehaviour
     float energy_EarnMultiplier = 1f;
 
     public double zee_earningPerMinute = 0f;
+    private void Awake()
+    {
+        instance = this;
+    }
 
     void Start()
     {
-        instance = this;
         ResetResources();
         StartCoroutine("DreamTick");
+
+        Camera.main.orthographicSize = 3;
+
+        ascensionLevel = 1;
+        nextAscension = 500000;
     }
+
+    public void Ascend()
+    {
+        if (zees >= nextAscension)
+        {
+            ascensionLevel++;
+            ResetResources();
+
+            foreach (GameObject g in GameObject.FindGameObjectsWithTag("Building"))
+                g.GetComponent<Building>().Demolish();
+
+            nextAscension *= 3.5f;
+        }
+    }
+
     void ResetResources()
     {
-        zees = 100000000;
+        zees = 1000;
         zees_earnLimit_base = 5000;
 
         rest_resource = 0;
@@ -53,12 +84,22 @@ public class MainManager : MonoBehaviour
 
         energy_resource = 0;
         energy_limit_base = 500;
+
+        SeedInventory = new Dictionary<Crop.CropType, int>();
+        SeedInventory.Add(Crop.CropType.DREAMLITE, -1);
+        SeedInventory.Add(Crop.CropType.ENERGITE, -1);
+        SeedInventory.Add(Crop.CropType.FERRITE, 0);
+        SeedInventory.Add(Crop.CropType.RANDITE, -1);
+        SeedInventory.Add(Crop.CropType.SPECITE, 0);
     }
 
     IEnumerator DreamTick()
     {
         while (true)
         {
+            foreach (GameObject g in GameObject.FindGameObjectsWithTag("Building"))
+                g.GetComponent<Building>().UpdateSprite();
+
             CountBuildings();
             ResourceTick();
 
@@ -73,9 +114,9 @@ public class MainManager : MonoBehaviour
     public void ResourceTick()
     {
         //Limits
-        rest_limit = rest_limit_base + (buildings_dreamEngines * 500f * Mathf.Pow(1.5f, UpgradeManager.dreamEngine_upgrade.level));
-        energy_limit = energy_limit_base + (buildings_fisheries * 50f * Mathf.Pow(1.8f, UpgradeManager.fishery_upgrade.level));
-        zees_earnLimit = zees_earnLimit_base + (buildings_crystariums * 5000f * Mathf.Pow(1.2f, UpgradeManager.crystarium_upgrade.level));
+        rest_limit = rest_limit_base + (buildings_dreamEngines * 1000f * Mathf.Pow(1.5f, UpgradeManager.dreamEngine_upgrade.level));
+        energy_limit = energy_limit_base + (buildings_fisheries * 100f * Mathf.Pow(1.8f, UpgradeManager.fishery_upgrade.level));
+        zees_earnLimit = zees_earnLimit_base + (buildings_crystariums * 2000f * Mathf.Pow(1.5f, UpgradeManager.crystarium_upgrade.level));
 
         if (sleepState == 1)
         {
@@ -97,9 +138,10 @@ public class MainManager : MonoBehaviour
             {
                 float rest_perDreamMachine = (1f) / 60f;
                 float rest_perFactory = (10f) / 60f;
+                float rest_perMin = (1 / 5f) / 60f;
 
                 float rest_gained = (buildings_dreamMachines * rest_perDreamMachine * Mathf.Pow(1.1f, UpgradeManager.dreamMachine_efficiency.level))
-                    + (buildings_factories * rest_perFactory * Mathf.Pow(1.03f, UpgradeManager.factory_efficiency.level));
+                    + (buildings_factories * rest_perFactory * Mathf.Pow(1.03f, UpgradeManager.factory_efficiency.level)) + rest_perMin;
 
                 rest_gained *= rest_EarnMultiplier;
 
@@ -123,7 +165,7 @@ public class MainManager : MonoBehaviour
             energy_resource = energy_limit;
 
         //Main Zees Gained
-        zee_FromRestEarnMultiplier = Mathf.Pow((1.1f) + (0.01f * UpgradeManager.refinery_efficiency.level), buildings_refineries);
+        zee_FromRestEarnMultiplier = Mathf.Pow((1.2f) + (0.01f * UpgradeManager.refinery_efficiency.level), buildings_refineries);
 
         double zees_perRest = (1f) / (60f * 60f); //1 per Rest per 1 hour
         double zees_gained = (rest_resource * zees_perRest);
@@ -266,27 +308,62 @@ public class MainManager : MonoBehaviour
                     StartCoroutine("CamPan_ReleaseCooldown");
             }
         }
+
+        if (Input.touchSupported)
+        {
+            if (Input.touchCount == 2)
+            {
+                Touch touch1 = Input.GetTouch(0);
+                Touch touch2 = Input.GetTouch(1);
+
+                Vector2 t1d = touch1.position - touch1.deltaPosition;
+                Vector2 t2d = touch2.position - touch2.deltaPosition;
+
+                float oD = Vector2.Distance(t1d, t2d);
+                float nD = Vector2.Distance(touch1.position, touch2.position);
+
+                Camera.main.orthographicSize *= 1 - (oD / nD);
+            }
+        }
+
+        float scroll = -Input.GetAxis("Mouse ScrollWheel");
+        Camera.main.orthographicSize += scroll * 10f;
+
+        Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize, 1, 7);
+
+        float clamp = 8f - (Camera.main.orthographicSize);
+        Vector3 p = Camera.main.transform.position;
+        p.x = Mathf.Clamp(p.x, -clamp, clamp);
+        p.y = Mathf.Clamp(p.y, -clamp, clamp);
+        Camera.main.transform.position = p;
     }
 
     Vector3 _panToTarget;
-    public void CamPan_SmoothToTarget(Vector3 tar)
+    float _panTime = 0.5f;
+    public void CamPan_SmoothToTarget(Vector3 tar, float tt)
     {
         _panToTarget = tar;
-        StartCoroutine("CamSmoothPanToTarget");
+        _panTime = tt;
+        StartCoroutine("CamSmoothPanToTarget", tt);
     }
 
-    IEnumerator CamSmoothPanToTarget()
+    public void CamPan_SmoothToTarget(Vector3 tar)
+    {
+        CamPan_SmoothToTarget(tar, 0.5f);
+    }
+
+    IEnumerator CamSmoothPanToTarget(float dur)
     {
         float t = 0;
-        float dur = 0.5f;
         Vector3 ve = Vector3.zero;
         while (true)
         {
-            t += Time.deltaTime;
-            Vector3 v = Vector3.SmoothDamp(Camera.main.transform.position, _panToTarget, ref ve, dur, 100f, Time.unscaledDeltaTime);
-            v.z = Camera.main.transform.position.z;
-            Camera.main.transform.position = v;
-            if (t >= dur)
+            t += Time.unscaledDeltaTime;
+
+            _panToTarget.z = Camera.main.transform.position.z;
+            Camera.main.transform.position = Vector3.SmoothDamp(Camera.main.transform.position, _panToTarget, ref ve, dur, 10000f, Time.unscaledDeltaTime);
+
+            if (t > dur + 1f)
                 break;
             yield return null;
         }

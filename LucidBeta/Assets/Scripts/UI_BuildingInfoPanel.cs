@@ -14,6 +14,7 @@ public class UI_BuildingInfoPanel : MonoBehaviour
     public GameObject energizeButton;
     public GameObject energizeDoneButton;
     public TextMeshProUGUI energizeButtonText;
+    public GameObject energizeInfo;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +40,7 @@ public class UI_BuildingInfoPanel : MonoBehaviour
 
         energizeButtonText.text = "Energize\n" + stats.energizeCost + " Energy";
 
+        energizeInfo.SetActive(stats.energizeCost > 0);
         energizeButton.SetActive((!selected.energized && stats.energizeCost > 0));
         energizeDoneButton.SetActive(selected.energized && stats.energizeCost > 0);
     }

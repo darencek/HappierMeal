@@ -22,56 +22,56 @@ public class UpgradeManager : MonoBehaviour
         up = new Upgrade();
         up.upgradeName = "Electric Sheep";
         up.upgradeInfo = "Improves each Dream Machine output by 10%.";
-        up.price = 5000;
+        up.price = 3000;
         up.buildingType = Building.BuildingType.DREAM_MACHINE;
         dreamMachine_efficiency = up;
 
         up = new Upgrade();
         up.upgradeName = "Snooze Generators";
         up.upgradeInfo = "Improves each Factory output by 3%.";
-        up.price = 12000;
+        up.price = 3000;
         up.buildingType = Building.BuildingType.FACTORY;
         factory_efficiency = up;
 
         up = new Upgrade();
         up.upgradeName = "Fluffier Bread";
         up.upgradeInfo = "Each Bakeries produce 5% more energy.";
-        up.price = 15000;
+        up.price = 3000;
         up.buildingType = Building.BuildingType.BAKERY;
         bakery_efficiency = up;
 
         up = new Upgrade();
         up.upgradeName = "Premium Sleepsand";
         up.upgradeInfo = "Improves $ gained by a further 1% for each Refineries.";
-        up.price = 25000;
+        up.price = 3000;
         up.buildingType = Building.BuildingType.REFINERY;
         refinery_efficiency = up;
 
         up = new Upgrade();
         up.upgradeName = "Sleep Capacitors";
         up.upgradeInfo = "Grants a bonus of 100 energy for every 400 energy gained.";
-        up.price = 18000;
+        up.price = 3000;
         up.buildingType = Building.BuildingType.FOUNDRY;
         foundry_efficiency = up;
 
         up = new Upgrade();
         up.upgradeName = "Daydream Battery";
         up.upgradeInfo = "Improves Rest limit increase by 50% for each Dream Engine.";
-        up.price = 7000;
+        up.price = 3000;
         up.buildingType = Building.BuildingType.DREAM_ENGINE;
         dreamEngine_upgrade = up;
 
         up = new Upgrade();
         up.upgradeName = "Cloud Boats";
         up.upgradeInfo = "Improves Energy lmit increase by 80% for each Fishery.";
-        up.price = 13000;
+        up.price = 3000;
         up.buildingType = Building.BuildingType.FISHERY;
         fishery_upgrade = up;
 
         up = new Upgrade();
         up.upgradeName = "Crystal Bank";
-        up.upgradeInfo = "Further improves $ earning limit by 20% for each Crystarium.";
-        up.price = 30000;
+        up.upgradeInfo = "Further improves $ earning limit by 50% for each Crystarium.";
+        up.price = 3000;
         up.buildingType = Building.BuildingType.CRYSTARIUM;
         crystarium_upgrade = up;
     }

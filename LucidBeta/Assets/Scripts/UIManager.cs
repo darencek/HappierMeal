@@ -17,8 +17,11 @@ public class UIManager : MonoBehaviour
     public GameObject wakePanel;
     public GameObject buildingInfoPanel;
     public GameObject upgradePanel;
+    public GameObject farmPanel;
+    public GameObject ascendPanel;
     public GameObject dialogBox;
     public GameObject newCreaturePopup;
+    public GameObject tutorialMain;
 
     public GameObject button_upgrade;
 
@@ -28,6 +31,11 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         MainManager.uiManager = this;
+
+        if (MainManager.instance.playTutorial)
+        {
+            tutorialMain.SetActive(true);
+        }
     }
 
     // Update is called once per frame
@@ -38,7 +46,7 @@ public class UIManager : MonoBehaviour
 
         restText.text = MainManager.FormatNumber(MainManager.instance.rest_resource) + "/" + MainManager.FormatNumber(MainManager.instance.rest_limit);
         energyText.text = MainManager.FormatNumber(MainManager.instance.energy_resource) + "/" + MainManager.FormatNumber(MainManager.instance.energy_limit);
-        
+
         sleepHoursText.text = "Slept for " + Mathf.FloorToInt(MainManager.instance.sleepTime / (60f * 60f)) + " hours...";
 
         button_upgrade.SetActive(MainManager.instance.buildings_haveWorkshop);
@@ -50,6 +58,7 @@ public class UIManager : MonoBehaviour
         buildingInfoPanel.SetActive(false);
         dialogBox.SetActive(false);
         upgradePanel.SetActive(false);
+        ascendPanel.SetActive(false);
         sleepPanel.SetActive(true);
 
         MainManager.instance.StartSleeping();
@@ -65,6 +74,8 @@ public class UIManager : MonoBehaviour
 
     public void UI_ShowBuildingPanel(Building selected)
     {
+        ascendPanel.SetActive(false);
+        farmPanel.SetActive(false);
         buildPanel.SetActive(true);
         dialogBox.SetActive(false);
         upgradePanel.SetActive(false);
@@ -72,6 +83,26 @@ public class UIManager : MonoBehaviour
         selectedBuilding = (selected);
     }
 
+    public void UI_ShowFarmPanel(FarmPlot f)
+    {
+        ascendPanel.SetActive(false);
+        farmPanel.SetActive(true);
+        buildPanel.SetActive(false);
+        dialogBox.SetActive(false);
+        upgradePanel.SetActive(false);
+        buildingInfoPanel.SetActive(false);
+        farmPanel.GetComponent<UI_FarmPanel>().OpenPanel(f);
+    }
+
+    public void UI_ShowAscendPanel()
+    {
+        ascendPanel.SetActive(true);
+        farmPanel.SetActive(false);
+        buildPanel.SetActive(false);
+        dialogBox.SetActive(false);
+        upgradePanel.SetActive(false);
+        buildingInfoPanel.SetActive(false);
+    }
     public void UI_BuildButton()
     {
         buildPanel.SetActive(!buildPanel.activeInHierarchy);
@@ -89,6 +120,8 @@ public class UIManager : MonoBehaviour
         buildPanel.SetActive(false);
         dialogBox.SetActive(false);
         upgradePanel.SetActive(false);
+        farmPanel.SetActive(false);
+        ascendPanel.SetActive(false);
         buildingInfoPanel.SetActive(true);
         buildingInfoPanel.GetComponent<UI_BuildingInfoPanel>().SelectBuilding(selectedBuilding);
     }
@@ -98,6 +131,8 @@ public class UIManager : MonoBehaviour
         buildPanel.SetActive(false);
         dialogBox.SetActive(false);
         buildingInfoPanel.SetActive(false);
+        farmPanel.SetActive(false);
+        ascendPanel.SetActive(false);
         upgradePanel.SetActive(true);
     }
 
@@ -106,6 +141,8 @@ public class UIManager : MonoBehaviour
         buildPanel.SetActive(false);
         buildingInfoPanel.SetActive(false);
         upgradePanel.SetActive(false);
+        farmPanel.SetActive(false);
+        ascendPanel.SetActive(false);
         dialogBox.SetActive(true);
         dialogBox.GetComponent<UI_DialogBox>().OpenDialog(c);
     }
@@ -116,6 +153,8 @@ public class UIManager : MonoBehaviour
         buildingInfoPanel.SetActive(false);
         upgradePanel.SetActive(false);
         dialogBox.SetActive(false);
+        farmPanel.SetActive(false);
+        ascendPanel.SetActive(false);
         newCreaturePopup.SetActive(true);
         newCreaturePopup.GetComponent<UI_NewCreaturePopup>().OpenPopup(c);
     }
