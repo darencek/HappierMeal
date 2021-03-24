@@ -1,4 +1,5 @@
-Change Log:
+***** CHANGE LOG *****
+
 - Enabled Farms
 - Enabled Ascension
 - Added lots of particles
@@ -6,12 +7,17 @@ Change Log:
 - Changed the scale of buildings and everything around
 
 
-READ ME:
+***** NOTES *****
+
 - Money earned = Rest x Number of hours slept
 - Rest is generated passively at 1 per 10 minutes slept
 - Workshop unlocks the upgrade menu
 - Tree fruits and Garden Crops grow regardless of sleeping
 
-Game is designed to be played on Portrait touch screen device, but works on regular computer monitors too.
 
-**** PRESS P TO QUIT THE GAME ****
+***** CONTROLS FOR PC *****
+
+Game is designed to be played on Portrait touch screen devices, but works on regular computer monitors too.
+- Click and drag to move the camera
+- Mouse scroll to zoom in and out
+- PRESS P TO EXIT THE GAME
