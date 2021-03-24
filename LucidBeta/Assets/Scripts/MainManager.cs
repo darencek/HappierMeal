@@ -184,6 +184,9 @@ public class MainManager : MonoBehaviour
     {
         MouseOnUI = eventSystem.IsPointerOverGameObject();
         CameraPanner();
+
+        if (Input.GetKeyDown(KeyCode.P))
+            Application.Quit();
     }
     public void StartSleeping()
     {
