@@ -24,11 +24,13 @@ public class UI_UpgradeButton : MonoBehaviour
 
     void OnEnable()
     {
-        if (upgrade != null)
-            researchable = (MainManager.instance.CountBuildingsOfType(upgrade.buildingType) > 0);
+
     }
     void Update()
     {
+        if (upgrade != null)
+            researchable = (MainManager.instance.CountBuildingsOfType(upgrade.buildingType) > 0);
+
         UpdateText();
 
         if (upgrade.level >= upgrade.maxLevel || !researchable)

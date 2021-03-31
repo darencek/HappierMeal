@@ -19,7 +19,7 @@ public class MainManager : MonoBehaviour
 
     public static float dreamTimeScale = 3600f;
 
-    public bool playTutorial = true;
+    public bool playTutorial;
 
     public int sleepState = 0;
     public float sleepTime = 0;
@@ -182,8 +182,23 @@ public class MainManager : MonoBehaviour
 
     void Update()
     {
-        MouseOnUI = eventSystem.IsPointerOverGameObject();
-        CameraPanner();
+        MouseOnUI = false;
+        if (Input.touchSupported && Input.touchCount > 0)
+            foreach (Touch touch in Input.touches)
+            {
+                int id = touch.fingerId;
+                if (EventSystem.current.IsPointerOverGameObject(id))
+                {
+                    MouseOnUI = true;
+                }
+            }
+        else
+            MouseOnUI = eventSystem.IsPointerOverGameObject();
+
+        if (!MouseOnUI)
+            CameraPanner();
+        else
+            dragging = false;
 
         if (Input.GetKeyDown(KeyCode.P))
             Application.Quit();
@@ -276,56 +291,92 @@ public class MainManager : MonoBehaviour
         return c;
     }
 
-    Vector3 CamPan_startPos;
-    float CamPan_totalMove = 0;
-    bool CamPan_Dragging = false;
+    bool dragging = false;
+    Vector3 lastPos = Vector3.zero;
+    int lastTouchCount = 0;
     public static bool CamPan_JustReleased = false;
+    float moveDist = 0;
+    float touchTime = 0;
+    float releaseResetTime = 0;
     void CameraPanner()
     {
-        if (!MouseOnUI)
+        if (!dragging)
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            touchTime = 0;
+            moveDist = 0;
+            if (Input.touchSupported && Input.touchCount > 0)
             {
-
-                CamPan_startPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                CamPan_Dragging = true;
+                Vector3 sP = Input.GetTouch(0).position;
+                lastPos = Camera.main.ScreenToWorldPoint(sP);
                 CamPan_JustReleased = false;
-                CamPan_totalMove = 0;
+                dragging = true;
+            }
+            else if (Input.GetKey(KeyCode.Mouse0))
+            {
+                Vector3 sP = Input.mousePosition;
+                lastPos = Camera.main.ScreenToWorldPoint(sP);
+                CamPan_JustReleased = false;
+                dragging = true;
+            }
+            if (releaseResetTime > 0)
+            {
+                if ((releaseResetTime -= Time.unscaledTime) <= 0)
+                    CamPan_JustReleased = false;
             }
         }
-        if (CamPan_Dragging)
+        else
         {
-            Vector3 CamPan_pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector3 PanDelta = (CamPan_pos - CamPan_startPos);
-            CamPan_totalMove += PanDelta.sqrMagnitude;
-            Camera.main.transform.position -= PanDelta;
-            if (CamPan_totalMove > 0.01f)
+            touchTime += Time.deltaTime;
+
+            if (touchTime > 1f || moveDist > 0.001f)
+            {
                 CamPan_JustReleased = true;
-            else
-                CamPan_JustReleased = false;
-
-            if (Input.GetKeyUp(KeyCode.Mouse0))
-            {
-                CamPan_Dragging = false;
-                if (CamPan_totalMove > 0.001f)
-                    StartCoroutine("CamPan_ReleaseCooldown");
+                releaseResetTime = 0.1f;
             }
-        }
 
-        if (Input.touchSupported)
-        {
-            if (Input.touchCount == 2)
+            if (!Input.GetKey(KeyCode.Mouse0) && (Input.touchSupported && Input.touchCount <= 0))
             {
-                Touch touch1 = Input.GetTouch(0);
-                Touch touch2 = Input.GetTouch(1);
+                dragging = false;
+            }
+            else
+            {
+                Vector3 sP = Vector3.zero;
+                Vector3 nowPos = Vector3.zero;
 
-                Vector2 t1d = touch1.position - touch1.deltaPosition;
-                Vector2 t2d = touch2.position - touch2.deltaPosition;
+                if (Input.touchSupported && Input.touchCount == 2)
+                {
+                    Touch touch1 = Input.GetTouch(0);
+                    Touch touch2 = Input.GetTouch(1);
 
-                float oD = Vector2.Distance(t1d, t2d);
-                float nD = Vector2.Distance(touch1.position, touch2.position);
+                    Vector2 t1d = touch1.position - touch1.deltaPosition;
+                    Vector2 t2d = touch2.position - touch2.deltaPosition;
 
-                Camera.main.orthographicSize *= 1 - (oD / nD);
+                    float nD = Vector2.Distance(touch1.position, touch2.position);
+                    float oD = Vector2.Distance(t1d, t2d);
+
+                    Camera.main.orthographicSize += (oD - nD) * 0.01f;
+                }
+
+                if (Input.touchSupported && Input.touchCount > 0)
+                {
+                    sP = Input.GetTouch(0).position;
+                    nowPos = Camera.main.ScreenToWorldPoint(sP);
+                    if (lastTouchCount != Input.touchCount)
+                    {
+                        lastPos = nowPos;
+                    }
+                }
+                else
+                {
+                    sP = Input.mousePosition;
+                    nowPos = Camera.main.ScreenToWorldPoint(sP);
+                }
+
+                Camera.main.transform.position = Camera.main.transform.position - (nowPos - lastPos);
+                moveDist += (nowPos - lastPos).magnitude;
+
+                lastPos = Camera.main.ScreenToWorldPoint(sP);
+
             }
         }
 
@@ -334,11 +385,11 @@ public class MainManager : MonoBehaviour
 
         Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize, 1, 7);
 
-        float clamp = 8f - (Camera.main.orthographicSize);
-        Vector3 p = Camera.main.transform.position;
-        p.x = Mathf.Clamp(p.x, -clamp, clamp);
-        p.y = Mathf.Clamp(p.y, -clamp, clamp);
-        Camera.main.transform.position = p;
+        Vector3 cV = Camera.main.transform.position;
+        cV.z = -10;
+        Camera.main.transform.position = cV;
+
+        lastTouchCount = Input.touchCount;
     }
 
     Vector3 _panToTarget;

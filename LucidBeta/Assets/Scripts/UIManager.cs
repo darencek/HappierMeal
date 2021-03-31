@@ -41,6 +41,7 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         zeeText.text = "$" + ((int)System.Math.Floor(MainManager.instance.zees)).ToString("N0");
         zeeRateText.text = "$" + MainManager.FormatMoney(MainManager.instance.zee_earningPerMinute * 60f) + "/" + MainManager.FormatMoney(MainManager.instance.zees_earnLimit) + " per hour of sleep";
 

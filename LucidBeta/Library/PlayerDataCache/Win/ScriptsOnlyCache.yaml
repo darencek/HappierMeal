@@ -30,6 +30,7 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
+    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.IK.Runtime.dll:
     - UnityEditor.U2D.IK.IKEditorManagerHelper
     Unity.2D.Tilemap.Editor.dll:
@@ -111,83 +112,83 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1462}
     - Class: 114
-      Script: {instanceID: 1630}
+      Script: {instanceID: 1718}
     - Class: 114
-      Script: {instanceID: 1694}
+      Script: {instanceID: 1782}
     - Class: 114
-      Script: {instanceID: 1700}
+      Script: {instanceID: 1788}
     - Class: 114
-      Script: {instanceID: 1714}
+      Script: {instanceID: 1802}
     - Class: 114
-      Script: {instanceID: 1786}
+      Script: {instanceID: 1874}
     - Class: 114
-      Script: {instanceID: 1876}
+      Script: {instanceID: 1964}
     - Class: 114
-      Script: {instanceID: 1972}
+      Script: {instanceID: 2060}
     - Class: 114
-      Script: {instanceID: 2098}
+      Script: {instanceID: 2186}
     - Class: 114
-      Script: {instanceID: 2106}
-    - Class: 114
-      Script: {instanceID: 2478}
-    - Class: 114
-      Script: {instanceID: 2532}
+      Script: {instanceID: 2194}
     - Class: 114
       Script: {instanceID: 2566}
     - Class: 114
-      Script: {instanceID: 2574}
+      Script: {instanceID: 2620}
     - Class: 114
-      Script: {instanceID: 2630}
+      Script: {instanceID: 2654}
     - Class: 114
-      Script: {instanceID: 2672}
+      Script: {instanceID: 2662}
     - Class: 114
-      Script: {instanceID: 2800}
+      Script: {instanceID: 2718}
     - Class: 114
-      Script: {instanceID: 2824}
+      Script: {instanceID: 2760}
     - Class: 114
-      Script: {instanceID: 2908}
+      Script: {instanceID: 2888}
     - Class: 114
-      Script: {instanceID: 2948}
+      Script: {instanceID: 2912}
     - Class: 114
-      Script: {instanceID: 3016}
+      Script: {instanceID: 2996}
     - Class: 114
-      Script: {instanceID: 3118}
+      Script: {instanceID: 3036}
     - Class: 114
-      Script: {instanceID: 3178}
+      Script: {instanceID: 3104}
     - Class: 114
-      Script: {instanceID: 3454}
+      Script: {instanceID: 3206}
     - Class: 114
-      Script: {instanceID: 3458}
+      Script: {instanceID: 3266}
     - Class: 114
-      Script: {instanceID: 3470}
+      Script: {instanceID: 3542}
     - Class: 114
-      Script: {instanceID: 3588}
+      Script: {instanceID: 3546}
     - Class: 114
-      Script: {instanceID: 3606}
+      Script: {instanceID: 3558}
     - Class: 114
-      Script: {instanceID: 3758}
+      Script: {instanceID: 3676}
     - Class: 114
-      Script: {instanceID: 3780}
+      Script: {instanceID: 3694}
     - Class: 114
-      Script: {instanceID: 4062}
+      Script: {instanceID: 3846}
     - Class: 114
-      Script: {instanceID: 4262}
+      Script: {instanceID: 3868}
     - Class: 114
-      Script: {instanceID: 4392}
+      Script: {instanceID: 4150}
     - Class: 114
-      Script: {instanceID: 4448}
+      Script: {instanceID: 4350}
     - Class: 114
-      Script: {instanceID: 4504}
+      Script: {instanceID: 4480}
     - Class: 114
-      Script: {instanceID: 4528}
+      Script: {instanceID: 4536}
     - Class: 114
-      Script: {instanceID: 4598}
+      Script: {instanceID: 4592}
     - Class: 114
-      Script: {instanceID: 4682}
+      Script: {instanceID: 4616}
     - Class: 114
-      Script: {instanceID: 5082}
+      Script: {instanceID: 4686}
     - Class: 114
-      Script: {instanceID: 5112}
+      Script: {instanceID: 4770}
+    - Class: 114
+      Script: {instanceID: 5170}
+    - Class: 114
+      Script: {instanceID: 5200}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -888,4 +889,4 @@ ScriptsOnlyBuild:
   platform: 5
   scenePathNames:
   - Assets/Scenes/MainScene.unity
-  playerPath: D:/Documents/GitHub/HappierMeal/LUCID_BETA_BUILD/LucidBeta.exe
+  playerPath: C:/Users/aceha/Documents/GitHub/HappierMeal/LUCID_BETA_BUILD/LucidBeta.exe
