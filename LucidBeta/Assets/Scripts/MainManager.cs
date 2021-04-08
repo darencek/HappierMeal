@@ -385,8 +385,11 @@ public class MainManager : MonoBehaviour
 
         Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize, 1, 7);
 
+        float camLimit = 7;
         Vector3 cV = Camera.main.transform.position;
         cV.z = -10;
+        cV.x = Mathf.Clamp(cV.x, -camLimit, camLimit);
+        cV.y = Mathf.Clamp(cV.y, -camLimit, camLimit);
         Camera.main.transform.position = cV;
 
         lastTouchCount = Input.touchCount;
