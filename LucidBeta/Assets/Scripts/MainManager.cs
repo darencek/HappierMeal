@@ -38,6 +38,7 @@ public class MainManager : MonoBehaviour
     public float energy_resource = 0;
     public float energy_limit = 0;
     public float energy_limit_base = 500;
+    public float energy_upkeep = 0;
 
     float zee_FromRestEarnMultiplier = 1f;
     float rest_EarnMultiplier = 1f;
@@ -118,11 +119,19 @@ public class MainManager : MonoBehaviour
         energy_limit = energy_limit_base + (buildings_fisheries * 100f * Mathf.Pow(1.8f, UpgradeManager.fishery_upgrade.level));
         zees_earnLimit = zees_earnLimit_base + (buildings_crystariums * 2000f * Mathf.Pow(1.5f, UpgradeManager.crystarium_upgrade.level));
 
+        //Calculate Required Energy Upkeep 
+        energy_upkeep = (buildings_dreamMachines + buildings_factories);
+        float energyUpkeepThisTick = energy_upkeep / 60f * dreamTimeScale;
+
         if (sleepState == 1)
         {
+            //WHEN SLEEPING ONLY
+
             //Add Energy
             if (energy_resource < energy_limit)
             {
+                float rest_perMin = (1 / 10f) / 60f;
+
                 float energy_perBakery = (1f) / 60f; //1 per Minute
 
                 energy_EarnMultiplier = Mathf.Pow(1.1f, buildings_foundries) * Mathf.Pow(1.25f, UpgradeManager.foundry_efficiency.level);
@@ -133,27 +142,28 @@ public class MainManager : MonoBehaviour
                 energy_resource += energy_gained * dreamTimeScale;
             }
 
-            //Add Rests
-            if (rest_resource < rest_limit)
+        }
+
+        //Add Rests
+        if (rest_resource < rest_limit)
+        {
+            float rest_perMin = (1 / 10f) / 60f;
+
+            float rest_perDreamMachine = (1f) / 60f;
+            float rest_perFactory = (10f) / 60f;
+
+            float rest_gained = (buildings_dreamMachines * rest_perDreamMachine * Mathf.Pow(1.1f, UpgradeManager.dreamMachine_efficiency.level))
+                + (buildings_factories * rest_perFactory * Mathf.Pow(1.03f, UpgradeManager.factory_efficiency.level)) + rest_perMin;
+
+            rest_gained *= rest_EarnMultiplier;
+
+            if (sleepState == 1 || energy_resource > 0)
             {
-                float rest_perDreamMachine = (1f) / 60f;
-                float rest_perFactory = (10f) / 60f;
-                float rest_perMin = (1 / 10f) / 60f;
-
-                float rest_gained = (buildings_dreamMachines * rest_perDreamMachine * Mathf.Pow(1.1f, UpgradeManager.dreamMachine_efficiency.level))
-                    + (buildings_factories * rest_perFactory * Mathf.Pow(1.03f, UpgradeManager.factory_efficiency.level)) + rest_perMin;
-
-                rest_gained *= rest_EarnMultiplier;
-
+                //ADD REST WHEN SLEEPING OR WHEN THERE IS SUFFICIENT ENERGY
                 rest_resource += rest_gained * dreamTimeScale;
             }
         }
 
-        if (sleepState == 0)
-        {
-            //Rest Loss
-            float restLoss = 0;
-        }
         //Cap Rest
         if (rest_resource > rest_limit)
             rest_resource = rest_limit;
@@ -174,9 +184,22 @@ public class MainManager : MonoBehaviour
         double zees_gained_capped = System.Math.Min(zees_gained, zees_earnLimit / (60f * 60f));
         zee_earningPerMinute = (zees_gained_capped * 60f);
 
-        if (sleepState == 1)
+        if (sleepState == 0)
         {
-            //zees += zees_gained_capped * dreamTimeScale;
+            //SUBTRACT REST (Lose 2% every hour so 24 hours = 48% lost)
+            if (rest_resource > 0)
+                rest_resource -= (rest_resource * (0.01f / (60f * 60f))) * dreamTimeScale;
+            if (rest_resource < 0)
+                rest_resource = 0;
+
+            //SUBTRACT ENERGY UPKEEP
+            if (energy_resource > 0)
+            {
+                energy_resource -= energyUpkeepThisTick;
+                if (energy_resource < 0) energy_resource = 0;
+            }
+            //GAIN ZEE DURING WAKING TIME
+            zees += zees_gained_capped * dreamTimeScale;
         }
     }
 
@@ -334,7 +357,7 @@ public class MainManager : MonoBehaviour
                 releaseResetTime = 0.1f;
             }
 
-            if (!Input.GetKey(KeyCode.Mouse0) && (Input.touchSupported && Input.touchCount <= 0))
+            if (!Input.GetKey(KeyCode.Mouse0) && (!Input.touchSupported || Input.touchCount <= 0))
             {
                 dragging = false;
             }
