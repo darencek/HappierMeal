@@ -44,7 +44,6 @@ public class UI_WorldTreePanel : MonoBehaviour
         {
             MainManager.instance.Ascend();
             gameObject.SetActive(false);
-            popupWindow.SetActive(true);
         }
     }
 

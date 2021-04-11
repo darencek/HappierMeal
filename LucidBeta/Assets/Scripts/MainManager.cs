@@ -15,6 +15,8 @@ public class MainManager : MonoBehaviour
 
     public EventSystem eventSystem;
 
+    public GameObject AscensionAnimation;
+
     public static bool MouseOnUI;
 
     public static float dreamTimeScale = 3600f;
@@ -65,14 +67,35 @@ public class MainManager : MonoBehaviour
     {
         if (zees >= nextAscension)
         {
-            ascensionLevel++;
-            ResetResources();
-
-            foreach (GameObject g in GameObject.FindGameObjectsWithTag("Building"))
-                g.GetComponent<Building>().Demolish();
-
-            nextAscension *= 3.5f;
+            StartCoroutine("StartAscension");
         }
+    }
+
+    IEnumerator StartAscension()
+    {
+        uiManager.blockUI = true;
+
+        CamPan_SmoothToTarget(AscensionAnimation.transform.position, 1f);
+
+        AscensionAnimation.SetActive(true);
+
+        yield return new WaitForSeconds(3.5f);
+
+        ascensionLevel++;
+        ResetResources();
+
+        foreach (GameObject g in GameObject.FindGameObjectsWithTag("Building"))
+            g.GetComponent<Building>().Demolish();
+
+        nextAscension *= 3.5f;
+
+        yield return new WaitForSeconds(2f);
+        AscensionAnimation.SetActive(false);
+
+        uiManager.newAscensionPopup.SetActive(true);
+
+        uiManager.blockUI = false;
+        yield return null;
     }
 
     void ResetResources()

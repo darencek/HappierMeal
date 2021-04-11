@@ -10,7 +10,13 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI energyText;
     public TextMeshProUGUI zeeRateText;
 
+    public TextMeshProUGUI energyCostsText;
+
     public TextMeshProUGUI sleepHoursText;
+
+    public GameObject statsMiniPopup;
+    public GameObject statsMiniPopup_rest;
+    public GameObject statsMiniPopup_energy;
 
     public GameObject buildPanel;
     public GameObject sleepPanel;
@@ -21,11 +27,18 @@ public class UIManager : MonoBehaviour
     public GameObject ascendPanel;
     public GameObject dialogBox;
     public GameObject newCreaturePopup;
+    public GameObject newAscensionPopup;
     public GameObject tutorialMain;
 
     public GameObject button_upgrade;
 
+    public GameObject UIBlocker;
+
+    public bool blockUI = false;
+
     Building selectedBuilding;
+
+    int statsMiniPopupCurrent = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +54,7 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        UIBlocker.SetActive(blockUI);
 
         zeeText.text = "$" + ((int)System.Math.Floor(MainManager.instance.zees)).ToString("N0");
         zeeRateText.text = "$" + MainManager.FormatMoney(MainManager.instance.zee_earningPerMinute * 60f) + "/" + MainManager.FormatMoney(MainManager.instance.zees_earnLimit) + " per hour";
@@ -50,7 +64,18 @@ public class UIManager : MonoBehaviour
 
         sleepHoursText.text = "Slept for " + Mathf.FloorToInt(MainManager.instance.sleepTime / (60f * 60f)) + " hours...";
 
+        energyCostsText.text = "Current costs: " + MainManager.instance.energy_upkeep + " / min";
+
         button_upgrade.SetActive(MainManager.instance.buildings_haveWorkshop);
+    }
+
+    public void UI_ShowStatsMiniPopup(int i)
+    {
+        statsMiniPopup.SetActive(!statsMiniPopup.activeInHierarchy || statsMiniPopupCurrent != i);
+        statsMiniPopup_rest.SetActive(i == 1);
+        statsMiniPopup_energy.SetActive(i == 2);
+
+        statsMiniPopupCurrent = statsMiniPopup.activeInHierarchy ? i : 0;
     }
 
     public void UI_SleepButton()
