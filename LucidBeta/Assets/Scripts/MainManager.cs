@@ -10,8 +10,12 @@ public class MainManager : MonoBehaviour
     public static BuildingSpriteManager buildingSpriteManager;
     public static CreatureManager creatureManager;
     public static FarmManager farmManager;
+    public static UpgradeManager upgradeManager;
 
     public Dictionary<Crop.CropType, int> SeedInventory;
+
+    public bool revealRunning = false;
+    public List<GameObject> revealEvents = new List<GameObject>();
 
     public EventSystem eventSystem;
 
@@ -86,6 +90,10 @@ public class MainManager : MonoBehaviour
 
         foreach (GameObject g in GameObject.FindGameObjectsWithTag("Building"))
             g.GetComponent<Building>().Demolish();
+        foreach (GameObject g in GameObject.FindGameObjectsWithTag("Creature"))
+            Destroy(g);
+
+        upgradeManager.ResetUpgrades();
 
         nextAscension *= 3.5f;
 
@@ -246,6 +254,18 @@ public class MainManager : MonoBehaviour
         else
             dragging = false;
 
+        if(sleepState == 0)
+        {
+            if(revealEvents.Count > 0)
+            {
+                if(!revealRunning){
+                    revealRunning = true;
+                    revealEvents[0].SendMessage("RevealSequence");
+                    revealEvents.RemoveAt(0);
+                }
+            }
+        }
+
         if (Input.GetKeyDown(KeyCode.P))
             Application.Quit();
     }
@@ -276,8 +296,7 @@ public class MainManager : MonoBehaviour
     }
     public void CompleteWakeUp()
     {
-        if (Random.Range(0, 100) <= 50)
-            creatureManager.SpawnNewCreature();
+        creatureManager.CheckSpawn();
     }
 
     public void BuildBuilding(Building building, Building.BuildingType type)
@@ -306,6 +325,8 @@ public class MainManager : MonoBehaviour
     public bool buildings_haveWorkshop = false;
     public bool buildings_haveGardenShed = false;
 
+    public int buildings_total = 0;
+
     public void CountBuildings()
     {
         buildings_dreamMachines = CountBuildingsOfType(Building.BuildingType.DREAM_MACHINE);
@@ -324,14 +345,21 @@ public class MainManager : MonoBehaviour
     public int CountBuildingsOfType(Building.BuildingType type)
     {
         int c = 0;
-        foreach (GameObject g in GameObject.FindGameObjectsWithTag("Building"))
+        buildings_total = 0;
+        GameObject[] bs = GameObject.FindGameObjectsWithTag("Building");
+        foreach (GameObject g in bs)
         {
             Building b = g.GetComponent<Building>();
-            if (b.type == type && !b.underConstruction)
+            if (!b.underConstruction)
             {
-                c++;
-                if (b.energized)
+                if (b.type != Building.BuildingType.NONE)
+                    buildings_total++;
+                if (b.type == type)
+                {
                     c++;
+                    if (b.energized)
+                        c++;
+                }
             }
         }
         return c;

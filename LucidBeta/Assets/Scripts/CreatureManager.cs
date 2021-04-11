@@ -11,11 +11,34 @@ public class CreatureManager : MonoBehaviour
 
     public List<Creature.CreatureType> encountered;
 
+    public float hoursSleptForSpawn = 0;
+    public float spawnTime = 0;
+
     // Start is called before the first frame update
     void Start()
     {
+        spawnTime = (12 * 60 * 60);
+
         MainManager.creatureManager = this;
         encountered = new List<Creature.CreatureType>();
+    }
+
+    void Update()
+    {
+        if (MainManager.instance.sleepState == 1)
+        {
+            hoursSleptForSpawn += Time.deltaTime * MainManager.dreamTimeScale;
+        }
+    }
+
+    public void CheckSpawn()
+    {
+        if (hoursSleptForSpawn >= spawnTime)
+        {
+            hoursSleptForSpawn = 0;
+            if (Random.Range(0, 100) <= 50)
+                SpawnNewCreature();
+        }
     }
     public Sprite GetCreatureSprite(Creature.CreatureType type)
     {
@@ -26,7 +49,7 @@ public class CreatureManager : MonoBehaviour
     {
         GameObject spawnLoc = creatureSpawnLocations[Random.Range(0, creatureSpawnLocations.Length)];
         GameObject g = Instantiate(creaturePrefab, spawnLoc.transform.position, Quaternion.identity);
-        g.GetComponent<CreatureController>().type = (Creature.CreatureType)Random.Range(0, System.Enum.GetNames(typeof(Creature.CreatureType)).Length);
+        g.GetComponent<CreatureController>().SetType((Creature.CreatureType)Random.Range(0, System.Enum.GetNames(typeof(Creature.CreatureType)).Length));
     }
 
     public void CheckNewEncounter(CreatureController c)
@@ -34,8 +57,7 @@ public class CreatureManager : MonoBehaviour
         if (!CheckEncountered(c.type))
         {
             encountered.Add(c.type);
-            _newEncounter = c;
-            StartCoroutine("NewEncounterSequence");
+            MainManager.instance.revealEvents.Add(c.gameObject);
         }
     }
     public bool CheckEncountered(Creature.CreatureType t)
@@ -43,14 +65,4 @@ public class CreatureManager : MonoBehaviour
         return encountered.Contains(t);
     }
 
-    CreatureController _newEncounter;
-    IEnumerator NewEncounterSequence()
-    {
-        Time.timeScale = 0f;
-        MainManager.instance.CamPan_SmoothToTarget(_newEncounter.transform.position);
-        yield return new WaitForSecondsRealtime(2f);
-        MainManager.uiManager.UI_ShowNewCreaturePopup(_newEncounter);
-        Time.timeScale = 1f;
-        yield return null;
-    }
 }

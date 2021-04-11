@@ -15,7 +15,16 @@ public class UpgradeManager : MonoBehaviour
     public static Upgrade fishery_upgrade;
     public static Upgrade crystarium_upgrade;
 
+    private void Start()
+    {
+        MainManager.upgradeManager = this;
+    }
+
     private void Awake()
+    {
+        ResetUpgrades();
+    }
+    public void ResetUpgrades()
     {
         Upgrade up;
 
@@ -75,6 +84,7 @@ public class UpgradeManager : MonoBehaviour
         up.buildingType = Building.BuildingType.CRYSTARIUM;
         crystarium_upgrade = up;
     }
+
     public class Upgrade
     {
         public Building.BuildingType buildingType = Building.BuildingType.FACTORY;

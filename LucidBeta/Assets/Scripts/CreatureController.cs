@@ -5,9 +5,8 @@ using UnityEngine;
 public class CreatureController : MonoBehaviour
 {
     float moveSpeed = 1f;
-    Vector3 moveTarget;
-
-    Rigidbody2D rb;
+    float moveDelay = 0;
+    List<Vector3> path = new List<Vector3>();
 
     public GameObject[] creatureSprites;
     public GameObject currentSprite;
@@ -20,23 +19,17 @@ public class CreatureController : MonoBehaviour
     Animator spriteAnimator;
     SpriteRenderer spriteRenderer;
 
-    Vector2 _lastPos;
     bool moving = false;
 
     bool spriteReady = false;
 
+    Creature.CreatureType lasttype;
+
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        moveSpeed = Random.Range(0.3f, 0.5f);
 
-        moveSpeed = Random.Range(0.1f, 1f) * 0.1f;
-
-        moveTarget = transform.position;
-        _lastPos = transform.position;
-        StartCoroutine("doNextMoveTarget");
-
-        StartCoroutine("delayInit");
     }
     public void UpdateSprite()
     {
@@ -55,20 +48,47 @@ public class CreatureController : MonoBehaviour
         spriteReady = true;
     }
 
+    public void SetType(Creature.CreatureType t)
+    {
+        type = lasttype = t;
+        UpdateSprite();
+    }
+
     // Update is called once per frame
     void Update()
     {
+        if (lasttype != type)
+            SetType(type);
+
         if (!spriteReady) return;
 
-        spriteAnimator.SetInteger("animState", moving ? 1 : 0);
-        spriteRenderer.flipX = (moveTarget.x < transform.position.x);
-    }
+        if (path.Count > 0)
+        {
+            moving = true;
+            Vector3 tar = path[0];
+            transform.position = Vector3.MoveTowards(transform.position, tar, moveSpeed * Time.deltaTime);
+            if (Vector3.Distance(transform.position, tar) < 0.01f)
+                path.RemoveAt(0);
 
-    private void FixedUpdate()
-    {
-        rb.MovePosition(Vector3.MoveTowards(rb.position, moveTarget, moveSpeed * Time.fixedDeltaTime));
-        moving = rb.position != _lastPos;
-        _lastPos = rb.position;
+            spriteRenderer.transform.localScale = new Vector3((tar.x < transform.position.x) ? -1 : 1, 1, 1);
+        }
+        else
+        {
+            moving = false;
+            if (moveDelay > 0)
+            {
+                moveDelay -= Time.deltaTime;
+            }
+            else
+            {
+                GameObject[] buildings = GameObject.FindGameObjectsWithTag("Building");
+                GameObject target = buildings[Random.Range(0, buildings.Length)];
+                path = PathfindingManager.instance.GetPath(transform.position, target.transform.position + new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0));
+                moveDelay = Random.Range(5, 10);
+            }
+        }
+
+        spriteAnimator.SetInteger("animState", moving ? 1 : 0);
     }
 
     bool clicked = false;
@@ -88,20 +108,23 @@ public class CreatureController : MonoBehaviour
         clicked = false;
     }
 
-    IEnumerator delayInit()
+    public void RevealSequence()
     {
-        yield return new WaitForEndOfFrame();
-        UpdateSprite();
-    }
-    IEnumerator doNextMoveTarget()
-    {
-        while (true)
-        {
-            moveTarget = transform.position + new Vector3(Random.Range(-1, 1), Random.Range(-1, 1));
-            yield return new WaitForSeconds(Random.Range(5f, 20f));
-        }
+        StartCoroutine("RevealCoroutine");
     }
 
+    IEnumerator RevealCoroutine()
+    {
+        MainManager.uiManager.blockUI = true;
+        Time.timeScale = 0f;
+        MainManager.instance.CamPan_SmoothToTarget(transform.position);
+        yield return new WaitForSecondsRealtime(2f);
+        MainManager.uiManager.blockUI = false;
+        MainManager.uiManager.UI_ShowNewCreaturePopup(this);
+        // Time.timeScale = 1f;
+        // MainManager.instance.revealRunning = false;
+        yield return null;
+    }
 }
 
 public struct Creature

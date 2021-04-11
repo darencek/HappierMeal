@@ -38,6 +38,7 @@ public class Building : MonoBehaviour
     public GameObject[] fruitTree_fruits;
 
     public GameObject EnergizedEffect;
+    public GameObject BuildCompleteEffect;
 
     public bool SlotUnlocked = true;
 
@@ -72,20 +73,25 @@ public class Building : MonoBehaviour
 
             tileSprite.sprite = tileSprites[0];
 
-            if (underConstruction)
+            if (underConstruction || placing)
                 buildingSprite.color = buildColor;
             else
                 buildingSprite.color = Color.white;
 
             if (underConstruction)
             {
+                placing = true;
                 _growthTimer = 0;
 
                 if (MainManager.instance.sleepState >= 1)
                     buildHours -= Time.unscaledDeltaTime * MainManager.dreamTimeScale;
 
                 if (buildHours <= 0)
+                {
+                    if (!MainManager.instance.revealEvents.Contains(gameObject))
+                        MainManager.instance.revealEvents.Add(gameObject);
                     underConstruction = false;
+                }
 
                 UpdateProgressBar();
             }
@@ -100,6 +106,26 @@ public class Building : MonoBehaviour
             tileSprite.sprite = tileSprites[1];
             tileSprite.transform.localScale = Vector3.one;
         }
+    }
+
+    public void RevealSequence()
+    {
+        StartCoroutine("RevealCoroutine");
+    }
+
+    IEnumerator RevealCoroutine()
+    {
+        MainManager.uiManager.blockUI = true;
+        Time.timeScale = 0f;
+        MainManager.instance.CamPan_SmoothToTarget(transform.position);
+        yield return new WaitForSecondsRealtime(2f);
+        BuildCompleteEffect.SetActive(true);
+        placing = false;
+        yield return new WaitForSecondsRealtime(2f);
+        BuildCompleteEffect.SetActive(false);
+        Time.timeScale = 1f;
+        MainManager.uiManager.blockUI = false;
+        MainManager.instance.revealRunning = false;
     }
 
     bool clicked = false;

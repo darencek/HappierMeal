@@ -94,8 +94,9 @@ public class UIManager : MonoBehaviour
     {
         sleepPanel.SetActive(false);
         MainManager.instance.StopSleeping();
-        wakePanel.SetActive(true);
-        wakePanel.GetComponent<UI_WakePanel>().StartWakeUp(MainManager.instance.sleepTime);
+        //wakePanel.SetActive(true);
+        //wakePanel.GetComponent<UI_WakePanel>().StartWakeUp(MainManager.instance.sleepTime);
+        MainManager.instance.CompleteWakeUp();
     }
 
     public void UI_ShowBuildingPanel(Building selected)

@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 341313}
   - component: {fileID: 341314}
   - component: {fileID: 341315}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -389,12 +389,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6223313}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5, y: -1.5, z: -0.038848113}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.995379, y: -0.3107525, z: 0.36980137}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_Father: {fileID: 383411488}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &12856205
 GameObject:
@@ -580,7 +580,7 @@ RectTransform:
   - {fileID: 818474436}
   - {fileID: 1376511092}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -633,7 +633,7 @@ GameObject:
   - component: {fileID: 27731066}
   - component: {fileID: 27731067}
   - component: {fileID: 27731068}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C2 (33)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -878,7 +878,7 @@ GameObject:
   - component: {fileID: 39818368}
   - component: {fileID: 39818369}
   - component: {fileID: 39818370}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C3 (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -985,7 +985,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1394859128947941865, guid: ff569b08cb118ec4591707d92587e5a8, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1394859128947941865, guid: ff569b08cb118ec4591707d92587e5a8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1052,7 +1052,7 @@ GameObject:
   - component: {fileID: 45431889}
   - component: {fileID: 45431890}
   - component: {fileID: 45431891}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C1 (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1161,7 +1161,7 @@ GameObject:
   - component: {fileID: 58572159}
   - component: {fileID: 58572160}
   - component: {fileID: 58572161}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C1 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1879,7 +1879,7 @@ GameObject:
   - component: {fileID: 98472366}
   - component: {fileID: 98472367}
   - component: {fileID: 98472368}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C1 (30)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4650,7 +4650,7 @@ GameObject:
   - component: {fileID: 157715489}
   - component: {fileID: 157715490}
   - component: {fileID: 157715491}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C1 (33)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4759,7 +4759,7 @@ GameObject:
   - component: {fileID: 158261223}
   - component: {fileID: 158261224}
   - component: {fileID: 158261225}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C1 (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4868,7 +4868,7 @@ GameObject:
   - component: {fileID: 159751063}
   - component: {fileID: 159751064}
   - component: {fileID: 159751065}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C1 (27)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4977,7 +4977,7 @@ GameObject:
   - component: {fileID: 165105700}
   - component: {fileID: 165105701}
   - component: {fileID: 165105702}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C3 (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5086,7 +5086,7 @@ GameObject:
   - component: {fileID: 166358608}
   - component: {fileID: 166358609}
   - component: {fileID: 166358610}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C3 (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5207,12 +5207,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 175973883}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: -1.5, z: -0.038848113}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.004621, y: -0.3107525, z: 0.36980137}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_Father: {fileID: 383411488}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &176963621
 PrefabInstance:
@@ -5872,7 +5872,7 @@ GameObject:
   - component: {fileID: 188226194}
   - component: {fileID: 188226195}
   - component: {fileID: 188226196}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C3 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5981,7 +5981,7 @@ GameObject:
   - component: {fileID: 189571300}
   - component: {fileID: 189571301}
   - component: {fileID: 189571302}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C1 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6088,7 +6088,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1394859128947941865, guid: ff569b08cb118ec4591707d92587e5a8, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1394859128947941865, guid: ff569b08cb118ec4591707d92587e5a8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6223,7 +6223,7 @@ GameObject:
   - component: {fileID: 195319957}
   - component: {fileID: 195319958}
   - component: {fileID: 195319959}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C1 (31)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6332,7 +6332,7 @@ GameObject:
   - component: {fileID: 197001350}
   - component: {fileID: 197001351}
   - component: {fileID: 197001352}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6699,12 +6699,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 227099389}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5, y: -0.25, z: -0.038848113}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.4953791, y: 0.9392475, z: 0.36980137}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_Father: {fileID: 383411488}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &253609451
 GameObject:
@@ -6717,7 +6717,7 @@ GameObject:
   - component: {fileID: 253609452}
   - component: {fileID: 253609453}
   - component: {fileID: 253609454}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C3 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7149,7 +7149,7 @@ GameObject:
   - component: {fileID: 262045510}
   - component: {fileID: 262045511}
   - component: {fileID: 262045512}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C2 (31)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7258,7 +7258,7 @@ GameObject:
   - component: {fileID: 267080555}
   - component: {fileID: 267080556}
   - component: {fileID: 267080557}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C2 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7367,7 +7367,7 @@ GameObject:
   - component: {fileID: 274329331}
   - component: {fileID: 274329332}
   - component: {fileID: 274329333}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C2 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7799,7 +7799,7 @@ GameObject:
   - component: {fileID: 331453845}
   - component: {fileID: 331453846}
   - component: {fileID: 331453847}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C1 (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8042,7 +8042,7 @@ GameObject:
   - component: {fileID: 346030807}
   - component: {fileID: 346030808}
   - component: {fileID: 346030809}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C1 (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8361,7 +8361,7 @@ GameObject:
   - component: {fileID: 363416061}
   - component: {fileID: 363416062}
   - component: {fileID: 363416063}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C3 (32)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8470,7 +8470,7 @@ GameObject:
   - component: {fileID: 368577905}
   - component: {fileID: 368577906}
   - component: {fileID: 368577907}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C3 (30)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8579,7 +8579,7 @@ GameObject:
   - component: {fileID: 382916009}
   - component: {fileID: 382916010}
   - component: {fileID: 382916011}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C2 (29)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8677,6 +8677,42 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
+--- !u!1 &383411487
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 383411488}
+  m_Layer: 0
+  m_Name: CreatureSpawnNodes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &383411488
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383411487}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.0046209395, y: -1.1892475, z: -0.40864947}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1346247674}
+  - {fileID: 227099390}
+  - {fileID: 175973884}
+  - {fileID: 6223314}
+  - {fileID: 1210676805}
+  - {fileID: 680977737}
+  m_Father: {fileID: 0}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &396168713
 GameObject:
   m_ObjectHideFlags: 0
@@ -9029,7 +9065,7 @@ GameObject:
   - component: {fileID: 410537971}
   - component: {fileID: 410537972}
   - component: {fileID: 410537973}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C1 (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9246,7 +9282,7 @@ GameObject:
   - component: {fileID: 431626737}
   - component: {fileID: 431626738}
   - component: {fileID: 431626739}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C2 (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9489,7 +9525,7 @@ GameObject:
   - component: {fileID: 441321088}
   - component: {fileID: 441321089}
   - component: {fileID: 441321090}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C3 (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9839,7 +9875,7 @@ GameObject:
   - component: {fileID: 459959849}
   - component: {fileID: 459959850}
   - component: {fileID: 459959851}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C1 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9948,7 +9984,7 @@ GameObject:
   - component: {fileID: 472787118}
   - component: {fileID: 472787119}
   - component: {fileID: 472787120}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C2 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10057,7 +10093,7 @@ GameObject:
   - component: {fileID: 474659325}
   - component: {fileID: 474659326}
   - component: {fileID: 474659327}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C1 (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10350,7 +10386,7 @@ Transform:
   - {fileID: 1358257777}
   - {fileID: 102931577}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &484000038
 GameObject:
@@ -10438,7 +10474,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1394859128947941865, guid: ff569b08cb118ec4591707d92587e5a8, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1394859128947941865, guid: ff569b08cb118ec4591707d92587e5a8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10497,7 +10533,7 @@ GameObject:
   - component: {fileID: 486387375}
   - component: {fileID: 486387376}
   - component: {fileID: 486387377}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C3 (27)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10742,7 +10778,7 @@ GameObject:
   - component: {fileID: 500506109}
   - component: {fileID: 500506110}
   - component: {fileID: 500506111}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C3 (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10985,7 +11021,7 @@ GameObject:
   - component: {fileID: 510365564}
   - component: {fileID: 510365565}
   - component: {fileID: 510365566}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C3 (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11164,7 +11200,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &537772154
 GameObject:
@@ -11177,7 +11213,7 @@ GameObject:
   - component: {fileID: 537772155}
   - component: {fileID: 537772156}
   - component: {fileID: 537772157}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C3 (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11553,7 +11589,7 @@ GameObject:
   - component: {fileID: 554166954}
   - component: {fileID: 554166955}
   - component: {fileID: 554166956}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C3 (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11820,7 +11856,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1394859128947941865, guid: ff569b08cb118ec4591707d92587e5a8, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 1394859128947941865, guid: ff569b08cb118ec4591707d92587e5a8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11879,7 +11915,7 @@ GameObject:
   - component: {fileID: 593273747}
   - component: {fileID: 593273748}
   - component: {fileID: 593273749}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C3 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16930,7 +16966,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &607453939
 PrefabInstance:
@@ -17061,7 +17097,7 @@ GameObject:
   - component: {fileID: 637876940}
   - component: {fileID: 637876941}
   - component: {fileID: 637876942}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C1 (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17170,7 +17206,7 @@ GameObject:
   - component: {fileID: 640062821}
   - component: {fileID: 640062822}
   - component: {fileID: 640062823}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C1 (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17268,6 +17304,53 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
+--- !u!1 &640089155
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 640089156}
+  - component: {fileID: 640089157}
+  m_Layer: 2
+  m_Name: Hitbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &640089156
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640089155}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1215491617}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &640089157
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640089155}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 2, y: 1.2}
+  m_Direction: 1
 --- !u!1001 &646435907
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17277,7 +17360,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1394859128947941865, guid: ff569b08cb118ec4591707d92587e5a8, type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 1394859128947941865, guid: ff569b08cb118ec4591707d92587e5a8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17344,7 +17427,7 @@ GameObject:
   - component: {fileID: 656647672}
   - component: {fileID: 656647673}
   - component: {fileID: 656647674}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C3 (31)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17453,7 +17536,7 @@ GameObject:
   - component: {fileID: 660455264}
   - component: {fileID: 660455265}
   - component: {fileID: 660455266}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C1 (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17696,7 +17779,7 @@ GameObject:
   - component: {fileID: 669221121}
   - component: {fileID: 669221122}
   - component: {fileID: 669221123}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C3 (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17892,12 +17975,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 680977736}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3, y: -3, z: -0.038848113}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.004621, y: -1.8107525, z: 0.36980137}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_Father: {fileID: 383411488}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &685433790
 GameObject:
@@ -20036,7 +20119,7 @@ GameObject:
   - component: {fileID: 833166059}
   - component: {fileID: 833166058}
   - component: {fileID: 833166060}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Rock1_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20413,7 +20496,7 @@ GameObject:
   - component: {fileID: 840442708}
   - component: {fileID: 840442709}
   - component: {fileID: 840442710}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C2 (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20575,7 +20658,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &870395305
 GameObject:
@@ -20796,7 +20879,7 @@ GameObject:
   - component: {fileID: 883208657}
   - component: {fileID: 883208658}
   - component: {fileID: 883208659}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21039,7 +21122,7 @@ GameObject:
   - component: {fileID: 913527581}
   - component: {fileID: 913527582}
   - component: {fileID: 913527583}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C1 (32)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21282,7 +21365,7 @@ GameObject:
   - component: {fileID: 918438064}
   - component: {fileID: 918438065}
   - component: {fileID: 918438066}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C2 (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21657,7 +21740,7 @@ GameObject:
   - component: {fileID: 930163458}
   - component: {fileID: 930163459}
   - component: {fileID: 930163460}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C1 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21766,7 +21849,7 @@ GameObject:
   - component: {fileID: 938978712}
   - component: {fileID: 938978713}
   - component: {fileID: 938978714}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C3 (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21981,7 +22064,7 @@ GameObject:
   - component: {fileID: 942660692}
   - component: {fileID: 942660693}
   - component: {fileID: 942660694}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C2 (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22677,7 +22760,7 @@ GameObject:
   - component: {fileID: 1000307938}
   - component: {fileID: 1000307939}
   - component: {fileID: 1000307940}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C1 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22803,7 +22886,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1001438230
 GameObject:
@@ -22816,7 +22899,7 @@ GameObject:
   - component: {fileID: 1001438231}
   - component: {fileID: 1001438232}
   - component: {fileID: 1001438233}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C2 (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23455,7 +23538,7 @@ GameObject:
   - component: {fileID: 1028644801}
   - component: {fileID: 1028644802}
   - component: {fileID: 1028644803}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23564,7 +23647,7 @@ GameObject:
   - component: {fileID: 1043670757}
   - component: {fileID: 1043670758}
   - component: {fileID: 1043670759}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C1 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23996,7 +24079,7 @@ GameObject:
   - component: {fileID: 1065768359}
   - component: {fileID: 1065768360}
   - component: {fileID: 1065768361}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C2 (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24427,7 +24510,7 @@ GameObject:
   - component: {fileID: 1083987923}
   - component: {fileID: 1083987924}
   - component: {fileID: 1083987925}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C1 (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24817,7 +24900,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1394859128947941865, guid: ff569b08cb118ec4591707d92587e5a8, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 1394859128947941865, guid: ff569b08cb118ec4591707d92587e5a8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -25097,7 +25180,7 @@ GameObject:
   - component: {fileID: 1123509140}
   - component: {fileID: 1123509141}
   - component: {fileID: 1123509142}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C2 (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25206,7 +25289,7 @@ GameObject:
   - component: {fileID: 1133074632}
   - component: {fileID: 1133074631}
   - component: {fileID: 1133074633}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Rock2_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25455,7 +25538,7 @@ GameObject:
   - component: {fileID: 1154714100}
   - component: {fileID: 1154714101}
   - component: {fileID: 1154714102}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C2 (36)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25564,7 +25647,7 @@ GameObject:
   - component: {fileID: 1156017967}
   - component: {fileID: 1156017968}
   - component: {fileID: 1156017969}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C2 (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25673,7 +25756,7 @@ GameObject:
   - component: {fileID: 1161168429}
   - component: {fileID: 1161168430}
   - component: {fileID: 1161168431}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C1 (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26062,12 +26145,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1210676804}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: -3, z: -0.038848113}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.995379, y: -1.8107525, z: 0.36980137}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_Father: {fileID: 383411488}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1215491615
 GameObject:
@@ -26152,8 +26235,9 @@ Transform:
   m_Children:
   - {fileID: 1597249156}
   - {fileID: 1895330893}
+  - {fileID: 640089156}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1215491618
 BoxCollider2D:
@@ -26343,7 +26427,7 @@ GameObject:
   - component: {fileID: 1231829293}
   - component: {fileID: 1231829294}
   - component: {fileID: 1231829295}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C2 (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26452,7 +26536,7 @@ GameObject:
   - component: {fileID: 1236373177}
   - component: {fileID: 1236373178}
   - component: {fileID: 1236373179}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C2 (27)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26920,7 +27004,7 @@ GameObject:
   - component: {fileID: 1245714822}
   - component: {fileID: 1245714823}
   - component: {fileID: 1245714824}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27161,7 +27245,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1394859128947941865, guid: ff569b08cb118ec4591707d92587e5a8, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1394859128947941865, guid: ff569b08cb118ec4591707d92587e5a8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -27206,6 +27290,18 @@ PrefabInstance:
     - target: {fileID: 4179866644639052963, guid: ff569b08cb118ec4591707d92587e5a8, type: 3}
       propertyPath: m_Name
       value: BuildingSlot
+      objectReference: {fileID: 0}
+    - target: {fileID: 5376617281125973567, guid: ff569b08cb118ec4591707d92587e5a8, type: 3}
+      propertyPath: useUnscaledTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5466080395325700329, guid: ff569b08cb118ec4591707d92587e5a8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8785904623413440847, guid: ff569b08cb118ec4591707d92587e5a8, type: 3}
+      propertyPath: useUnscaledTime
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff569b08cb118ec4591707d92587e5a8, type: 3}
@@ -27385,7 +27481,7 @@ GameObject:
   - component: {fileID: 1296464095}
   - component: {fileID: 1296464096}
   - component: {fileID: 1296464097}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C2 (30)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27494,7 +27590,7 @@ GameObject:
   - component: {fileID: 1309861336}
   - component: {fileID: 1309861337}
   - component: {fileID: 1309861338}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C2 (35)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27680,7 +27776,7 @@ GameObject:
   - component: {fileID: 1321337551}
   - component: {fileID: 1321337552}
   - component: {fileID: 1321337553}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C3 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28036,7 +28132,7 @@ GameObject:
   - component: {fileID: 1337389049}
   - component: {fileID: 1337389050}
   - component: {fileID: 1337389051}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C2 (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28348,12 +28444,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1346247673}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5, y: -0.25, z: -0.038848113}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.5046209, y: 0.9392475, z: 0.36980137}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_Father: {fileID: 383411488}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1353668719
 GameObject:
@@ -28366,7 +28462,7 @@ GameObject:
   - component: {fileID: 1353668720}
   - component: {fileID: 1353668721}
   - component: {fileID: 1353668722}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C2 (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28617,7 +28713,7 @@ TilemapCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1358257776}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -29405,7 +29501,7 @@ GameObject:
   - component: {fileID: 1361445291}
   - component: {fileID: 1361445292}
   - component: {fileID: 1361445293}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C3 (34)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29579,7 +29675,7 @@ GameObject:
   - component: {fileID: 1364843321}
   - component: {fileID: 1364843322}
   - component: {fileID: 1364843323}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29822,7 +29918,7 @@ GameObject:
   - component: {fileID: 1367893570}
   - component: {fileID: 1367893571}
   - component: {fileID: 1367893572}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C3 (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30711,7 +30807,7 @@ GameObject:
   - component: {fileID: 1395922168}
   - component: {fileID: 1395922169}
   - component: {fileID: 1395922170}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C3 (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30820,7 +30916,7 @@ GameObject:
   - component: {fileID: 1395992381}
   - component: {fileID: 1395992380}
   - component: {fileID: 1395992382}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Log (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30929,7 +31025,7 @@ GameObject:
   - component: {fileID: 1399739972}
   - component: {fileID: 1399739973}
   - component: {fileID: 1399739974}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C2 (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31038,7 +31134,7 @@ GameObject:
   - component: {fileID: 1409181920}
   - component: {fileID: 1409181921}
   - component: {fileID: 1409181922}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C3 (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31687,7 +31783,7 @@ GameObject:
   - component: {fileID: 1442299578}
   - component: {fileID: 1442299577}
   - component: {fileID: 1442299579}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Log
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32005,7 +32101,7 @@ GameObject:
   - component: {fileID: 1463826995}
   - component: {fileID: 1463826996}
   - component: {fileID: 1463826997}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C2 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32381,7 +32477,7 @@ GameObject:
   - component: {fileID: 1469432281}
   - component: {fileID: 1469432282}
   - component: {fileID: 1469432283}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C3 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33066,7 +33162,7 @@ GameObject:
   - component: {fileID: 1516580055}
   - component: {fileID: 1516580056}
   - component: {fileID: 1516580057}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C2 (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33308,7 +33404,7 @@ GameObject:
   - component: {fileID: 1523059535}
   - component: {fileID: 1523059536}
   - component: {fileID: 1523059537}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C2 (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33959,7 +34055,7 @@ GameObject:
   - component: {fileID: 1560599939}
   - component: {fileID: 1560599940}
   - component: {fileID: 1560599941}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C3 (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34068,7 +34164,7 @@ GameObject:
   - component: {fileID: 1565234074}
   - component: {fileID: 1565234075}
   - component: {fileID: 1565234076}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C1 (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34480,6 +34576,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f7202d6f9317bb44af68ee93287bfff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  revealRunning: 0
+  revealEvents: []
   eventSystem: {fileID: 850463111}
   AscensionAnimation: {fileID: 1597249154}
   playTutorial: 0
@@ -34508,6 +34606,7 @@ MonoBehaviour:
   buildings_crystariums: 0
   buildings_haveWorkshop: 0
   buildings_haveGardenShed: 0
+  buildings_total: 0
 --- !u!114 &1571699388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34564,6 +34663,8 @@ MonoBehaviour:
   - {fileID: 1210676804}
   - {fileID: 680977736}
   encountered: 
+  hoursSleptForSpawn: 0
+  spawnTime: 0
 --- !u!114 &1571699390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34612,7 +34713,7 @@ GameObject:
   - component: {fileID: 1571888056}
   - component: {fileID: 1571888057}
   - component: {fileID: 1571888058}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C2 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34857,7 +34958,7 @@ GameObject:
   - component: {fileID: 1581737414}
   - component: {fileID: 1581737415}
   - component: {fileID: 1581737416}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C2 (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35181,7 +35282,7 @@ GameObject:
   - component: {fileID: 1592810191}
   - component: {fileID: 1592810192}
   - component: {fileID: 1592810193}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C1 (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35875,7 +35976,7 @@ GameObject:
   - component: {fileID: 1602542989}
   - component: {fileID: 1602542990}
   - component: {fileID: 1602542991}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C3 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35984,7 +36085,7 @@ GameObject:
   - component: {fileID: 1603450743}
   - component: {fileID: 1603450744}
   - component: {fileID: 1603450745}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C3 (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36093,7 +36194,7 @@ GameObject:
   - component: {fileID: 1606090085}
   - component: {fileID: 1606090086}
   - component: {fileID: 1606090087}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C2 (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36512,7 +36613,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1394859128947941865, guid: ff569b08cb118ec4591707d92587e5a8, type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1394859128947941865, guid: ff569b08cb118ec4591707d92587e5a8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -46321,7 +46422,7 @@ GameObject:
   - component: {fileID: 1701538871}
   - component: {fileID: 1701538872}
   - component: {fileID: 1701538873}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C1 (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46722,7 +46823,7 @@ GameObject:
   - component: {fileID: 1727799550}
   - component: {fileID: 1727799551}
   - component: {fileID: 1727799552}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C3 (29)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47097,7 +47198,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1394859128947941865, guid: ff569b08cb118ec4591707d92587e5a8, type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 1394859128947941865, guid: ff569b08cb118ec4591707d92587e5a8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -47277,7 +47378,7 @@ GameObject:
   - component: {fileID: 1747505774}
   - component: {fileID: 1747505773}
   - component: {fileID: 1747505775}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Pond
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47466,7 +47567,7 @@ GameObject:
   - component: {fileID: 1748811666}
   - component: {fileID: 1748811665}
   - component: {fileID: 1748811667}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Log (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47776,7 +47877,7 @@ GameObject:
   - component: {fileID: 1758212926}
   - component: {fileID: 1758212927}
   - component: {fileID: 1758212928}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C2 (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48106,7 +48207,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1394859128947941865, guid: ff569b08cb118ec4591707d92587e5a8, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1394859128947941865, guid: ff569b08cb118ec4591707d92587e5a8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -48278,7 +48379,7 @@ GameObject:
   - component: {fileID: 1804783321}
   - component: {fileID: 1804783322}
   - component: {fileID: 1804783323}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C1 (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48521,7 +48622,7 @@ GameObject:
   - component: {fileID: 1808262788}
   - component: {fileID: 1808262789}
   - component: {fileID: 1808262790}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C2 (28)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48764,7 +48865,7 @@ GameObject:
   - component: {fileID: 1815707425}
   - component: {fileID: 1815707426}
   - component: {fileID: 1815707427}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C1 (28)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49089,7 +49190,7 @@ GameObject:
   - component: {fileID: 1829535630}
   - component: {fileID: 1829535631}
   - component: {fileID: 1829535632}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C1 (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49198,7 +49299,7 @@ GameObject:
   - component: {fileID: 1829674084}
   - component: {fileID: 1829674085}
   - component: {fileID: 1829674086}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C3 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49441,7 +49542,7 @@ GameObject:
   - component: {fileID: 1835936699}
   - component: {fileID: 1835936698}
   - component: {fileID: 1835936700}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Fireplace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49630,7 +49731,7 @@ GameObject:
   - component: {fileID: 1850778082}
   - component: {fileID: 1850778083}
   - component: {fileID: 1850778084}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C2 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49995,7 +50096,7 @@ GameObject:
   - component: {fileID: 1872855066}
   - component: {fileID: 1872855067}
   - component: {fileID: 1872855068}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C3 (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50104,7 +50205,7 @@ GameObject:
   - component: {fileID: 1875842720}
   - component: {fileID: 1875842721}
   - component: {fileID: 1875842722}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C3 (33)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55398,7 +55499,7 @@ GameObject:
   - component: {fileID: 1916903666}
   - component: {fileID: 1916903667}
   - component: {fileID: 1916903668}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C1 (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55642,7 +55743,7 @@ GameObject:
   - component: {fileID: 1944063814}
   - component: {fileID: 1944063815}
   - component: {fileID: 1944063816}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C3 (28)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56293,7 +56394,7 @@ GameObject:
   - component: {fileID: 1976987147}
   - component: {fileID: 1976987148}
   - component: {fileID: 1976987149}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C2 (34)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56611,7 +56712,7 @@ GameObject:
   - component: {fileID: 1992233075}
   - component: {fileID: 1992233076}
   - component: {fileID: 1992233077}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C3 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56720,7 +56821,7 @@ GameObject:
   - component: {fileID: 1993211597}
   - component: {fileID: 1993211598}
   - component: {fileID: 1993211599}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C1 (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56829,7 +56930,7 @@ GameObject:
   - component: {fileID: 1995025278}
   - component: {fileID: 1995025279}
   - component: {fileID: 1995025280}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C3 (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57011,7 +57112,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2010074227}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Decorations
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57145,7 +57246,7 @@ Transform:
   - {fileID: 1747505774}
   - {fileID: 1748811666}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2018483022
 PrefabInstance:
@@ -57156,7 +57257,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1394859128947941865, guid: ff569b08cb118ec4591707d92587e5a8, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 1394859128947941865, guid: ff569b08cb118ec4591707d92587e5a8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -57323,6 +57424,63 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2666b1c2983c5cc4daf34679cc468566, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &2027231921
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2027231922}
+  - component: {fileID: 2027231923}
+  - component: {fileID: 2027231924}
+  m_Layer: 0
+  m_Name: HoomanManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2027231922
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027231921}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2027231923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027231921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f84b3d9ec81fb544dbfa63ea9c74710c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoomanPrefab: {fileID: 5956329290855627925, guid: 96447e68924e1cc4bac15e4f6fe9083d, type: 3}
+--- !u!114 &2027231924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027231921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 620ff1ca8ec2e0b4a8e8ea07f56e4de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2029416975
@@ -57579,7 +57737,7 @@ GameObject:
   - component: {fileID: 2031085831}
   - component: {fileID: 2031085832}
   - component: {fileID: 2031085833}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C2 (38)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57963,7 +58121,7 @@ GameObject:
   - component: {fileID: 2055228711}
   - component: {fileID: 2055228712}
   - component: {fileID: 2055228713}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C2 (37)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58072,7 +58230,7 @@ GameObject:
   - component: {fileID: 2055534067}
   - component: {fileID: 2055534068}
   - component: {fileID: 2055534069}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C1 (29)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63263,7 +63421,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2064287959
 PrefabInstance:
@@ -63274,7 +63432,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1394859128947941865, guid: ff569b08cb118ec4591707d92587e5a8, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1394859128947941865, guid: ff569b08cb118ec4591707d92587e5a8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -63408,7 +63566,7 @@ GameObject:
   - component: {fileID: 2080662489}
   - component: {fileID: 2080662490}
   - component: {fileID: 2080662491}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C2 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63592,7 +63750,7 @@ GameObject:
   - component: {fileID: 2101839746}
   - component: {fileID: 2101839747}
   - component: {fileID: 2101839748}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C3 (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63701,7 +63859,7 @@ GameObject:
   - component: {fileID: 2103262691}
   - component: {fileID: 2103262692}
   - component: {fileID: 2103262693}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C2 (32)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63810,7 +63968,7 @@ GameObject:
   - component: {fileID: 2116035413}
   - component: {fileID: 2116035414}
   - component: {fileID: 2116035415}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tree1_C2 (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
