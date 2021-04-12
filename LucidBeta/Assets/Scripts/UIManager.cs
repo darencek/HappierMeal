@@ -84,7 +84,7 @@ public class UIManager : MonoBehaviour
 
         sleepHoursText.text = "Slept for " + Mathf.FloorToInt(MainManager.instance.sleepTime / (60f * 60f)) + " hours...";
 
-        energyCostsText.text = "Current costs: " + (MainManager.instance.energy_upkeep*60) + " / hour";
+        energyCostsText.text = "Current costs: " + (MainManager.instance.energy_upkeep * 60) + " / hour";
 
         button_upgrade.SetActive(MainManager.instance.buildings_haveWorkshop);
     }
@@ -250,14 +250,43 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public void UI_Settings_LoadDemoSave()
-    {
-
-    }
-
     public void UI_Settings_Credits()
     {
         MainManager.musicManager.PlayClick();
         credits.SetActive(true);
     }
+
+    public void UI_Settings_LoadDemoSave()
+    {
+        MainManager.musicManager.PlayClick();
+
+        MainManager.instance.ascensionLevel = 3;
+        GameObject[] bs = GameObject.FindGameObjectsWithTag("Building");
+
+        bs[0].GetComponent<Building>().type = Building.BuildingType.DREAM_ENGINE;
+        bs[1].GetComponent<Building>().type = Building.BuildingType.DREAM_MACHINE;
+        bs[2].GetComponent<Building>().type = Building.BuildingType.WORKSHOP;
+        bs[3].GetComponent<Building>().type = Building.BuildingType.LARGE_FARM;
+        bs[4].GetComponent<Building>().type = Building.BuildingType.BAKERY;
+        bs[5].GetComponent<Building>().type = Building.BuildingType.CRYSTARIUM;
+        bs[6].GetComponent<Building>().type = Building.BuildingType.GARDEN_SHED;
+        bs[7].GetComponent<Building>().type = Building.BuildingType.REFINERY;
+        bs[8].GetComponent<Building>().type = Building.BuildingType.FOUNDRY;
+        bs[9].GetComponent<Building>().type = Building.BuildingType.FACTORY;
+        bs[10].GetComponent<Building>().type = Building.BuildingType.FISHERY;
+        bs[11].GetComponent<Building>().type = Building.BuildingType.FRUIT_TREE;
+
+        UpgradeManager.bakery_efficiency.level = 12;
+        UpgradeManager.fishery_upgrade.level = 9;
+        UpgradeManager.dreamMachine_efficiency.level = 15;
+        UpgradeManager.dreamEngine_upgrade.level = 8;
+        UpgradeManager.crystarium_upgrade.level = 5;
+        UpgradeManager.refinery_efficiency.level = 10;
+
+        MainManager.instance.rest_resource = 10000000;
+        MainManager.instance.energy_resource = 10000000;
+
+        MainManager.instance.zees = 10000000;
+    }
+
 }

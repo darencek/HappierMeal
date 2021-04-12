@@ -104,7 +104,6 @@ public class Building : MonoBehaviour
         }
         else
         {
-            buildingSprite.gameObject.SetActive(false);
             tileSprite.sprite = tileSprites[1];
             tileSprite.transform.localScale = Vector3.one;
         }

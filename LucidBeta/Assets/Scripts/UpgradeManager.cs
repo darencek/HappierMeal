@@ -41,19 +41,18 @@ public class UpgradeManager : MonoBehaviour
         up = new Upgrade();
         up.upgradeName = "Snooze Generators";
         up.upgradeInfo = "Improves each Factory output by 3%.";
-
         up.buildingType = Building.BuildingType.FACTORY;
         factory_efficiency = up;
+
         up = new Upgrade();
         up.upgradeName = "Fluffier Bread";
         up.upgradeInfo = "Each Bakeries produce 5% more energy.";
-        up.priceMultiplier = 3.2f;
         up.buildingType = Building.BuildingType.BAKERY;
         bakery_efficiency = up;
 
         up = new Upgrade();
         up.upgradeName = "Premium Sleepsand";
-        up.upgradeInfo = "Improves $ gained by a further 1% for each Refineries.";
+        up.upgradeInfo = "Further improves $ gained by 5% for each Refineries.";
         up.buildingType = Building.BuildingType.REFINERY;
         refinery_efficiency = up;
 
@@ -67,21 +66,20 @@ public class UpgradeManager : MonoBehaviour
 
         up = new Upgrade();
         up.upgradeName = "Daydream Battery";
-        up.upgradeInfo = "Improves Rest limit increase by 50% for each Dream Engine.";
+        up.upgradeInfo = "Improves Rest limit increase by 30% for each Dream Engine.";
         up.buildingType = Building.BuildingType.DREAM_ENGINE;
         dreamEngine_upgrade = up;
 
         up = new Upgrade();
         up.upgradeName = "Cloud Boats";
-        up.upgradeInfo = "Improves Energy limit increase by 80% for each Fishery.";
-        up.price = 6000;
-        up.priceMultiplier = 3f;
+        up.upgradeInfo = "Improves Energy limit increase by 30% for each Fishery.";
+        up.price = 8000;
         up.buildingType = Building.BuildingType.FISHERY;
         fishery_upgrade = up;
 
         up = new Upgrade();
         up.upgradeName = "Crystal Bank";
-        up.upgradeInfo = "Further improves $ earning limit by 50% for each Crystarium.";
+        up.upgradeInfo = "Further improves $ earning limit by 20% for each Crystarium.";
         up.buildingType = Building.BuildingType.CRYSTARIUM;
         crystarium_upgrade = up;
 
@@ -114,13 +112,13 @@ public class UpgradeManager : MonoBehaviour
         public string upgradeName = "SomeUpgrade";
         public string upgradeInfo = "This does some things";
         public int maxLevel = 30;
-        public float priceMultiplier = 2.3f;
+        public float priceMultiplier = 1.3f;
 
         public int level = 0;
 
         public float GetAdjustedPrice()
         {
-            return price + price * (priceMultiplier * level);
+            return price * Mathf.Pow(priceMultiplier, level);
         }
     }
 }

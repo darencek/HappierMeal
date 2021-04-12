@@ -193,9 +193,9 @@ public class MainManager : MonoBehaviour
         }
 
         //Limits
-        rest_limit = rest_limit_base + (buildings_dreamEngines * 1000f * Mathf.Pow(1.5f, UpgradeManager.dreamEngine_upgrade.level));
-        energy_limit = energy_limit_base + (buildings_fisheries * 100f * Mathf.Pow(1.8f, UpgradeManager.fishery_upgrade.level));
-        zees_earnLimit = zees_earnLimit_base + (buildings_crystariums * 2000f * Mathf.Pow(1.5f, UpgradeManager.crystarium_upgrade.level));
+        rest_limit = rest_limit_base + (buildings_dreamEngines * 1000f * Mathf.Pow(1.3f, UpgradeManager.dreamEngine_upgrade.level));
+        energy_limit = energy_limit_base + (buildings_fisheries * 100f * Mathf.Pow(1.3f, UpgradeManager.fishery_upgrade.level));
+        zees_earnLimit = zees_earnLimit_base + (buildings_crystariums * 2000f * Mathf.Pow(1.2f, UpgradeManager.crystarium_upgrade.level));
 
         //Calculate Required Energy Upkeep 
         energy_upkeep = (buildings_dreamMachines + buildings_factories + buildings_bakeries) * energy_upkeep_multiplier;
@@ -253,7 +253,7 @@ public class MainManager : MonoBehaviour
             energy_resource = energy_limit;
 
         //Main Zees Gained
-        zee_FromRestEarnMultiplier *= Mathf.Pow((1.2f) + (0.01f * UpgradeManager.refinery_efficiency.level), buildings_refineries);
+        zee_FromRestEarnMultiplier *= Mathf.Pow(1.2f  * Mathf.Pow(1.05f, UpgradeManager.refinery_efficiency.level), buildings_refineries);
 
         double zees_perRest = (1f) / (60f * 60f); //1 per Rest per 1 hour
         double zees_gained = (rest_resource * zees_perRest);
@@ -325,7 +325,8 @@ public class MainManager : MonoBehaviour
                 }
             }
         }
-        else{
+        else
+        {
             dreamTimeScale = sleepingTimeScale;
         }
 
