@@ -67,7 +67,7 @@ public class FarmPlot : MonoBehaviour
         for (int i = 0; i < activeSlots; i++)
         {
             Crop c = crops[i];
-            if (c == null && c.type != Crop.CropType.NONE)
+            if (c != null && c.type != Crop.CropType.NONE)
             {
                 c.growTime += MainManager.dreamTimeScale * 60 * 60 * hours;
             }

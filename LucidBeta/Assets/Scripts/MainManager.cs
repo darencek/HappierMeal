@@ -11,6 +11,7 @@ public class MainManager : MonoBehaviour
     public static CreatureManager creatureManager;
     public static FarmManager farmManager;
     public static UpgradeManager upgradeManager;
+    public static MusicManager musicManager;
 
     public Dictionary<Crop.CropType, int> SeedInventory;
 
@@ -27,7 +28,7 @@ public class MainManager : MonoBehaviour
     public static bool MouseOnUI;
 
     public static float sleepingTimeScale = 3600f;
-    public static float wakingTimeScale = 900f;
+    public static float wakingTimeScale = 3600f;
 
     public static float dreamTimeScale = 3600f;
 
@@ -98,6 +99,7 @@ public class MainManager : MonoBehaviour
         CamPan_SmoothToTarget(AscensionAnimation.transform.position, 1f);
 
         AscensionAnimation.SetActive(true);
+        musicManager.PlayLevelUpSound();
 
         yield return new WaitForSeconds(3.5f);
 

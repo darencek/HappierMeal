@@ -182,7 +182,7 @@ public class CreatureController : MonoBehaviour
         switch (type)
         {
             case Creature.CreatureType.GLOW:
-                if (helpTimer < 5 && !helpBonusGiven)
+                if (helpTimer < 8 && !helpBonusGiven)
                 {
                     float bonus = MainManager.instance.rest_limit * 0.005f * (scale);
                     MainManager.instance.rest_resource += bonus;
@@ -194,7 +194,7 @@ public class CreatureController : MonoBehaviour
                 }
                 break;
             case Creature.CreatureType.GLOOMY:
-                if (helpTimer < 5 && !helpBonusGiven)
+                if (helpTimer < 6 && !helpBonusGiven)
                 {
                     GameObject[] buildings = GameObject.FindGameObjectsWithTag("Building");
                     foreach (GameObject bo in buildings)
@@ -207,11 +207,12 @@ public class CreatureController : MonoBehaviour
                             break;
                         }
                     }
+                    helpTimer = 0;
                     helpBonusGiven = true;
                 }
                 break;
             case Creature.CreatureType.BIG:
-                if (helpTimer < 5 && !helpBonusGiven)
+                if (helpTimer < 7 && !helpBonusGiven)
                 {
                     float bonus = MainManager.instance.energy_limit * 0.005f * (scale);
                     MainManager.instance.energy_resource += bonus;
@@ -249,7 +250,7 @@ public class CreatureController : MonoBehaviour
                 }
                 break;
             case Creature.CreatureType.JITTERY:
-                if (helpTimer < 5 && !helpBonusGiven)
+                if (helpTimer < 7 && !helpBonusGiven)
                 {
                     GameObject[] buildings = GameObject.FindGameObjectsWithTag("Building");
                     foreach (GameObject bo in buildings)

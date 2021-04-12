@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 public class UIManager : MonoBehaviour
 {
     public TextMeshProUGUI zeeText;
@@ -30,11 +33,15 @@ public class UIManager : MonoBehaviour
     public GameObject newAscensionPopup;
     public GameObject tutorialMain;
 
+    public GameObject settingsMenu;
+    public GameObject credits;
+
     public GameObject button_upgrade;
 
     public UI_FarmPanel farmUI;
 
     public GameObject UIBlocker;
+    public GameObject FadeIn;
 
     public bool blockUI = false;
 
@@ -45,6 +52,8 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        FadeIn.SetActive(true);
+
         MainManager.uiManager = this;
 
         if (MainManager.instance.playTutorial)
@@ -56,6 +65,15 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (FadeIn.activeInHierarchy)
+        {
+            Color c = FadeIn.GetComponent<Image>().color;
+            c.a = Mathf.MoveTowards(c.a, 0, Time.deltaTime);
+            FadeIn.GetComponent<Image>().color = c;
+            if (c.a <= 0)
+                FadeIn.SetActive(false);
+        }
+
         UIBlocker.SetActive(blockUI);
 
         zeeText.text = "$" + ((int)System.Math.Floor(MainManager.instance.zees)).ToString("N0");
@@ -82,6 +100,7 @@ public class UIManager : MonoBehaviour
 
     public void UI_SleepButton()
     {
+        settingsMenu.SetActive(false);
         buildPanel.SetActive(false);
         buildingInfoPanel.SetActive(false);
         dialogBox.SetActive(false);
@@ -197,5 +216,25 @@ public class UIManager : MonoBehaviour
     public void UI_CrossbreedPopup(Crop.CropInfo info)
     {
         farmUI.UI_ShowCrossbreedPopup(info);
+    }
+
+    public void UI_SettingsButton()
+    {
+        settingsMenu.SetActive(!settingsMenu.activeInHierarchy);
+    }
+
+    public void UI_Settings_Reload()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void UI_Settings_LoadDemoSave()
+    {
+
+    }
+
+    public void UI_Settings_Credits()
+    {
+        credits.SetActive(true);
     }
 }

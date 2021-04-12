@@ -38,7 +38,7 @@ public class UI_UpgradeButton : MonoBehaviour
             priceLabelSprite.color = Color.gray;
             mainSprite.color = Color.gray;
         }
-        else if (MainManager.instance.zees >= upgrade.price)
+        else if (MainManager.instance.zees >= upgrade.GetAdjustedPrice())
         {
             priceLabelSprite.color = col_green;
             mainSprite.color = Color.white;
