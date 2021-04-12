@@ -64,6 +64,8 @@ public class UI_UpgradeButton : MonoBehaviour
     {
         if (!researchable) return;
 
+        MainManager.musicManager.PlayPop();
+
         float p = upgrade.GetAdjustedPrice();
         if (MainManager.instance.zees >= p && upgrade.level < upgrade.maxLevel)
         {

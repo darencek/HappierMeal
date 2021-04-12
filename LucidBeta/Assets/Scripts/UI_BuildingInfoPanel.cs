@@ -52,6 +52,7 @@ public class UI_BuildingInfoPanel : MonoBehaviour
 
     public void UI_Demolish()
     {
+        MainManager.musicManager.PlayDemolishSound();
         selected.Demolish();
         UI_Close();
     }
@@ -60,7 +61,7 @@ public class UI_BuildingInfoPanel : MonoBehaviour
         if (MainManager.instance.energy_resource >= stats.energizeCost)
         {
             MainManager.instance.energy_resource -= stats.energizeCost;
-            selected.energized = true;
+            selected.Energize();
         }
     }
 }

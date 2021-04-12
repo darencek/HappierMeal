@@ -100,6 +100,8 @@ public class UIManager : MonoBehaviour
 
     public void UI_SleepButton()
     {
+        MainManager.musicManager.PlayClick();
+
         settingsMenu.SetActive(false);
         buildPanel.SetActive(false);
         buildingInfoPanel.SetActive(false);
@@ -114,6 +116,8 @@ public class UIManager : MonoBehaviour
 
     public void UI_WakeUpButton()
     {
+        MainManager.musicManager.PlayClick();
+
         StartCoroutine("WakeupCoroutine");
     }
 
@@ -128,6 +132,8 @@ public class UIManager : MonoBehaviour
 
     public void UI_ShowBuildingPanel(Building selected)
     {
+        MainManager.musicManager.PlayClick();
+
         ascendPanel.SetActive(false);
         farmPanel.SetActive(false);
         buildPanel.SetActive(true);
@@ -139,6 +145,8 @@ public class UIManager : MonoBehaviour
 
     public void UI_ShowFarmPanel(FarmPlot f)
     {
+        MainManager.musicManager.PlayClick();
+
         ascendPanel.SetActive(false);
         farmPanel.SetActive(true);
         buildPanel.SetActive(false);
@@ -150,6 +158,8 @@ public class UIManager : MonoBehaviour
 
     public void UI_ShowAscendPanel()
     {
+        MainManager.musicManager.PlayClick();
+
         ascendPanel.SetActive(true);
         farmPanel.SetActive(false);
         buildPanel.SetActive(false);
@@ -159,6 +169,8 @@ public class UIManager : MonoBehaviour
     }
     public void UI_BuildButton()
     {
+        MainManager.musicManager.PlayClick();
+
         buildPanel.SetActive(!buildPanel.activeInHierarchy);
         buildingInfoPanel.SetActive(false);
     }
@@ -170,6 +182,8 @@ public class UIManager : MonoBehaviour
 
     public void UI_ShowBuildingInfoPanel(Building b)
     {
+        MainManager.musicManager.PlayClick();
+
         selectedBuilding = b;
         buildPanel.SetActive(false);
         dialogBox.SetActive(false);
@@ -182,6 +196,8 @@ public class UIManager : MonoBehaviour
 
     public void UI_ShowUpgradePanel()
     {
+        MainManager.musicManager.PlayClick();
+
         buildPanel.SetActive(false);
         dialogBox.SetActive(false);
         buildingInfoPanel.SetActive(false);
@@ -192,6 +208,8 @@ public class UIManager : MonoBehaviour
 
     public void UI_ShowDialogBox(CreatureController c)
     {
+        MainManager.musicManager.PlayClick();
+
         buildPanel.SetActive(false);
         buildingInfoPanel.SetActive(false);
         upgradePanel.SetActive(false);
@@ -203,6 +221,8 @@ public class UIManager : MonoBehaviour
 
     public void UI_ShowNewCreaturePopup(CreatureController c)
     {
+        MainManager.musicManager.PlayJingle();
+
         buildPanel.SetActive(false);
         buildingInfoPanel.SetActive(false);
         upgradePanel.SetActive(false);
@@ -220,6 +240,8 @@ public class UIManager : MonoBehaviour
 
     public void UI_SettingsButton()
     {
+        MainManager.musicManager.PlayClick();
+
         settingsMenu.SetActive(!settingsMenu.activeInHierarchy);
     }
 
@@ -235,6 +257,7 @@ public class UIManager : MonoBehaviour
 
     public void UI_Settings_Credits()
     {
+        MainManager.musicManager.PlayClick();
         credits.SetActive(true);
     }
 }

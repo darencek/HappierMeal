@@ -36,7 +36,7 @@ public class CreatureManager : MonoBehaviour
         if (hoursSleptForSpawn >= spawnTime)
         {
             hoursSleptForSpawn = 0;
-            if (Random.Range(0, 100) <= 50)
+            if (Random.Range(0, 100) <= 90)
                 SpawnNewCreature();
         }
     }

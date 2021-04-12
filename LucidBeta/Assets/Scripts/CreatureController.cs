@@ -214,7 +214,7 @@ public class CreatureController : MonoBehaviour
             case Creature.CreatureType.BIG:
                 if (helpTimer < 7 && !helpBonusGiven)
                 {
-                    float bonus = MainManager.instance.energy_limit * 0.005f * (scale);
+                    float bonus = MainManager.instance.energy_limit * 0.01f * (scale);
                     MainManager.instance.energy_resource += bonus;
                     helpTimer = 0;
                     helpBonusGiven = true;
@@ -228,7 +228,7 @@ public class CreatureController : MonoBehaviour
                 {
                     if (MainManager.instance.rest_resource >= MainManager.instance.rest_limit * 0.7f)
                     {
-                        float bonus = MainManager.instance.energy_limit * 0.005f * (scale);
+                        float bonus = MainManager.instance.energy_limit * 0.02f * (scale);
                         MainManager.instance.energy_resource += bonus;
 
                         GameObject g = Instantiate(popupPrefab, transform.position + Vector3.forward * 10f, Quaternion.identity);
@@ -241,7 +241,7 @@ public class CreatureController : MonoBehaviour
             case Creature.CreatureType.EFFORT:
                 if (helpTimer < 4 && !helpBonusGiven)
                 {
-                    float bonus = MainManager.instance.energy_limit * 0.005f * (scale);
+                    float bonus = MainManager.instance.energy_limit * 0.015f * (scale);
                     MainManager.instance.energy_resource += MainManager.instance.energy_limit * bonus;
                     helpBonusGiven = true;
 
@@ -257,7 +257,7 @@ public class CreatureController : MonoBehaviour
                     {
                         if (Vector3.Distance(bo.transform.position, transform.position) <= 2f && CheckIfPreferredBuilding(bo.GetComponent<Building>().type))
                         {
-                            bo.GetComponent<Building>().energized = true;
+                            bo.GetComponent<Building>().Energize();
                             break;
                         }
                     }

@@ -123,6 +123,7 @@ public class Building : MonoBehaviour
         yield return new WaitForSecondsRealtime(2f);
         BuildCompleteEffect.SetActive(true);
         placing = false;
+        MainManager.musicManager.PlayBoom();
         yield return new WaitForSecondsRealtime(2f);
         BuildCompleteEffect.SetActive(false);
         Time.timeScale = 1f;
@@ -175,6 +176,13 @@ public class Building : MonoBehaviour
         totalBuildHours = GetBuildHours(type) * 60f * 60f;
         buildHours = totalBuildHours;
         UpdateSprite();
+        MainManager.musicManager.PlayDink();
+    }
+
+    public void Energize()
+    {
+        energized = true;
+        MainManager.musicManager.PlayDoubleDink();
     }
 
     public void Demolish()

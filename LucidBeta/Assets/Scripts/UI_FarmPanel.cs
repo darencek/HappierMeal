@@ -72,6 +72,8 @@ public class UI_FarmPanel : MonoBehaviour
 
     public void UI_OpenSeedWindow(int slot)
     {
+        MainManager.musicManager.PlayPop();
+
         if (selectedFarm.crops[slot] == null)
         {
             seedPanel.SetActive(true);
@@ -89,6 +91,7 @@ public class UI_FarmPanel : MonoBehaviour
 
     public void UI_ShowCrossbreedPopup(Crop.CropInfo info)
     {
+
         crossbreedPopup.SetActive(true);
         crossbreedPopup_Text.text = "Obtained " + info.name + " seed.";
     }
@@ -100,6 +103,8 @@ public class UI_FarmPanel : MonoBehaviour
 
     public void UI_SeedSwitchPanel(int panel)
     {
+        MainManager.musicManager.PlayPop();
+
         for (int i = 0; i < seedPanelPanels.Length; i++)
         {
             seedPanelPanels[i].SetActive(i == panel);

@@ -59,6 +59,8 @@ public class UI_UpgradesPanel : MonoBehaviour
 
     public void UI_UpgradeSwitchPanel(int panel)
     {
+        MainManager.musicManager.PlayPop();
+
         for (int i = 0; i < upgradeWindow_Panels.Length; i++)
         {
             upgradeWindow_Panels[i].SetActive(i == panel);

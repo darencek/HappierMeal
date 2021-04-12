@@ -52,6 +52,7 @@ public class UI_SeedButton : MonoBehaviour
 
     public void ButtonPress()
     {
+        MainManager.musicManager.PlayPop();
         MainManager.uiManager.farmPanel.GetComponent<UI_FarmPanel>().UI_SelectSeed(seedType);
     }
 }
