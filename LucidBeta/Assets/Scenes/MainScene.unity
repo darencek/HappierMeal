@@ -37501,7 +37501,7 @@ MonoBehaviour:
   eventSystem: {fileID: 850463111}
   AscensionAnimation: {fileID: 1597249154}
   RainEffect: {fileID: 41062648}
-  playTutorial: 0
+  playTutorial: 1
   sleepState: 0
   sleepTime: 0
   sleepMoodStat: 0
