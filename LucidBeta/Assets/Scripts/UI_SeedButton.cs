@@ -20,12 +20,22 @@ public class UI_SeedButton : MonoBehaviour
         Crop.CropInfo info = new Crop.CropInfo(seedType);
         seedName.text = info.name;
         seedInfo.text = info.info;
-        xbreed.text = info.xbreed;
+        xbreed.text = "";
+
+        if (info.x1 != Crop.CropType.NONE && info.x2 != Crop.CropType.NONE)
+        {
+            xbreed.text = new Crop.CropInfo(info.x1).name + " + " + new Crop.CropInfo(info.x2).name;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!MainManager.instance.SeedInventory.ContainsKey(seedType))
+        {
+            MainManager.instance.SeedInventory[seedType] = 0;
+        } 
+
         float q = MainManager.instance.SeedInventory[seedType];
 
         quantity.text = q == -1 ? "\u221E" : q.ToString();

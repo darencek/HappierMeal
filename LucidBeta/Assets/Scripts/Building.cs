@@ -84,7 +84,7 @@ public class Building : MonoBehaviour
                 _growthTimer = 0;
 
                 if (MainManager.instance.sleepState >= 1)
-                    buildHours -= Time.unscaledDeltaTime * MainManager.dreamTimeScale;
+                    buildHours -= Time.unscaledDeltaTime * MainManager.dreamTimeScale * MainManager.instance.constructionSpeed_multiplier;
 
                 if (buildHours <= 0)
                 {
@@ -361,7 +361,7 @@ public class Building : MonoBehaviour
                     price = 10000;
                     buildHours = 7;
                     buildingName = "Garden Shed";
-                    buildingInfo = "Enables researching upgrades for gardening.";
+                    buildingInfo = "Adds gardening upgrades to the workshop.";
                     break;
                 case BuildingType.INCUBATOR:
                     price = 30000;

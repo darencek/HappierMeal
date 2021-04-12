@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class UI_FarmPanel : MonoBehaviour
 {
     public FarmPlot selectedFarm;
     public GameObject seedPanel;
+    public GameObject[] seedPanelPanels;
+
+    public GameObject crossbreedPopup;
+    public TextMeshProUGUI crossbreedPopup_Text;
 
     public UI_FarmSlotButton[] slotButtons;
     public Sprite noCropSprite;
@@ -82,10 +87,25 @@ public class UI_FarmPanel : MonoBehaviour
         }
     }
 
+    public void UI_ShowCrossbreedPopup(Crop.CropInfo info)
+    {
+        crossbreedPopup.SetActive(true);
+        crossbreedPopup_Text.text = "Obtained " + info.name + " seed.";
+    }
+
     public void UI_ShowBuildingInfoButton()
     {
         MainManager.uiManager.UI_ShowBuildingInfoPanel(selectedFarm.gameObject.GetComponent<Building>());
     }
+
+    public void UI_SeedSwitchPanel(int panel)
+    {
+        for (int i = 0; i < seedPanelPanels.Length; i++)
+        {
+            seedPanelPanels[i].SetActive(i == panel);
+        }
+    }
+
     public void UI_Close()
     {
         gameObject.SetActive(false);

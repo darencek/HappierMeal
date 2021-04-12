@@ -817,6 +817,7 @@ MonoBehaviour:
   - {fileID: 6854145932770964348}
   - {fileID: 6854145932678637476}
   currentSprite: {fileID: 0}
+  popupPrefab: {fileID: 1047287682523245893, guid: cef52a38ab0c2704cadd3cbd09550ae9, type: 3}
   type: 0
   friendshipLevel: 0
 --- !u!61 &3705717568671366835

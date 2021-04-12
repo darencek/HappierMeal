@@ -32,6 +32,8 @@ public class UIManager : MonoBehaviour
 
     public GameObject button_upgrade;
 
+    public UI_FarmPanel farmUI;
+
     public GameObject UIBlocker;
 
     public bool blockUI = false;
@@ -64,7 +66,7 @@ public class UIManager : MonoBehaviour
 
         sleepHoursText.text = "Slept for " + Mathf.FloorToInt(MainManager.instance.sleepTime / (60f * 60f)) + " hours...";
 
-        energyCostsText.text = "Current costs: " + MainManager.instance.energy_upkeep + " / min";
+        energyCostsText.text = "Current costs: " + (MainManager.instance.energy_upkeep*60) + " / hour";
 
         button_upgrade.SetActive(MainManager.instance.buildings_haveWorkshop);
     }
@@ -87,15 +89,21 @@ public class UIManager : MonoBehaviour
         ascendPanel.SetActive(false);
         sleepPanel.SetActive(true);
 
+        sleepPanel.GetComponent<Animator>().SetBool("Sleep", true);
         MainManager.instance.StartSleeping();
     }
 
     public void UI_WakeUpButton()
     {
+        StartCoroutine("WakeupCoroutine");
+    }
+
+    IEnumerator WakeupCoroutine()
+    {
+        sleepPanel.GetComponent<Animator>().SetBool("Sleep", false);
+        yield return new WaitForSecondsRealtime(0.5f);
         sleepPanel.SetActive(false);
         MainManager.instance.StopSleeping();
-        //wakePanel.SetActive(true);
-        //wakePanel.GetComponent<UI_WakePanel>().StartWakeUp(MainManager.instance.sleepTime);
         MainManager.instance.CompleteWakeUp();
     }
 
@@ -184,5 +192,10 @@ public class UIManager : MonoBehaviour
         ascendPanel.SetActive(false);
         newCreaturePopup.SetActive(true);
         newCreaturePopup.GetComponent<UI_NewCreaturePopup>().OpenPopup(c);
+    }
+
+    public void UI_CrossbreedPopup(Crop.CropInfo info)
+    {
+        farmUI.UI_ShowCrossbreedPopup(info);
     }
 }

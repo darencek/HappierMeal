@@ -45,7 +45,7 @@ public class FarmPlot : MonoBehaviour
                 {
                     if (c.growTime < c.maxGrowTime)
                     {
-                        c.growTime += MainManager.dreamTimeScale * Time.unscaledDeltaTime;
+                        c.growTime += MainManager.dreamTimeScale * Time.unscaledDeltaTime * MainManager.instance.farm_grow_multiplier;
 
                         float f = (c.growTime / c.maxGrowTime) * 3f;
                         sp.sprite = MainManager.farmManager.growingSprites[Mathf.FloorToInt(f) + 1];
@@ -60,6 +60,20 @@ public class FarmPlot : MonoBehaviour
         }
     }
 
+    public void Fertilize(float hours)
+    {
+        activeSlots = building.type == Building.BuildingType.SMALL_FARM ? 1 : 4;
+
+        for (int i = 0; i < activeSlots; i++)
+        {
+            Crop c = crops[i];
+            if (c == null && c.type != Crop.CropType.NONE)
+            {
+                c.growTime += MainManager.dreamTimeScale * 60 * 60 * hours;
+            }
+        }
+    }
+
     public void Plant(int slot, Crop.CropType seed, Crop.SoilType soil)
     {
         crops[slot] = new Crop(seed, soil);
@@ -67,7 +81,41 @@ public class FarmPlot : MonoBehaviour
 
     public void Harvest(int slot)
     {
-        crops[slot].Harvest();
+        Crop c = crops[slot];
+        //Crossbreed Check
+        foreach (Crop.CropInfo ci in MainManager.farmManager.crossbreeds)
+        {
+            bool x1 = false;
+            bool x2 = false;
+            foreach (Crop cr in crops)
+            {
+                if (cr != null)
+                {
+                    if (cr.type == ci.x1)
+                        x1 = true;
+                    if (cr.type == ci.x2)
+                        x2 = true;
+                }
+            }
+
+            if (x1 && x2)
+            {
+                float chanceTresh = 50 * Mathf.Pow(0.99f, UpgradeManager.farm_crossbreed_upgrade.level);
+                if (Random.Range(0, 100) <= chanceTresh)
+                {
+                    if (!MainManager.instance.SeedInventory.ContainsKey(ci.type))
+                    {
+                        MainManager.instance.SeedInventory[ci.type] = 0;
+                    }
+
+                    MainManager.uiManager.UI_CrossbreedPopup(ci);
+                    MainManager.instance.SeedInventory[ci.type]++;
+                }
+            }
+        }
+
+        c.Harvest();
+
         crops[slot] = null;
     }
 }

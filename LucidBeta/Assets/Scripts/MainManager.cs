@@ -17,11 +17,17 @@ public class MainManager : MonoBehaviour
     public bool revealRunning = false;
     public List<GameObject> revealEvents = new List<GameObject>();
 
+    public List<CropBonusBuff> cropBuffs = new List<CropBonusBuff>();
+
     public EventSystem eventSystem;
 
     public GameObject AscensionAnimation;
+    public GameObject RainEffect;
 
     public static bool MouseOnUI;
+
+    public static float sleepingTimeScale = 3600f;
+    public static float wakingTimeScale = 900f;
 
     public static float dreamTimeScale = 3600f;
 
@@ -30,12 +36,16 @@ public class MainManager : MonoBehaviour
     public int sleepState = 0;
     public float sleepTime = 0;
 
+    public float sleepMoodStat = 0;
+    public float sleepMoodTresh = 0;
+
     public int ascensionLevel = 1;
     public double nextAscension = 100;
 
     public double zees = 0;
     public double zees_earnLimit = 0;
     public double zees_earnLimit_base = 1000;
+    public double zees_earnLimit_bonusMultiplier = 1;
 
     public float rest_resource = 0;
     public float rest_limit = 0;
@@ -45,12 +55,18 @@ public class MainManager : MonoBehaviour
     public float energy_limit = 0;
     public float energy_limit_base = 500;
     public float energy_upkeep = 0;
+    public float energy_upkeep_multiplier = 1;
 
-    float zee_FromRestEarnMultiplier = 1f;
-    float rest_EarnMultiplier = 1f;
-    float energy_EarnMultiplier = 1f;
+    public float zee_FromRestEarnMultiplier = 1f;
+    public float rest_EarnMultiplier = 1f;
+    public float energy_EarnMultiplier = 1f;
 
     public double zee_earningPerMinute = 0f;
+
+    public float constructionSpeed_multiplier = 1f;
+    public float farm_grow_multiplier = 1f;
+
+
     private void Awake()
     {
         instance = this;
@@ -108,6 +124,9 @@ public class MainManager : MonoBehaviour
 
     void ResetResources()
     {
+        sleepMoodStat = 0;
+        sleepMoodTresh = 40 * 60 * 60;
+
         zees = 1000;
         zees_earnLimit_base = 10000;
 
@@ -120,9 +139,14 @@ public class MainManager : MonoBehaviour
         SeedInventory = new Dictionary<Crop.CropType, int>();
         SeedInventory.Add(Crop.CropType.DREAMLITE, -1);
         SeedInventory.Add(Crop.CropType.ENERGITE, -1);
-        SeedInventory.Add(Crop.CropType.FERRITE, 0);
         SeedInventory.Add(Crop.CropType.RANDITE, -1);
-        SeedInventory.Add(Crop.CropType.SPECITE, 0);
+
+        /*
+        SeedInventory.Add(Crop.CropType.SPECITE, -1);
+        SeedInventory.Add(Crop.CropType.FERRITE, -1);
+        SeedInventory.Add(Crop.CropType.BATTRON, -1);
+        SeedInventory.Add(Crop.CropType.GROWON, -1);
+        */
     }
 
     IEnumerator DreamTick()
@@ -145,13 +169,34 @@ public class MainManager : MonoBehaviour
     }
     public void ResourceTick()
     {
+        //Multipliers
+        constructionSpeed_multiplier = 1;
+
+        zee_FromRestEarnMultiplier = 1f;
+        zees_earnLimit_bonusMultiplier = 1;
+        rest_EarnMultiplier = 1f;
+        energy_EarnMultiplier = 1f;
+        energy_upkeep_multiplier = 1;
+
+        farm_grow_multiplier = Mathf.Pow(1.01f, UpgradeManager.farm_grow_upgrade.level);
+
+        //Plant Buffs
+        for (int i = cropBuffs.Count - 1; i >= 0; i--)
+        {
+            CropBonusBuff buff = cropBuffs[i];
+            buff.timeLeft -= dreamTimeScale;
+            buff.Update();
+            if (buff.timeLeft <= 0)
+                cropBuffs.Remove(buff);
+        }
+
         //Limits
         rest_limit = rest_limit_base + (buildings_dreamEngines * 1000f * Mathf.Pow(1.5f, UpgradeManager.dreamEngine_upgrade.level));
         energy_limit = energy_limit_base + (buildings_fisheries * 100f * Mathf.Pow(1.8f, UpgradeManager.fishery_upgrade.level));
         zees_earnLimit = zees_earnLimit_base + (buildings_crystariums * 2000f * Mathf.Pow(1.5f, UpgradeManager.crystarium_upgrade.level));
 
         //Calculate Required Energy Upkeep 
-        energy_upkeep = (buildings_dreamMachines + buildings_factories);
+        energy_upkeep = (buildings_dreamMachines + buildings_factories + buildings_bakeries) * energy_upkeep_multiplier;
         float energyUpkeepThisTick = energy_upkeep / 60f * dreamTimeScale;
 
         if (sleepState == 1)
@@ -165,7 +210,7 @@ public class MainManager : MonoBehaviour
 
                 float energy_perBakery = (1f) / 60f; //1 per Minute
 
-                energy_EarnMultiplier = Mathf.Pow(1.1f, buildings_foundries) * Mathf.Pow(1.25f, UpgradeManager.foundry_efficiency.level);
+                energy_EarnMultiplier *= Mathf.Pow(1.1f, buildings_foundries) * Mathf.Pow(1.25f, UpgradeManager.foundry_efficiency.level);
 
                 float energy_gained = (buildings_bakeries * energy_perBakery * Mathf.Pow(1.05f, UpgradeManager.bakery_efficiency.level));
                 energy_gained *= energy_EarnMultiplier;
@@ -206,13 +251,13 @@ public class MainManager : MonoBehaviour
             energy_resource = energy_limit;
 
         //Main Zees Gained
-        zee_FromRestEarnMultiplier = Mathf.Pow((1.2f) + (0.01f * UpgradeManager.refinery_efficiency.level), buildings_refineries);
+        zee_FromRestEarnMultiplier *= Mathf.Pow((1.2f) + (0.01f * UpgradeManager.refinery_efficiency.level), buildings_refineries);
 
         double zees_perRest = (1f) / (60f * 60f); //1 per Rest per 1 hour
         double zees_gained = (rest_resource * zees_perRest);
         zees_gained *= zee_FromRestEarnMultiplier;
 
-        double zees_gained_capped = System.Math.Min(zees_gained, zees_earnLimit / (60f * 60f));
+        double zees_gained_capped = System.Math.Min(zees_gained, zees_earnLimit / (60f * 60f)) * zees_earnLimit_bonusMultiplier;
         zee_earningPerMinute = (zees_gained_capped * 60f);
 
         if (sleepState == 0)
@@ -231,6 +276,16 @@ public class MainManager : MonoBehaviour
             }
             //GAIN ZEE DURING WAKING TIME
             zees += zees_gained_capped * dreamTimeScale;
+
+            //INCREASE LACK OF SLEEP
+            if (sleepMoodStat < sleepMoodTresh * 1.1f)
+                sleepMoodStat += dreamTimeScale;
+        }
+        else
+        {
+            //REDUCE LACK OF SLEEP
+            if (sleepMoodStat > 0)
+                sleepMoodStat -= dreamTimeScale * 4f;
         }
     }
 
@@ -254,16 +309,33 @@ public class MainManager : MonoBehaviour
         else
             dragging = false;
 
-        if(sleepState == 0)
+        if (sleepState == 0)
         {
-            if(revealEvents.Count > 0)
+            dreamTimeScale = wakingTimeScale;
+
+            if (revealEvents.Count > 0)
             {
-                if(!revealRunning){
+                if (!revealRunning)
+                {
                     revealRunning = true;
                     revealEvents[0].SendMessage("RevealSequence");
                     revealEvents.RemoveAt(0);
                 }
             }
+        }
+        else{
+            dreamTimeScale = sleepingTimeScale;
+        }
+
+        if (RainEffect.activeInHierarchy)
+        {
+            if (sleepMoodStat < sleepMoodTresh)
+                RainEffect.SetActive(false);
+        }
+        else
+        {
+            if (sleepMoodStat > sleepMoodTresh)
+                RainEffect.SetActive(true);
         }
 
         if (Input.GetKeyDown(KeyCode.P))

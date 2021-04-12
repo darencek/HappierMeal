@@ -15,6 +15,7 @@ public class UI_Tutorial : MonoBehaviour
     public GameObject welcomePanel4;
 
     public int tutorialState = 0;
+    float timer = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +38,7 @@ public class UI_Tutorial : MonoBehaviour
                     tutorialState = 2;
                     welcomePanel3.SetActive(true);
                     break;
+
                 }
             }
             return;
@@ -52,10 +54,14 @@ public class UI_Tutorial : MonoBehaviour
         }
         if (tutorialState == 3)
         {
-            if (MainManager.instance.sleepState == 0 && !MainManager.uiManager.wakePanel.activeInHierarchy)
+            if (MainManager.instance.sleepState == 0 && !MainManager.instance.revealRunning)
             {
-                tutorialState = 4;
-                welcomePanel4.SetActive(true);
+                timer += Time.deltaTime;
+                if (timer > 0.1f)
+                {
+                    tutorialState = 4;
+                    welcomePanel4.SetActive(true);
+                }
             }
         }
     }

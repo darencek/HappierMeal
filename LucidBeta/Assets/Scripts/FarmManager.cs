@@ -7,16 +7,23 @@ public class FarmManager : MonoBehaviour
     public Sprite[] cropSprites;
     public Sprite[] growingSprites;
 
+    public List<Crop.CropInfo> crossbreeds = new List<Crop.CropInfo>();
+
     private void Start()
     {
         MainManager.farmManager = this;
+
+        crossbreeds.Add(new Crop.CropInfo(Crop.CropType.FERRITE));
+        crossbreeds.Add(new Crop.CropInfo(Crop.CropType.SPECITE));
+        crossbreeds.Add(new Crop.CropInfo(Crop.CropType.BATTRON));
+        crossbreeds.Add(new Crop.CropInfo(Crop.CropType.GROWON));
     }
 }
 
 public class Crop
 {
     public enum SoilType { DREAM_SOIL, BOSOIL, MULSOIL };
-    public enum CropType { NONE, DREAMLITE, ENERGITE, RANDITE, SPECITE, FERRITE };
+    public enum CropType { NONE, DREAMLITE, ENERGITE, RANDITE, SPECITE, FERRITE, BATTRON, GROWON };
 
     public SoilType soil;
     public CropType type;
@@ -29,30 +36,38 @@ public class Crop
         this.type = type;
         growTime = 0;
         maxGrowTime = 12 * (60 * 60);
-
-        switch (type)
-        {
-        }
     }
 
     public void Harvest()
     {
         float multiplier = soil == SoilType.BOSOIL ? 1.1f : 1;
 
+        multiplier *= Mathf.Pow(1.01f, UpgradeManager.farm_yield_upgrade.level);
+
         switch (type)
         {
+            //T1
             case CropType.DREAMLITE:
-                MainManager.instance.rest_resource += 1500 * multiplier;
+                MainManager.instance.rest_resource += 500 * multiplier;
                 break;
             case CropType.ENERGITE:
-                MainManager.instance.energy_resource += 2000 * multiplier;
+                MainManager.instance.energy_resource += 180 * multiplier;
                 break;
             case CropType.RANDITE:
-                MainManager.instance.zees += Random.Range(5000, 20000) * multiplier;
+                MainManager.instance.zees += Random.Range(1000, 2000) * multiplier;
                 break;
+            //T2
             case CropType.SPECITE:
+                MainManager.instance.cropBuffs.Add(new CropBonusBuff(CropBonusBuff.buffType.ZLIMIT1));
                 break;
             case CropType.FERRITE:
+                MainManager.instance.cropBuffs.Add(new CropBonusBuff(CropBonusBuff.buffType.CONSTRUCTION));
+                break;
+            case CropType.BATTRON:
+                MainManager.instance.energy_resource += 300 * multiplier;
+                break;
+            case CropType.GROWON:
+                MainManager.instance.cropBuffs.Add(new CropBonusBuff(CropBonusBuff.buffType.ENERGYCOST1));
                 break;
         }
     }
@@ -63,35 +78,90 @@ public class Crop
         public string info;
         public string xbreed;
 
+        public CropType x1;
+        public CropType x2;
+
+        public CropType type;
+
         public CropInfo(CropType type)
         {
+            this.type = type;
+
             name = "SEED";
             info = "-";
             xbreed = "";
 
+            x1 = CropType.NONE;
+            x2 = CropType.NONE;
+
             switch (type)
             {
+                //T1
                 case CropType.DREAMLITE:
                     name = "Dreamlite";
-                    info = "Gives 1500 rest on harvest.";
+                    info = "Gives 500 rest on harvest.";
                     break;
                 case CropType.ENERGITE:
                     name = "Energite";
-                    info = "Gives 2000 energy on harvest.";
+                    info = "Gives 180 energy on harvest.";
                     break;
                 case CropType.RANDITE:
                     name = "Randite";
-                    info = "Gives $5000 to $20000 randomly on harvest.";
+                    info = "Gives $1000 to $2000 randomly on harvest.";
                     break;
+                //T2
                 case CropType.SPECITE:
                     name = "Specite";
-                    info = "";
+                    info = "Harvest to increase $ earning limit by 10% for 24 hours.";
+                    x1 = CropType.ENERGITE;
+                    x2 = CropType.RANDITE;
                     break;
                 case CropType.FERRITE:
                     name = "Ferrite";
-                    info = "";
+                    info = "Harvest to double construction speed for 24 hours (not stackable).";
+                    x1 = CropType.DREAMLITE;
+                    x2 = CropType.RANDITE;
+                    break;
+                case CropType.BATTRON:
+                    name = "Battron";
+                    info = "Gives 300 energy on harvest.";
+                    x1 = CropType.ENERGITE;
+                    x2 = CropType.FERRITE;
+                    break;
+                case CropType.GROWON:
+                    name = "Growon";
+                    info = "Harvest to reduce energy running costs by 1% for 24 hours.";
+                    x1 = CropType.RANDITE;
+                    x2 = CropType.SPECITE;
                     break;
             }
+        }
+    }
+}
+
+public class CropBonusBuff
+{
+    public enum buffType { ZLIMIT1, CONSTRUCTION, ENERGYCOST1 };
+    public float timeLeft = 24 * 60 * 60;
+    public buffType type = buffType.ZLIMIT1;
+
+    public CropBonusBuff(buffType t)
+    {
+        type = t;
+    }
+    public void Update()
+    {
+        switch (type)
+        {
+            case buffType.ZLIMIT1:
+                MainManager.instance.zees_earnLimit_bonusMultiplier *= 1.1f;
+                break;
+            case buffType.CONSTRUCTION:
+                MainManager.instance.constructionSpeed_multiplier = 2f;
+                break;
+            case buffType.ENERGYCOST1:
+                MainManager.instance.energy_upkeep_multiplier *= 0.99f;
+                break;
         }
     }
 }

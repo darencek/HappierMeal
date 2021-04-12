@@ -15,6 +15,7 @@ public class UI_DialogBox : MonoBehaviour
 
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogText;
+    public TextMeshProUGUI hintText;
     public Image charSprite;
     public Image friendLevelSprite;
 
@@ -55,6 +56,7 @@ public class UI_DialogBox : MonoBehaviour
         friendLevelSprite.sprite = friendLevelSprites[Mathf.Clamp(c.friendshipLevel, 0, friendLevelSprites.Length - 1)];
 
         dialogText.text = c.info.defaultDialog;
+        hintText.text = c.info.hint;
     }
 
     public void CloseDialogBox()
