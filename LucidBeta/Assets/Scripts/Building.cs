@@ -189,6 +189,7 @@ public class Building : MonoBehaviour
         if (type == BuildingType.LARGE_FARM || type == BuildingType.SMALL_FARM)
             gameObject.GetComponent<FarmPlot>().ClearSlots();
         type = BuildingType.NONE;
+        energized = false;
         UpdateSprite();
         UpdateProgressBar();
     }
@@ -331,7 +332,7 @@ public class Building : MonoBehaviour
                     price = 100000;
                     buildHours = 7;
                     buildingName = "Refinery";
-                    buildingInfo = "Increases $ earned by 20% while sleeping.";
+                    buildingInfo = "Increases $ earned by 5% while sleeping.";
                     energizeCost = 1000;
                     break;
                 case BuildingType.FOUNDRY:

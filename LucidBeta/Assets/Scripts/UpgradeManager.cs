@@ -52,7 +52,7 @@ public class UpgradeManager : MonoBehaviour
 
         up = new Upgrade();
         up.upgradeName = "Premium Sleepsand";
-        up.upgradeInfo = "Further improves $ gained by 5% for each Refineries.";
+        up.upgradeInfo = "Further improves $ gained by 3% for each Refineries.";
         up.buildingType = Building.BuildingType.REFINERY;
         refinery_efficiency = up;
 

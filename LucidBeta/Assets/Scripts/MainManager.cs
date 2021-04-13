@@ -116,6 +116,7 @@ public class MainManager : MonoBehaviour
         uiManager.newAscensionPopup.SetActive(true);
 
         uiManager.blockUI = false;
+
         yield return null;
     }
 
@@ -248,7 +249,7 @@ public class MainManager : MonoBehaviour
             energy_resource = energy_limit;
 
         //Main Zees Gained
-        zee_FromRestEarnMultiplier *= Mathf.Pow(1.2f * Mathf.Pow(1.05f, UpgradeManager.refinery_efficiency.level), buildings_refineries);
+        zee_FromRestEarnMultiplier *= Mathf.Pow(1.05f * Mathf.Pow(1.03f, UpgradeManager.refinery_efficiency.level), buildings_refineries);
 
         double zees_perRest = (1f) / (60f * 60f); //1 per Rest per 1 hour
         double zees_gained = (rest_resource * zees_perRest);

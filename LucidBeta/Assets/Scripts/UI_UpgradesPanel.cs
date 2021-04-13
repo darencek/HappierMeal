@@ -25,6 +25,11 @@ public class UI_UpgradesPanel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        LinkUpgrades();
+    }
+
+    void LinkUpgrades()
+    {
         upgradeButton_dreamMachine.upgrade = UpgradeManager.dreamMachine_efficiency;
         upgradeButton_factory.upgrade = UpgradeManager.factory_efficiency;
         upgradeButton_bakery.upgrade = UpgradeManager.bakery_efficiency;
@@ -44,6 +49,8 @@ public class UI_UpgradesPanel : MonoBehaviour
     {
         UI_gardeningButton.SetActive(MainManager.instance.CountBuildingsOfType(Building.BuildingType.GARDEN_SHED) > 0);
         if (!UI_gardeningButton.activeInHierarchy && upgradeWindow_Panels[2].activeInHierarchy) UI_UpgradeSwitchPanel(0);
+
+        LinkUpgrades();
     }
 
     // Update is called once per frame
