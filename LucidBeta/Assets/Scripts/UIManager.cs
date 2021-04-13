@@ -34,13 +34,17 @@ public class UIManager : MonoBehaviour
     public GameObject newCreaturePopup;
     public GameObject newAscensionPopup;
     public GameObject tutorialMain;
-
+    public GameObject quitConfirmation;
+    public GameObject resetConfirmation;
+    public GameObject howToPlay;
     public GameObject settingsMenu;
     public GameObject credits;
 
     public GameObject button_upgrade;
 
     public UI_FarmPanel farmUI;
+
+    public GameObject debugMenu;
 
     public GameObject UIBlocker;
     public GameObject FadeIn;
@@ -49,6 +53,7 @@ public class UIManager : MonoBehaviour
 
     Building selectedBuilding;
 
+    public float debugTimer = 0;
     int statsMiniPopupCurrent = 0;
 
     // Start is called before the first frame update
@@ -70,7 +75,7 @@ public class UIManager : MonoBehaviour
         if (FadeIn.activeInHierarchy)
         {
             Color c = FadeIn.GetComponent<Image>().color;
-            c.a = Mathf.MoveTowards(c.a, 0, Time.deltaTime);
+            c.a = Mathf.MoveTowards(c.a, 0, Time.unscaledDeltaTime);
             FadeIn.GetComponent<Image>().color = c;
             if (c.a <= 0)
                 FadeIn.SetActive(false);
@@ -94,6 +99,37 @@ public class UIManager : MonoBehaviour
         {
             timeScaleText.text = "Time Scale: " + MainManager.dreamTimeScale + "x";
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            UI_SettingsButton();
+            quitConfirmation.SetActive(false);
+            resetConfirmation.SetActive(false);
+        }
+
+        if (MainManager.enableDebugMenu)
+        {
+            if (Input.GetKeyDown(KeyCode.BackQuote))
+                debugMenu.SetActive(!debugMenu.activeInHierarchy);
+        }
+        else
+        {
+            if (Input.GetKey(KeyCode.BackQuote))
+            {
+                debugTimer += Time.unscaledDeltaTime;
+                if (debugTimer >= 3f)
+                {
+                    MainManager.enableDebugMenu = true;
+                    debugMenu.SetActive(true);
+                }
+            }
+            else
+            {
+                debugTimer = 0f;
+            }
+        }
+
+        MainManager.instance.pause = (settingsMenu.activeInHierarchy);
     }
 
     public void UI_ShowStatsMiniPopup(int i)
@@ -254,13 +290,19 @@ public class UIManager : MonoBehaviour
 
     public void UI_Settings_Reload()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        MainManager.musicManager.PlayClick();
+        resetConfirmation.SetActive(true);
     }
 
     public void UI_Settings_Credits()
     {
         MainManager.musicManager.PlayClick();
         credits.SetActive(true);
+    }
+    public void UI_Settings_HowToPlay()
+    {
+        MainManager.musicManager.PlayClick();
+        howToPlay.SetActive(true);
     }
 
     public void UI_Settings_ToggleTimeScale()
@@ -317,4 +359,59 @@ public class UIManager : MonoBehaviour
         MainManager.instance.zees = 6000000;
     }
 
+    public void UI_debug_toggleDebugEnable()
+    {
+        MainManager.enableDebugMenu = !MainManager.enableDebugMenu;
+    }
+
+    public void UI_debug_give_money()
+    {
+        MainManager.instance.zees += 1000000;
+    }
+    public void UI_debug_give_rest()
+    {
+        MainManager.instance.rest_resource += MainManager.instance.rest_limit;
+    }
+    public void UI_debug_give_energy()
+    {
+        MainManager.instance.energy_resource += MainManager.instance.energy_limit;
+    }
+    public void UI_debug_spawn_creature(int id)
+    {
+        MainManager.creatureManager.SpawnNewCreature((Creature.CreatureType)id);
+    }
+
+    public void UI_ShowQuitConfirmation()
+    {
+        MainManager.musicManager.PlayClick();
+        quitConfirmation.SetActive(true);
+    }
+
+    public void UI_DontQuitGame()
+    {
+        MainManager.musicManager.PlayClick();
+        quitConfirmation.SetActive(false);
+    }
+
+    public void UI_QuitGame()
+    {
+        Application.Quit();
+    }
+
+    public void UI_ResumeGame()
+    {
+        MainManager.musicManager.PlayClick();
+        settingsMenu.SetActive(false);
+    }
+
+    public void UI_ConfirmReset()
+    {
+        MainManager.musicManager.PlayClick();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    public void UI_DontReset()
+    {
+        MainManager.musicManager.PlayClick();
+        resetConfirmation.SetActive(false);
+    }
 }

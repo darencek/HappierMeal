@@ -65,6 +65,10 @@ public class MainManager : MonoBehaviour
     public float constructionSpeed_multiplier = 1f;
     public float farm_grow_multiplier = 1f;
 
+    public static bool enableDebugMenu = false;
+
+    public bool pause = false;
+    public bool freeze = false;
 
     private void Awake()
     {
@@ -162,7 +166,7 @@ public class MainManager : MonoBehaviour
                 sleepTime += dreamTimeScale;
             }
 
-            yield return new WaitForSecondsRealtime(1f);
+            yield return new WaitForSeconds(1f);
         }
     }
     public void ResourceTick()
@@ -332,8 +336,18 @@ public class MainManager : MonoBehaviour
         }
 
         nextAscension = 500000 * Mathf.Pow(4f, ascensionLevel - 1);
-        if (Input.GetKeyDown(KeyCode.P))
-            Application.Quit();
+
+        if(freeze || pause)
+        {
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1;
+        }
+
+        //if (Input.GetKeyDown(KeyCode.Q))
+        //    Application.Quit();
     }
     public void StartSleeping()
     {

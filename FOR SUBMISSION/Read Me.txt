@@ -1,0 +1,28 @@
+LUCID
+By Team Happier Meal 2021
+---
+weizhijoel.hoon@digipen.edu
+PLEASE PUT IN YOUR EMAILS HERE
+--
+
+== HOW TO PLAY ==
+
+Controls:
+- Mouse to click and interact with objects
+- Click and drag on the environment to pan the camera
+- Scroll wheel to zoom in and out
+- Esc key to open pause menu
+- "~" key to access the debug cheat menu (see below)
+
+The game supports touch screen devices.
+
+The game is set to a default timescale of 3600x (1 sec = 1 hour). This can be toggled from the pause menu.
+
+
+*** DEBUG CHEAT MENU ***
+For your playtesting convenience, the game has a debug cheat menu hidden inside.
+Pressing and holding the ~ key for 5 seconds will enable the debug cheat menu.
+After enabling it, you can press ~ to toggle the menu.
+This menu alows you to spawn creatures and give yourself resources.
+
+

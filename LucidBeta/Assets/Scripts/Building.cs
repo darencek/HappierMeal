@@ -86,7 +86,7 @@ public class Building : MonoBehaviour
                 _growthTimer = 0;
 
                 if (MainManager.instance.sleepState >= 1)
-                    buildHours -= Time.unscaledDeltaTime * MainManager.dreamTimeScale * MainManager.instance.constructionSpeed_multiplier;
+                    buildHours -= Time.deltaTime * MainManager.dreamTimeScale * MainManager.instance.constructionSpeed_multiplier;
 
                 if (buildHours <= 0)
                 {
@@ -117,7 +117,7 @@ public class Building : MonoBehaviour
     IEnumerator RevealCoroutine()
     {
         MainManager.uiManager.blockUI = true;
-        Time.timeScale = 0f;
+        MainManager.instance.freeze = true;
         MainManager.instance.CamPan_SmoothToTarget(transform.position);
         yield return new WaitForSecondsRealtime(2f);
         BuildCompleteEffect.SetActive(true);
@@ -125,7 +125,7 @@ public class Building : MonoBehaviour
         MainManager.musicManager.PlayBoom();
         yield return new WaitForSecondsRealtime(2f);
         BuildCompleteEffect.SetActive(false);
-        Time.timeScale = 1f;
+        MainManager.instance.freeze = false;
         MainManager.uiManager.blockUI = false;
         MainManager.instance.revealRunning = false;
     }
@@ -241,7 +241,7 @@ public class Building : MonoBehaviour
     {
         if (type == BuildingType.FRUIT_TREE)
         {
-            _growthTimer += Time.unscaledDeltaTime * MainManager.dreamTimeScale;
+            _growthTimer += Time.deltaTime * MainManager.dreamTimeScale;
 
             if (_growthTimer >= (60f * 60f * 3f))
             {

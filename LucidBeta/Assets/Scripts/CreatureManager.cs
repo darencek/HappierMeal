@@ -14,6 +14,8 @@ public class CreatureManager : MonoBehaviour
     public float hoursSleptForSpawn = 0;
     public float spawnTime = 0;
 
+    int maxCreatures = 6;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +39,8 @@ public class CreatureManager : MonoBehaviour
         {
             hoursSleptForSpawn = 0;
             if (Random.Range(0, 100) <= 90)
-                SpawnNewCreature();
+                SpawnNewCreature((Creature.CreatureType)Random.Range(0, System.Enum.GetNames(typeof(Creature.CreatureType)).Length));
+
         }
     }
     public Sprite GetCreatureSprite(Creature.CreatureType type)
@@ -45,11 +48,16 @@ public class CreatureManager : MonoBehaviour
         return creatureSprites[(int)type];
     }
 
-    public void SpawnNewCreature()
+    public void SpawnNewCreature(Creature.CreatureType t)
     {
+        GameObject[] crs = GameObject.FindGameObjectsWithTag("Creature");
+        if (crs.Length > maxCreatures)
+            for (int i = 0; i < (crs.Length - maxCreatures); i++)
+                Destroy(crs[i]);
+
         GameObject spawnLoc = creatureSpawnLocations[Random.Range(0, creatureSpawnLocations.Length)];
         GameObject g = Instantiate(creaturePrefab, spawnLoc.transform.position, Quaternion.identity);
-        g.GetComponent<CreatureController>().SetType((Creature.CreatureType)Random.Range(0, System.Enum.GetNames(typeof(Creature.CreatureType)).Length));
+        g.GetComponent<CreatureController>().SetType(t);
     }
 
     public void CheckNewEncounter(CreatureController c)

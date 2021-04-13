@@ -37,7 +37,6 @@ public class CreatureController : MonoBehaviour
     void Start()
     {
         moveSpeed = Random.Range(0.3f, 0.5f);
-
     }
     public void UpdateSprite()
     {
@@ -293,7 +292,7 @@ public class CreatureController : MonoBehaviour
     IEnumerator RevealCoroutine()
     {
         MainManager.uiManager.blockUI = true;
-        Time.timeScale = 0f;
+        MainManager.instance.freeze = true;
         MainManager.instance.CamPan_SmoothToTarget(transform.position);
         yield return new WaitForSecondsRealtime(2f);
         MainManager.uiManager.blockUI = false;

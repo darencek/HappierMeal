@@ -21,6 +21,11 @@ public class StartScreenController : MonoBehaviour
         Camera.main.transform.position = v;
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
     public void StartGame()
     {
         StartCoroutine("StartGameCR");

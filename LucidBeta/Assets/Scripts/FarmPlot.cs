@@ -45,7 +45,7 @@ public class FarmPlot : MonoBehaviour
                 {
                     if (c.growTime < c.maxGrowTime)
                     {
-                        c.growTime += MainManager.dreamTimeScale * Time.unscaledDeltaTime * MainManager.instance.farm_grow_multiplier;
+                        c.growTime += MainManager.dreamTimeScale * Time.deltaTime * MainManager.instance.farm_grow_multiplier;
 
                         float f = (c.growTime / c.maxGrowTime) * 3f;
                         sp.sprite = MainManager.farmManager.growingSprites[Mathf.FloorToInt(f) + 1];

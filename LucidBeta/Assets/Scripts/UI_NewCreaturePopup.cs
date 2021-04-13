@@ -26,7 +26,7 @@ public class UI_NewCreaturePopup : MonoBehaviour
 
     public void UI_Close()
     {
-        Time.timeScale = 1f;
+        MainManager.instance.freeze = false;
         MainManager.instance.revealRunning = false;
         gameObject.SetActive(false);
     }
