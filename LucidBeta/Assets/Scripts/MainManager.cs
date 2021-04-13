@@ -27,9 +27,7 @@ public class MainManager : MonoBehaviour
 
     public static bool MouseOnUI;
 
-    public static float sleepingTimeScale = 3600f;
-    public static float wakingTimeScale = 3600f;
-
+    public static float fastTimeScale = 3600f;
     public static float dreamTimeScale = 3600f;
 
     public bool playTutorial;
@@ -41,7 +39,7 @@ public class MainManager : MonoBehaviour
     public float sleepMoodTresh = 0;
 
     public int ascensionLevel = 1;
-    public double nextAscension = 100;
+    public double nextAscension = 500000;
 
     public double zees = 0;
     public double zees_earnLimit = 0;
@@ -81,7 +79,6 @@ public class MainManager : MonoBehaviour
         Camera.main.orthographicSize = 3;
 
         ascensionLevel = 1;
-        nextAscension = 500000;
     }
 
     public void Ascend()
@@ -112,8 +109,6 @@ public class MainManager : MonoBehaviour
             Destroy(g);
 
         upgradeManager.ResetUpgrades();
-
-        nextAscension *= 3.5f;
 
         yield return new WaitForSeconds(2f);
         AscensionAnimation.SetActive(false);
@@ -253,7 +248,7 @@ public class MainManager : MonoBehaviour
             energy_resource = energy_limit;
 
         //Main Zees Gained
-        zee_FromRestEarnMultiplier *= Mathf.Pow(1.2f  * Mathf.Pow(1.05f, UpgradeManager.refinery_efficiency.level), buildings_refineries);
+        zee_FromRestEarnMultiplier *= Mathf.Pow(1.2f * Mathf.Pow(1.05f, UpgradeManager.refinery_efficiency.level), buildings_refineries);
 
         double zees_perRest = (1f) / (60f * 60f); //1 per Rest per 1 hour
         double zees_gained = (rest_resource * zees_perRest);
@@ -313,8 +308,6 @@ public class MainManager : MonoBehaviour
 
         if (sleepState == 0)
         {
-            dreamTimeScale = wakingTimeScale;
-
             if (revealEvents.Count > 0)
             {
                 if (!revealRunning)
@@ -324,10 +317,6 @@ public class MainManager : MonoBehaviour
                     revealEvents.RemoveAt(0);
                 }
             }
-        }
-        else
-        {
-            dreamTimeScale = sleepingTimeScale;
         }
 
         if (RainEffect.activeInHierarchy)
@@ -341,6 +330,7 @@ public class MainManager : MonoBehaviour
                 RainEffect.SetActive(true);
         }
 
+        nextAscension = 500000 * Mathf.Pow(4f, ascensionLevel - 1);
         if (Input.GetKeyDown(KeyCode.P))
             Application.Quit();
     }

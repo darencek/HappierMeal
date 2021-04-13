@@ -131,7 +131,7 @@ public class CreatureController : MonoBehaviour
                     {
                         GameObject[] buildings = GameObject.FindGameObjectsWithTag("Building");
                         GameObject target = buildings[Random.Range(0, buildings.Length)];
-                        path = PathfindingManager.instance.GetPath(transform.position, target.transform.position + new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0));
+                        path = PathfindingManager.instance.GetPath(transform.position, target.transform.position + new Vector3(Random.Range(-0.4f, 4f), Random.Range(-0.4f, 0.4f), 0));
                         moveDelay = Random.Range(5, 10);
                     }
 

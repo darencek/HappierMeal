@@ -17,6 +17,8 @@ public class UIManager : MonoBehaviour
 
     public TextMeshProUGUI sleepHoursText;
 
+    public TextMeshProUGUI timeScaleText;
+
     public GameObject statsMiniPopup;
     public GameObject statsMiniPopup_rest;
     public GameObject statsMiniPopup_energy;
@@ -87,6 +89,11 @@ public class UIManager : MonoBehaviour
         energyCostsText.text = "Current costs: " + (MainManager.instance.energy_upkeep * 60) + " / hour";
 
         button_upgrade.SetActive(MainManager.instance.buildings_haveWorkshop);
+
+        if (timeScaleText.gameObject.activeInHierarchy)
+        {
+            timeScaleText.text = "Time Scale: " + MainManager.dreamTimeScale + "x";
+        }
     }
 
     public void UI_ShowStatsMiniPopup(int i)
@@ -256,6 +263,27 @@ public class UIManager : MonoBehaviour
         credits.SetActive(true);
     }
 
+    public void UI_Settings_ToggleTimeScale()
+    {
+        MainManager.musicManager.PlayClick();
+
+        if (MainManager.dreamTimeScale == 1)
+        {
+            MainManager.dreamTimeScale = 60f;
+        }
+        else if (MainManager.dreamTimeScale == 60f)
+        {
+            MainManager.dreamTimeScale = 900f;
+        }
+        else if (MainManager.dreamTimeScale == 900f)
+        {
+            MainManager.dreamTimeScale = 3600f;
+        }
+        else
+        {
+            MainManager.dreamTimeScale = 1;
+        }
+    }
     public void UI_Settings_LoadDemoSave()
     {
         MainManager.musicManager.PlayClick();
@@ -283,10 +311,10 @@ public class UIManager : MonoBehaviour
         UpgradeManager.crystarium_upgrade.level = 5;
         UpgradeManager.refinery_efficiency.level = 10;
 
-        MainManager.instance.rest_resource = 10000000;
-        MainManager.instance.energy_resource = 10000000;
+        MainManager.instance.rest_resource = 6000;
+        MainManager.instance.energy_resource = 2000;
 
-        MainManager.instance.zees = 10000000;
+        MainManager.instance.zees = 6000000;
     }
 
 }
