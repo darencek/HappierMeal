@@ -19,6 +19,11 @@ public class StartScreenController : MonoBehaviour
         v.y = Mathf.PingPong(Time.time/47f, 0.1f);
 
         Camera.main.transform.position = v;
+
+        if (Input.anyKeyDown)
+        {
+            GetComponent<Animator>().SetTrigger("skip");
+        }
     }
 
     public void QuitGame()
