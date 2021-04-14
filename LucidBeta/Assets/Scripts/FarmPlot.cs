@@ -100,15 +100,15 @@ public class FarmPlot : MonoBehaviour
 
             if (x1 && x2)
             {
-                float chanceTresh = 50 * Mathf.Pow(0.99f, UpgradeManager.farm_crossbreed_upgrade.level);
-                if (Random.Range(0, 100) <= chanceTresh)
+                float chanceTresh = 30 * Mathf.Pow(0.99f, UpgradeManager.farm_crossbreed_upgrade.level);
+                if (Random.Range(0, 100) >= chanceTresh)
                 {
                     if (!MainManager.instance.SeedInventory.ContainsKey(ci.type))
                     {
                         MainManager.instance.SeedInventory[ci.type] = 0;
                     }
 
-                    MainManager.uiManager.UI_CrossbreedPopup(ci);
+                    MainManager.uiManager.UI_CrossbreedPopup(ci,1);
                     MainManager.instance.SeedInventory[ci.type]++;
                 }
             }

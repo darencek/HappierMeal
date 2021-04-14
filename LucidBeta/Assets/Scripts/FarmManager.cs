@@ -23,7 +23,7 @@ public class FarmManager : MonoBehaviour
 public class Crop
 {
     public enum SoilType { DREAM_SOIL, BOSOIL, MULSOIL };
-    public enum CropType { NONE, DREAMLITE, ENERGITE, RANDITE, SPECITE, FERRITE, BATTRON, GROWON };
+    public enum CropType { NONE, DREAMLITE, ENERGITE, RANDITE, SPECITE, FERRITE, BATTRON, GROWON, SLOWON, CRYSTAVER, GENERVER, QUICKSILVER };
 
     public SoilType soil;
     public CropType type;
@@ -56,18 +56,31 @@ public class Crop
             case CropType.RANDITE:
                 MainManager.instance.zees += Random.Range(1000, 2000) * multiplier;
                 break;
-            //T2
             case CropType.SPECITE:
                 MainManager.instance.cropBuffs.Add(new CropBonusBuff(CropBonusBuff.buffType.ZLIMIT1));
                 break;
             case CropType.FERRITE:
                 MainManager.instance.cropBuffs.Add(new CropBonusBuff(CropBonusBuff.buffType.CONSTRUCTION));
                 break;
+            //T2
             case CropType.BATTRON:
                 MainManager.instance.energy_resource += 300 * multiplier;
                 break;
             case CropType.GROWON:
                 MainManager.instance.cropBuffs.Add(new CropBonusBuff(CropBonusBuff.buffType.ENERGYCOST1));
+                break;
+            case CropType.SLOWON:
+                MainManager.instance.cropBuffs.Add(new CropBonusBuff(CropBonusBuff.buffType.REST1));
+                break;
+            //T3
+            case CropType.CRYSTAVER:
+                MainManager.instance.rest_resource += 1000 * multiplier;
+                break;
+            case CropType.GENERVER:
+                MainManager.instance.cropBuffs.Add(new CropBonusBuff(CropBonusBuff.buffType.ENERGY1));
+                break;
+            case CropType.QUICKSILVER:
+                MainManager.instance.cropBuffs.Add(new CropBonusBuff(CropBonusBuff.buffType.EARNING1));
                 break;
         }
     }
@@ -109,7 +122,6 @@ public class Crop
                     name = "Randite";
                     info = "Gives $1000 to $2000 randomly on harvest.";
                     break;
-                //T2
                 case CropType.SPECITE:
                     name = "Specite";
                     info = "Harvest to increase $ earning limit by 10% for 24 hours.";
@@ -122,6 +134,7 @@ public class Crop
                     x1 = CropType.DREAMLITE;
                     x2 = CropType.RANDITE;
                     break;
+                //T2
                 case CropType.BATTRON:
                     name = "Battron";
                     info = "Gives 300 energy on harvest.";
@@ -130,9 +143,34 @@ public class Crop
                     break;
                 case CropType.GROWON:
                     name = "Growon";
-                    info = "Harvest to reduce energy running costs by 1% for 24 hours.";
+                    info = "Harvest to reduce energy running costs by 5% for 24 hours.";
                     x1 = CropType.RANDITE;
                     x2 = CropType.SPECITE;
+                    break;
+                case CropType.SLOWON:
+                    name = "Slowon";
+                    info = "Harvest to boost rest generation by 5% for 24 hours.";
+                    x1 = CropType.DREAMLITE;
+                    x2 = CropType.SPECITE;
+                    break;
+                //T3
+                case CropType.CRYSTAVER:
+                    name = "Crystaver";
+                    info = "Gives 1000 rest on harvest.";
+                    x1 = CropType.DREAMLITE;
+                    x2 = CropType.SLOWON;
+                    break;
+                case CropType.GENERVER:
+                    name = "Generver";
+                    info = "Harvest to boost energy generation by 5% for 24 hours.";
+                    x1 = CropType.BATTRON;
+                    x2 = CropType.SLOWON;
+                    break;
+                case CropType.QUICKSILVER:
+                    name = "Quicksilver";
+                    info = "Harvest to boost $ earned by 3% for 24 hours.";
+                    x1 = CropType.SLOWON;
+                    x2 = CropType.GROWON;
                     break;
             }
         }
@@ -141,7 +179,7 @@ public class Crop
 
 public class CropBonusBuff
 {
-    public enum buffType { ZLIMIT1, CONSTRUCTION, ENERGYCOST1 };
+    public enum buffType { ZLIMIT1, CONSTRUCTION, ENERGYCOST1, REST1, ENERGY1, EARNING1 };
     public float timeLeft = 24 * 60 * 60;
     public buffType type = buffType.ZLIMIT1;
 
@@ -160,7 +198,16 @@ public class CropBonusBuff
                 MainManager.instance.constructionSpeed_multiplier = 2f;
                 break;
             case buffType.ENERGYCOST1:
-                MainManager.instance.energy_upkeep_multiplier *= 0.99f;
+                MainManager.instance.energy_upkeep_multiplier *= 0.95f;
+                break;
+            case buffType.REST1:
+                MainManager.instance.rest_EarnMultiplier *= 1.05f;
+                break;
+            case buffType.ENERGY1:
+                MainManager.instance.energy_EarnMultiplier *= 1.05f;
+                break;
+            case buffType.EARNING1:
+                MainManager.instance.zee_FromRestEarnMultiplier *= 1.03f;
                 break;
         }
     }

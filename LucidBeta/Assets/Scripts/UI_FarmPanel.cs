@@ -72,28 +72,31 @@ public class UI_FarmPanel : MonoBehaviour
 
     public void UI_OpenSeedWindow(int slot)
     {
-        MainManager.musicManager.PlayPop();
 
         if (selectedFarm.crops[slot] == null)
         {
+            MainManager.musicManager.PlayPop();
+
             seedPanel.SetActive(true);
             selectedSlot = slot;
         }
         else
         {
+            MainManager.musicManager.PlayPop();
             Crop C = selectedFarm.crops[slot];
             if (C.growTime >= C.maxGrowTime)
             {
+                MainManager.musicManager.PlayDemolishSound();
                 selectedFarm.Harvest(slot);
             }
         }
     }
 
-    public void UI_ShowCrossbreedPopup(Crop.CropInfo info)
+    public void UI_ShowCrossbreedPopup(Crop.CropInfo info, int qty)
     {
 
         crossbreedPopup.SetActive(true);
-        crossbreedPopup_Text.text = "Obtained " + info.name + " seed.";
+        crossbreedPopup_Text.text = "Obtained " + qty + "x " + info.name + " seed.";
     }
 
     public void UI_ShowBuildingInfoButton()

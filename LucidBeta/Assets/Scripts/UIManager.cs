@@ -276,9 +276,9 @@ public class UIManager : MonoBehaviour
         newCreaturePopup.GetComponent<UI_NewCreaturePopup>().OpenPopup(c);
     }
 
-    public void UI_CrossbreedPopup(Crop.CropInfo info)
+    public void UI_CrossbreedPopup(Crop.CropInfo info, int q)
     {
-        farmUI.UI_ShowCrossbreedPopup(info);
+        farmUI.UI_ShowCrossbreedPopup(info, q);
     }
 
     public void UI_SettingsButton()
@@ -380,7 +380,13 @@ public class UIManager : MonoBehaviour
     {
         MainManager.creatureManager.SpawnNewCreature((Creature.CreatureType)id);
     }
-
+    public void UI_debug_give_seeds()
+    {
+        for(int i=0;i< System.Enum.GetNames(typeof(Crop.CropType)).Length;i++)
+        {
+            MainManager.instance.SeedInventory[(Crop.CropType)i] = 999;
+        }
+    }
     public void UI_ShowQuitConfirmation()
     {
         MainManager.musicManager.PlayClick();

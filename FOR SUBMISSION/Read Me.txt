@@ -1,8 +1,11 @@
 LUCID
 By Team Happier Meal 2021
 ---
-weizhijoel.hoon@digipen.edu
-PLEASE PUT IN YOUR EMAILS HERE
+Weizhijoel.hoon@digipen.edu      
+Germaine.l@digipen.edu      
+d.kwok@digipen.edu      
+v.owyong@digipen.edu      
+d.loo@digipen.edu
 --
 
 == HOW TO PLAY ==
