@@ -15,11 +15,17 @@ public class UI_BuildingInfoPanel : MonoBehaviour
     public GameObject energizeDoneButton;
     public TextMeshProUGUI energizeButtonText;
     public GameObject energizeInfo;
+    public GameObject demolishConfirm;
+
 
     // Start is called before the first frame update
     void Start()
     {
 
+    }
+    private void OnEnable()
+    {
+        demolishConfirm.SetActive(false);
     }
 
     public void SelectBuilding(Building b)
@@ -49,13 +55,25 @@ public class UI_BuildingInfoPanel : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
-
     public void UI_Demolish()
+    {
+        MainManager.musicManager.PlayClick();
+        demolishConfirm.SetActive(true);
+    }
+
+    public void UI_DemolishCancel()
+    {
+        MainManager.musicManager.PlayClick();
+        demolishConfirm.SetActive(false);
+    }
+    public void UI_DemolishConfirm()
     {
         MainManager.musicManager.PlayDemolishSound();
         selected.Demolish();
+        demolishConfirm.SetActive(false);
         UI_Close();
     }
+
     public void UI_Energize()
     {
         if (MainManager.instance.energy_resource >= stats.energizeCost)
